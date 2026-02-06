@@ -1,0 +1,2501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAMIKAS | Own More, Manage Less.</title>
+    <meta name="description" content="Automate rent collection, ditch paperwork, and increase rental income by 20–40% in just 90 days.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lamikas.com/">
+    <meta property="og:title" content="LAMIKAS | Own More. Manage Less.">
+    <meta property="og:description" content="Automate rent collection, eliminate paperwork, and grow your rental income. Africa's most intuitive property management platform.">
+    <meta property="og:image" content="https://lamikas.com/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lamikas.com/">
+    <meta property="twitter:title" content="LAMIKAS | Own More. Manage Less.">
+    <meta property="twitter:description" content="Automate rent collection, eliminate paperwork, and grow your rental income. Africa's most intuitive property management platform.">
+    <meta property="twitter:image" content="https://lamikas.com/images/twitter-image.jpg">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <style>
+        /* ===== LAMIKAS PROPERTY MANAGEMENT CSS ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Primary Colors - Professional Blue Theme */
+            --primary: #1a365d;
+            --primary-dark: #0d243f;
+            --primary-medium: #2c5282;
+            --primary-light: #4299e1;
+            --primary-lighter: #bee3f8;
+            
+            /* Secondary Colors */
+            --secondary: #2d3748;
+            --secondary-light: #4a5568;
+            
+            /* Accent Colors */
+            --accent: #38b2ac;
+            --accent-light: #81e6d9;
+            
+            /* Success Colors */
+            --success: #38a169;
+            --warning: #d69e2e;
+            --danger: #e53e3e;
+            --info: #3182ce;
+            
+            /* Neutral Colors */
+            --dark: #1a202c;
+            --gray-900: #2d3748;
+            --gray-800: #4a5568;
+            --gray-700: #718096;
+            --gray-600: #a0aec0;
+            --gray-500: #cbd5e0;
+            --gray-400: #e2e8f0;
+            --gray-300: #edf2f7;
+            --gray-200: #f7fafc;
+            --white: #ffffff;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+            
+            /* Border Radius */
+            --radius-sm: 5px;    /* reduced */
+            --radius-md: 8px;    /* reduced */
+            --radius-lg: 12px;   /* reduced */
+            --radius-xl: 16px;   /* reduced */
+            --radius-full: 9999px;
+            
+            /* Spacing - Reduced by ~15% */
+            --space-xs: 0.4rem;
+            --space-sm: 0.85rem;
+            --space-md: 1.3rem;
+            --space-lg: 1.7rem;
+            --space-xl: 2.55rem;
+            --space-2xl: 3.4rem;
+            --space-3xl: 5.1rem;
+            
+            /* Typography */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            font-size: 15px;
+            line-height: 1.5;
+            color: var(--gray-800);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--dark);
+        }
+
+        h1 {
+            font-size: 2.8rem;    /* reduced */
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: 2.1rem;    /* reduced */
+        }
+
+        h3 {
+            font-size: 1.5rem;    /* reduced */
+        }
+
+        h4 {
+            font-size: 1.15rem;   /* reduced */
+        }
+
+        p {
+            margin-bottom: 0.85rem;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--primary-medium);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1250px;    /* reduced */
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        .section {
+            padding: var(--space-2xl) 0;    /* reduced from 3xl */
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);    /* reduced from 2xl */
+            max-width: 700px;                  /* reduced */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-title {
+            margin-bottom: var(--space-sm);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;          /* reduced */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;           /* reduced */
+            height: 2px;           /* reduced */
+            background-color: var(--accent);
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;    /* reduced */
+            color: var(--gray-700);
+            max-width: 550px;      /* reduced */
+            margin: 0 auto;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.7rem;    /* reduced */
+            font-family: var(--font-sans);
+            font-size: 0.95rem;         /* reduced */
+            font-weight: 600;
+            line-height: 1.4;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            gap: 0.4rem;                /* reduced */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-medium) 100%);
+            color: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            font-weight: 600;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-login {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary-medium);
+            padding: 0.65rem 1.3rem;    /* reduced */
+            font-weight: 600;
+        }
+
+        .btn-login:hover {
+            background-color: var(--primary-lighter);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+            color: var(--primary);
+        }
+
+        .btn-text {
+            background-color: transparent;
+            color: var(--primary);
+            border: none;
+            padding: 0.4rem 0.85rem;    /* reduced */
+        }
+
+        .btn-text:hover {
+            color: var(--primary-dark);
+            background-color: var(--gray-200);
+        }
+
+        .btn-lg {
+            padding: 0.85rem 2.1rem;    /* reduced */
+            font-size: 1.05rem;         /* reduced */
+        }
+
+        .btn-sm {
+            padding: 0.4rem 0.85rem;    /* reduced */
+            font-size: 0.8rem;          /* reduced */
+        }
+
+        .btn-block {
+            width: 100%;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+            padding: 0.85rem 0;    /* reduced */
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;    /* reduced */
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;    /* reduced */
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 45px;     /* reduced */
+            height: 45px;    /* reduced */
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-medium) 100%);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.3rem;    /* reduced */
+            box-shadow: var(--shadow-md);
+        }
+
+        .logo-text {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;    /* reduced */
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .logo-subtitle {
+            font-size: 0.8rem;    /* reduced */
+            color: var(--gray-600);
+            margin-top: -3px;     /* reduced */
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: var(--space-lg);    /* reduced from xl */
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);    /* reduced from lg */
+        }
+
+        .nav-link {
+            color: var(--gray-800);
+            font-weight: 600;
+            padding: 0.4rem 0;    /* reduced */
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);    /* reduced from md */
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 3px;          /* reduced */
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4rem;   /* reduced */
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 22px;       /* reduced */
+            height: 2px;
+            background-color: var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.95) 0%, rgba(44, 82, 130, 0.95) 100%), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: var(--space-2xl) 0;    /* reduced from 3xl */
+            min-height: 85vh;               /* reduced */
+            display: flex;
+            align-items: center;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);    /* reduced from 2xl */
+            align-items: center;
+        }
+
+        .hero-badge {
+            margin-bottom: var(--space-sm);    /* reduced from md */
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 1.3rem;    /* reduced */
+            background-color: rgba(255,255,255,0.1);
+            color: var(--white);
+            font-size: 0.8rem;         /* reduced */
+            font-weight: 600;
+            border-radius: var(--radius-full);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero-title {
+            color: var(--white);
+            margin-bottom: var(--space-sm);    /* reduced from md */
+        }
+
+        .text-gradient {
+            background: linear-gradient(90deg, var(--accent-light) 0%, var(--white) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;        /* reduced */
+            margin-bottom: var(--space-lg);    /* reduced from xl */
+            opacity: 0.9;
+            max-width: 550px;          /* reduced */
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: var(--space-sm);    /* reduced from md */
+            margin-bottom: var(--space-lg);    /* reduced from xl */
+            flex-wrap: wrap;
+        }
+
+        .hero-actions .btn-primary {
+            background: var(--white) !important;
+            color: var(--primary-dark) !important;
+            border: 2px solid var(--white) !important;
+        }
+
+        .hero-actions .btn-primary:hover {
+            background: var(--gray-200) !important;
+            border-color: var(--gray-200) !important;
+            color: var(--primary-dark) !important;
+        }
+
+        .hero-actions .btn-outline {
+            background-color: transparent !important;
+            color: var(--white) !important;
+            border: 2px solid rgba(255,255,255,0.8) !important;
+        }
+
+        .hero-actions .btn-outline:hover {
+            background-color: rgba(255,255,255,0.1) !important;
+            border-color: var(--white) !important;
+            color: var(--white) !important;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: var(--space-lg);    /* reduced from xl */
+            margin-top: var(--space-lg);    /* reduced from xl */
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.1rem;        /* reduced */
+            font-weight: 800;
+            color: var(--accent-light);
+            line-height: 1;
+            margin-bottom: 0.2rem;    /* reduced */
+        }
+
+        .stat-label {
+            font-size: 0.8rem;        /* reduced */
+            color: rgba(255,255,255,0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;    /* reduced */
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .dashboard-preview {
+            background: rgba(255,255,255,0.95);
+            border-radius: var(--radius-xl);
+            padding: 1.7rem;          /* reduced */
+            box-shadow: var(--shadow-xl);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: transform 0.5s ease;
+            height: 360px;            /* reduced */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dashboard-preview:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 270px;            /* reduced */
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-medium) 100%);
+            border-radius: var(--radius-lg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            margin-bottom: var(--space-sm);    /* reduced */
+        }
+
+        .video-placeholder i {
+            font-size: 3.4rem;        /* reduced */
+            margin-bottom: var(--space-sm);    /* reduced */
+            opacity: 0.8;
+        }
+
+        .video-placeholder-text {
+            font-size: 1.15rem;       /* reduced */
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* ===== FEATURES SECTION ===== */
+        .features {
+            background-color: var(--gray-200);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));    /* reduced */
+            gap: var(--space-lg);    /* reduced from xl */
+            margin-bottom: var(--space-xl);    /* reduced from 2xl */
+        }
+
+        .feature-card {
+            background-color: var(--white);
+            border-radius: var(--radius-xl);
+            padding: var(--space-lg);    /* reduced from xl */
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid transparent;
+            border: 1px solid var(--primary);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);    /* reduced */
+            box-shadow: var(--shadow-xl);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 65px;     /* reduced */
+            height: 65px;    /* reduced */
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;    /* reduced */
+            margin-bottom: var(--space-md);    /* reduced from lg */
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-title {
+            margin-bottom: var(--space-sm);    /* reduced from md */
+            font-size: 1.3rem;    /* reduced */
+        }
+
+        .feature-description {
+            color: var(--gray-700);
+            margin-bottom: var(--space-sm);    /* reduced from md */
+            font-size: 0.95rem;   /* reduced */
+        }
+
+        /* ===== PRICING SECTION ===== */
+        .pricing {
+            background-color: var(--white);
+        }
+
+        .pricing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-xs);    /* reduced from sm */
+            margin-top: var(--space-md);    /* reduced from lg */
+            margin-bottom: var(--space-lg);    /* reduced from xl */
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 55px;    /* reduced */
+            height: 28px;   /* reduced */
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--gray-400);
+            transition: .4s;
+            border-radius: var(--radius-full);
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;   /* reduced */
+            width: 20px;    /* reduced */
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .toggle-slider {
+            background-color: var(--primary);
+        }
+
+        input:checked + .toggle-slider:before {
+            transform: translateX(27px);    /* reduced */
+        }
+
+        .discount-badge {
+            background: linear-gradient(135deg, var(--success) 0%, #2d9c6f 100%);
+            color: var(--white);
+            font-size: 0.85rem;    /* reduced */
+            font-weight: 700;
+            padding: 0.3rem 0.85rem;    /* reduced */
+            border-radius: var(--radius-full);
+            margin-left: 0.7rem;    /* reduced */
+            box-shadow: 0 3px 10px rgba(56, 161, 105, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.4px;    /* reduced */
+            position: relative;
+            top: -1px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-sm);    /* reduced from md */
+            margin-bottom: var(--space-xl);    /* reduced from 2xl */
+        }
+
+        .pricing-card {
+            background-color: var(--white);
+            border-radius: var(--radius-xl);
+            padding: var(--space-md);    /* reduced from lg */
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--gray-300);
+            position: relative;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);    /* reduced */
+            box-shadow: var(--shadow-xl);
+        }
+
+        .pricing-card.popular {
+            border-color: var(--primary);
+            transform: translateY(-4px);    /* reduced */
+            border: 2px solid var(--primary);
+            padding-top: calc(var(--space-md) + 12px);  /* Extra padding at top for badge */
+        }
+
+        .pricing-card.popular:hover {
+            transform: translateY(-8px);    /* reduced */
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;    /* Increased from -10px */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary);
+            color: var(--white);
+            font-size: 0.8rem;    /* reduced */
+            font-weight: 600;
+            padding: 0.4rem 1.3rem;    /* reduced */
+            border-radius: var(--radius-full);
+            z-index: 2;  /* Ensure it's above the card */
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: var(--space-md);    /* reduced from lg */
+        }
+
+        .pricing-title {
+            margin-bottom: 0.4rem;    /* reduced */
+            font-size: 1.3rem;        /* reduced */
+        }
+
+        .pricing-subtitle {
+            color: var(--gray-600);
+            margin-bottom: var(--space-sm);    /* reduced from md */
+            font-size: 0.9rem;        /* reduced */
+        }
+
+        .pricing-price {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.2rem;    /* reduced */
+            margin-bottom: 0.4rem;    /* reduced */
+        }
+
+        .price-amount {
+            font-size: 2.2rem;    /* reduced */
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .price-period {
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+
+        .pricing-annual {
+            color: var(--success);
+            font-weight: 600;
+            text-align: center;
+            display: none;
+            margin-top: 0.4rem;    /* reduced */
+            font-size: 0.9rem;     /* reduced */
+        }
+
+        .pricing-features {
+            margin-bottom: var(--space-lg);    /* reduced from xl */
+            flex-grow: 1;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;    /* reduced */
+            margin-bottom: 0.65rem;    /* reduced */
+            color: var(--gray-700);
+            font-size: 0.9rem;        /* reduced */
+        }
+
+        .feature-item i {
+            color: var(--success);
+            font-size: 0.85rem;    /* reduced */
+        }
+
+        .pricing-cta {
+            text-align: center;
+            color: var(--gray-700);
+            margin-top: auto;
+            font-size: 0.95rem;    /* reduced */
+        }
+
+        .pricing-cta .small-text {
+            font-size: 0.8rem;    /* reduced */
+            margin-top: 0.4rem;   /* reduced */
+            color: var(--gray-600);
+        }
+
+        /* ===== ENTERPRISE PRICING CARD ===== */
+        .enterprise-card-wrapper {
+            grid-column: 1 / -1;
+            margin-top: var(--space-lg);
+            position: relative;
+        }
+
+        .enterprise-pricing-card {
+            background-color: var(--white);
+            border-radius: var(--radius-xl);
+            padding: var(--space-lg);
+            box-shadow: var(--shadow-xl);
+            border: 2px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .enterprise-pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .enterprise-badge {
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            font-size: 0.9rem;
+            font-weight: 700;
+            padding: 0.6rem 2rem;
+            border-radius: var(--radius-full);
+            z-index: 10;
+            box-shadow: var(--shadow-md);
+            border: 2px solid var(--accent);
+            white-space: nowrap;
+        }
+
+        .enterprise-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            align-items: center;
+        }
+
+        .enterprise-info {
+            padding-right: var(--space-md);
+        }
+
+        .enterprise-title {
+            margin-bottom: var(--space-sm);
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .enterprise-subtitle {
+            color: var(--gray-700);
+            margin-bottom: var(--space-md);
+            font-size: 1.05rem;
+        }
+
+        .enterprise-features-list {
+            margin-bottom: var(--space-md);
+        }
+
+        .enterprise-feature-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            margin-bottom: 0.65rem;
+            color: var(--gray-700);
+            font-size: 0.95rem;
+        }
+
+        .enterprise-feature-item i {
+            color: var(--success);
+            font-size: 0.9rem;
+        }
+
+        .enterprise-controls {
+            background-color: var(--gray-100);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            border: 1px solid var(--gray-300);
+        }
+
+        .enterprise-controls-title {
+            text-align: center;
+            margin-bottom: var(--space-md);
+            font-size: 1.3rem;
+            color: var(--primary);
+        }
+
+        .unit-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-md);
+        }
+
+        .unit-input-label {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--gray-800);
+            text-align: center;
+        }
+
+        .unit-input-container {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .unit-input {
+            flex: 1;
+            padding: 0.85rem 1.3rem;
+            border: 2px solid var(--gray-400);
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            color: var(--dark);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .unit-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.1);
+        }
+
+        .unit-input.invalid {
+            border-color: var(--danger);
+            background-color: rgba(229, 62, 62, 0.05);
+        }
+
+        .unit-btn {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary);
+            border: 2px solid var(--primary);
+            color: var(--white);
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .unit-btn:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        .unit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .unit-btn:disabled:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .unit-hint {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            text-align: center;
+            margin-top: var(--space-xs);
+        }
+
+        .enterprise-price-display {
+            background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            text-align: center;
+            border: 2px solid var(--gray-300);
+            margin-bottom: var(--space-md);
+        }
+
+        .enterprise-price-amount {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .enterprise-price-period {
+            font-size: 1.1rem;
+            color: var(--gray-700);
+            margin-bottom: var(--space-sm);
+        }
+
+        .enterprise-price-per-unit {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+        }
+
+        .enterprise-cta {
+            text-align: center;
+        }
+
+        .error-message {
+            background-color: rgba(229, 62, 62, 0.1);
+            border: 1px solid var(--danger);
+            border-radius: var(--radius-md);
+            padding: var(--space-sm);
+            margin-top: var(--space-sm);
+            text-align: center;
+            display: none;
+        }
+
+        .error-message p {
+            color: var(--danger);
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+        }
+
+        /* ===== TESTIMONIALS SECTION ===== */
+        .testimonials {
+            background-color: var(--gray-200);
+        }
+
+        .testimonial-slider {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));    /* reduced */
+            gap: var(--space-md);    /* reduced from lg */
+            margin-bottom: var(--space-xl);    /* reduced from 2xl */
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: var(--radius-xl);
+            padding: var(--space-md);    /* reduced from lg */
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--primary);
+        }
+
+        .testimonial-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;    /* reduced */
+            margin-bottom: var(--space-sm);    /* reduced from md */
+        }
+
+        .testimonial-rating i {
+            color: #fbbf24;
+        }
+
+        .rating-text {
+            margin-left: 0.4rem;    /* reduced */
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--gray-800);
+            margin-bottom: var(--space-sm);    /* reduced from md */
+            line-height: 1.6;    /* reduced */
+            font-size: 0.95rem;  /* reduced */
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);    /* reduced from sm */
+        }
+
+        .author-avatar {
+            width: 44px;    /* reduced */
+            height: 44px;   /* reduced */
+            border-radius: var(--radius-full);
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-medium) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 0.95rem;    /* reduced */
+        }
+
+        .author-role {
+            font-size: 0.8rem;    /* reduced */
+            color: var(--gray-600);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));    /* reduced */
+            gap: var(--space-md);    /* reduced from lg */
+            margin-top: var(--space-lg);    /* reduced from xl */
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: var(--space-md);    /* reduced from lg */
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--primary);
+        }
+
+        .stat-card .stat-number {
+            font-size: 2.2rem;    /* reduced */
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 0.4rem;    /* reduced */
+        }
+
+        .stat-card .stat-label {
+            font-size: 0.95rem;    /* reduced */
+            color: var(--gray-700);
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta {
+            padding: var(--space-2xl) 0;    /* reduced from 3xl */
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+        }
+
+        .cta-content {
+            text-align: center;
+            max-width: 650px;    /* reduced */
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            color: var(--white);
+            margin-bottom: var(--space-sm);    /* reduced from md */
+        }
+
+        .cta-description {
+            font-size: 1.05rem;    /* reduced */
+            margin-bottom: var(--space-lg);    /* reduced from xl */
+            opacity: 0.9;
+        }
+
+        .cta-actions {
+            margin-bottom: var(--space-lg);    /* reduced from xl */
+        }
+
+        .cta .btn-primary {
+            background-color: var(--white);
+            color: var(--white) !important;
+            border-color: var(--white);
+        }
+
+        .cta .btn-primary:hover {
+            background-color: var(--gray-200);
+            border-color: var(--gray-200);
+            color: var(--primary-dark) !important;
+        }
+
+        .cta-note {
+            margin-top: var(--space-xs);    /* reduced from sm */
+            font-size: 0.8rem;    /* reduced */
+            opacity: 0.8;
+        }
+
+        .cta-benefits {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);    /* reduced from xl */
+            flex-wrap: wrap;
+        }
+
+        .benefit {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;    /* reduced */
+            font-weight: 500;
+            font-size: 0.95rem;    /* reduced */
+        }
+
+        .benefit i {
+            font-size: 1.15rem;    /* reduced */
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: var(--space-2xl) 0 var(--space-lg);    /* reduced */
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));    /* reduced */
+            gap: var(--space-xl);    /* reduced from 2xl */
+            margin-bottom: var(--space-xl);    /* reduced from 2xl */
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: var(--space-md);    /* reduced from lg */
+            font-size: 1.15rem;    /* reduced */
+        }
+
+        .footer-logo {
+            margin-bottom: var(--space-sm);    /* reduced from md */
+        }
+
+        .footer-description {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: var(--space-md);    /* reduced from lg */
+            line-height: 1.6;    /* reduced */
+            font-size: 0.95rem;  /* reduced */
+        }
+
+        .footer-social {
+            display: flex;
+            gap: var(--space-xs);    /* reduced from sm */
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;    /* reduced */
+            height: 34px;   /* reduced */
+            background-color: rgba(255,255,255,0.1);
+            color: var(--white);
+            border-radius: var(--radius-full);
+            transition: all 0.2s ease;
+        }
+
+        .footer-social a:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.65rem;    /* reduced */
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;    /* reduced */
+            font-size: 0.95rem;    /* reduced */
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-light);
+            padding-left: 4px;    /* reduced */
+        }
+
+        .footer-bottom {
+            padding-top: var(--space-lg);    /* reduced from xl */
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-sm);    /* reduced from md */
+        }
+
+        .footer-contact {
+            display: flex;
+            gap: var(--space-md);    /* reduced from lg */
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;    /* reduced */
+            font-size: 0.95rem;    /* reduced */
+        }
+
+        .contact-item i {
+            color: var(--accent-light);
+        }
+
+        .contact-item a, .contact-item span {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .contact-item a:hover {
+            color: var(--white);
+        }
+
+        .footer-copyright {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8rem;    /* reduced */
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1200px) {
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-md);    /* reduced */
+            }
+            
+            .pricing-card.popular {
+                transform: none;
+            }
+            
+            .pricing-card.popular:hover {
+                transform: translateY(-4px);    /* reduced */
+            }
+            
+            .enterprise-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+            
+            .enterprise-info {
+                padding-right: 0;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.9rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 2.3rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero .container {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+            
+            .hero-visual {
+                order: -1;
+            }
+            
+            .enterprise-content {
+                gap: var(--space-md);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.1rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 70px;    /* reduced */
+                left: 0;
+                right: 0;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: var(--space-md);
+                box-shadow: var(--shadow-lg);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                align-items: flex-start;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+            
+            .nav-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(4px, 4px);
+            }
+            
+            .nav-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .nav-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -5px);
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: var(--space-md);
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .enterprise-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .unit-input-container {
+                flex-direction: column;
+            }
+            
+            .unit-btn {
+                width: 100%;
+                height: 44px;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-contact {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section {
+                padding: var(--space-xl) 0;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-benefits {
+                flex-direction: column;
+                gap: var(--space-sm);
+            }
+            
+            .enterprise-pricing-card {
+                padding: var(--space-md);
+            }
+            
+            .enterprise-badge {
+                font-size: 0.8rem;
+                padding: 0.5rem 1.5rem;
+            }
+        }
+
+        /* Animation classes */
+        .fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);    /* reduced */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section scroll fix */
+        section[id] {
+            scroll-margin-top: 80px;    /* reduced */
+        }
+
+        /* For mobile */
+        @media (max-width: 768px) {
+            section[id] {
+                scroll-margin-top: 70px;    /* reduced */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">
+                    <img src="/assets/logos/logo.png" alt="LAMIKAS Logo" class="logo-icon" style="width: 45px; height: 45px; object-fit: contain;">
+                    <div>
+                        <div class="logo-text">LAMIKAS</div>
+                        <div class="logo-subtitle">Property Management</div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <div class="nav-links">
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#pricing" class="nav-link">Pricing</a>
+                    <a href="faq.html" class="nav-link">FAQ</a>
+                    <a href="about.html" class="nav-link">About</a>
+                </div>
+                
+                <div class="nav-actions">
+                    <a href="login.html" class="btn btn-login">Login</a>
+                    <a href="register.html" class="btn btn-primary" style="white-space: nowrap; position: relative; padding: 8px 35px 8px 18px; display: flex; flex-direction: column; align-items: center; line-height: 1.1; text-align: center; min-height: 55px; justify-content: center; font-size: 0.9rem;">
+                        <div style="display: flex; flex-direction: column; gap: 3px;">
+                            <span style="font-weight: 700; font-size: 13px;">Start Free 7-Day Trial</span>
+                            <span style="font-size: 10px; font-weight: 500; opacity: 0.95; display: flex; align-items: center; justify-content: center; gap: 4px;">
+                                <i class="fas fa-credit-card" style="font-size: 9px;"></i>
+                                No credit card required!
+                            </span>
+                        </div>
+                        <i class="fas fa-arrow-right" style="position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-size: 12px;"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge">Trusted by landlords across the globe.</span>
+                </div>
+                <h1 class="hero-title">Own More,<br><span class="text-gradient">Manage Less.</span></h1>
+                <p class="hero-description">Automate rent collection, ditch paperwork, and increase rental income by 20–40% in just 90 days.</p>
+                
+                <div class="hero-actions">
+                    <a href="register.html" class="btn btn-primary btn-lg">
+                        <span>Start Free 7-Day Trial</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#demo" class="btn btn-outline btn-lg">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Watch 2-Min Demo</span>
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">99%</div>
+                        <div class="stat-label">On-time rent collection</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Hours saved monthly</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">30%</div>
+                        <div class="stat-label">Average income increase</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="dashboard-preview">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <div class="video-placeholder-text">Your demo video will appear here</div>
+                    </div>
+                    <div style="text-align: center; color: var(--gray-700); font-size: 0.95rem;">
+                        <p>See how LAMIKAS transforms property management</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Everything You Need in One Platform</h2>
+                <p class="section-subtitle">From rent collection to maintenance management, we've got you covered</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Integrated Payments</h3>
+                    <p class="feature-description">Accept M-Pesa, card, and bank payments. All payments auto-record to tenant accounts with instant receipts.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3 class="feature-title">Smart Invoicing</h3>
+                    <p class="feature-description">Generate invoices, send via SMS/email, and track payment status automatically. Recurring billing for rent and utilities.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="feature-title">Maintenance Management</h3>
+                    <p class="feature-description">Tenants can report issues, you can track progress, assign contractors, and manage maintenance costs.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="feature-title">Advanced Reporting</h3>
+                    <p class="feature-description">Generate landlord statements, occupancy reports, income statements, and tax-ready financial reports.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-sms"></i>
+                    </div>
+                    <h3 class="feature-title">Bulk SMS & Email</h3>
+                    <p class="feature-description">Communicate with all tenants at once or send targeted messages. Pre-built templates for common scenarios.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile"></i>
+                    </div>
+                    <h3 class="feature-title">Tenant Portal</h3>
+                    <p class="feature-description">Tenants can view balances, make payments, download receipts, and submit maintenance requests via mobile.</p>
+                </div>
+            </div>
+            
+            <div class="features-cta" style="text-align: center;">
+                <a href="#features" class="btn btn-outline">
+                    <span>View All 20+ Features</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Simple, Transparent Pricing</h2>
+                <p class="section-subtitle">All plans include all features. Pay only for the number of units you manage.</p>
+                <div class="pricing-toggle">
+                    <span>Monthly</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="annualToggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <span class="active">Yearly <span class="discount-badge">Save up to $90+ yearly</span></span>
+                </div>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Starter</h3>
+                        <p class="pricing-subtitle">Perfect for individual landlords</p>
+                        <div class="pricing-price">
+                            <span class="price-amount">$9.99</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <div class="pricing-annual">GET 1 MONTH FREE</div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Up to 5 units</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>All core features</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>M-Pesa integration</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Email support</span>
+                        </div>
+                    </div>
+                    <a href="register.html?plan=starter" class="btn btn-outline btn-block">Start Free 7-Day Trial</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Essential</h3>
+                        <p class="pricing-subtitle">Growing portfolio management</p>
+                        <div class="pricing-price">
+                            <span class="price-amount">$22.99</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <div class="pricing-annual">SAVE $16+</div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Up to 20 units</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>All Essential features</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Bulk SMS credits</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Priority chat support</span>
+                        </div>
+                    </div>
+                    <a href="register.html?plan=essential" class="btn btn-outline btn-block">Start Free 7-Day Trial</a>
+                </div>
+                
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Professional</h3>
+                        <p class="pricing-subtitle">For growing property portfolios</p>
+                        <div class="pricing-price">
+                            <span class="price-amount">$49.99</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <div class="pricing-annual">SAVE $70+</div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Up to 50 units</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>All Professional features</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Advanced reporting</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Priority phone support</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Bulk SMS credits</span>
+                        </div>
+                    </div>
+                    <a href="register.html?plan=professional" class="btn btn-primary btn-block">Start Free 7-Day Trial</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Business</h3>
+                        <p class="pricing-subtitle">For property managers & agencies</p>
+                        <div class="pricing-price">
+                            <span class="price-amount">$69.99</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <div class="pricing-annual">SAVE $90+</div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Up to 100 units</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Multi-user access</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Custom reporting</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Dedicated account manager</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>API access</span>
+                        </div>
+                    </div>
+                    <a href="register.html?plan=business" class="btn btn-outline btn-block">Start Free 7-Day Trial</a>
+                </div>
+                
+                <!-- Enterprise Pricing Card - Now spans full width exactly like the grid above -->
+                <div class="enterprise-card-wrapper">
+                    <div class="enterprise-pricing-card">
+                        
+                        <div class="enterprise-content">
+                            <div class="enterprise-info">
+    <div class="pricing-header">
+        <h3 class="pricing-title">Enterprise</h3>
+	<p class="enterprise-subtitle" style="font-size: 1.15rem; font-weight: 600; color: var(--gray-700);">For large 	portfolios & agencies</p>
+    </div>
+<h3 class="enterprise-title" style="margin-top: 2rem;">Need more than 100 units?</h3>
+<p class="enterprise-subtitle">Scale your property management with our enterprise plan. Perfect for large portfolios, property management companies, and real estate agencies with 100+ units.</p>
+                                
+                                <div class="enterprise-features-list">
+                                    <div class="enterprise-feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Unlimited units (custom pricing)</span>
+                                    </div>
+                                    <div class="enterprise-feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Unlimited user accounts</span>
+                                    </div>
+                                    <div class="enterprise-feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Full API access & custom integrations</span>
+                                    </div>
+                                    <div class="enterprise-feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Dedicated account manager & 24/7 support</span>
+                                    </div>
+                                    <div class="enterprise-feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Custom reporting & analytics</span>
+                                    </div>
+                                    <div class="enterprise-feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>White-label options available</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="enterprise-controls">
+                                <h4 class="enterprise-controls-title">Calculate Your Price</h4>
+                                
+                                <div class="unit-input-group">
+                                    <label class="unit-input-label">Number of Units to Manage</label>
+                                    <div class="unit-input-container">
+                                        <button class="unit-btn" id="decreaseUnits">-</button>
+                                        <input 
+                                            type="text" 
+                                            id="unitInput" 
+                                            class="unit-input" 
+                                            value="101"
+                                            placeholder="Enter number of units"
+                                        >
+                                        <button class="unit-btn" id="increaseUnits">+</button>
+                                    </div>
+                                    <p class="unit-hint">Minimum 101 units. Price per unit decreases as you add more units.</p>
+                                </div>
+                                
+                                <div class="enterprise-price-display">
+                                    <div class="enterprise-price-amount" id="enterprisePrice">$109.89</div>
+                                    <div class="enterprise-price-period" id="enterprisePeriod">per month</div>
+                                    <div class="enterprise-price-per-unit" id="pricePerUnit">$1.09 per unit/month</div>
+                                </div>
+                                
+                                <div class="error-message" id="errorMessage">
+                                    <p>For 100 units or less, check out our <a href="#pricing">Business Plan</a> at $69.99/month</p>
+                                </div>
+                                
+                                <div class="enterprise-cta">
+                                    <a href="register.html?plan=enterprise&units=101" class="btn btn-primary btn-lg" id="enterpriseCta">
+                                        <span>Get Custom Plan</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pricing-cta">
+                <p class="small-text">All plans include a 7-day free trial. No credit card required.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Trusted by 500+ Property Professionals</h2>
+                <p class="section-subtitle">See what our customers are saying</p>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="rating-text">5.0</span>
+                    </div>
+                    <p class="testimonial-text">"LAMIKAS cut my rent collection time from 15 hours to just 2 hours per month. The automated reminders alone have improved on-time payments by 40%."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <div class="author-name">Sarah M.</div>
+                            <div class="author-role">Landlord with 32 units in Nairobi</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="rating-text">5.0</span>
+                    </div>
+                    <p class="testimonial-text">"As a property manager handling 150+ units, LAMIKAS has been a game-changer. My clients get real-time reports, and I've scaled without adding staff."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DK</div>
+                        <div class="author-info">
+                            <div class="author-name">David K.</div>
+                            <div class="author-role">Property Manager, Prime Properties</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="rating-text">5.0</span>
+                    </div>
+                    <p class="testimonial-text">"The M-Pesa integration works flawlessly. Tenants pay easily, and everything syncs automatically. No more chasing payments or manual reconciliation."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">GW</div>
+                        <div class="author-info">
+                            <div class="author-name">Grace W.</div>
+                            <div class="author-role">Estate Manager, Greenview Estates</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Active Customers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15,000+</div>
+                    <div class="stat-label">Units Managed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$2.1B+</div>
+                    <div class="stat-label">Rent Processed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Uptime</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Transform Your Property Management?</h2>
+                <p class="cta-description">Join 500+ property professionals who are already saving time and increasing their rental income.</p>
+                <div class="cta-actions">
+                    <a href="register.html" class="btn btn-primary btn-lg">
+                        <span>Start Your Free 7-Day Trial</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <p class="cta-note">No credit card required • Cancel anytime</p>
+                </div>
+                <div class="cta-benefits">
+                    <div class="benefit">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Bank-level security</span>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-headset"></i>
+                        <span>Dedicated onboarding</span>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Mobile app included</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="/assets/logos/logo.png" alt="LAMIKAS Logo" style="width: 36px; height: 36px; object-fit: contain;">
+                    </div>
+                    <p class="footer-description">Africa's most intuitive property management platform, helping landlords and property managers grow their rental income.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#integrations">Integrations</a></li>
+                        <li><a href="#mobile-app">Mobile App</a></li>
+                        <li><a href="#roadmap">Roadmap</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="#tutorials">Tutorials</a></li>
+                        <li><a href="#webinars">Webinars</a></li>
+                        <li><a href="#api-docs">API Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:support@lamikas.com">support@lamikas.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+254711234567">+254 711 234 567</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>London, United Kingdom</span>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 LAMIKAS Property Management. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                    navToggle.classList.toggle('active');
+                });
+            }
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (event) => {
+                if (navToggle && navMenu && !navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                    navMenu.classList.remove('active');
+                    navToggle.classList.remove('active');
+                }
+            });
+            
+            // Annual/monthly pricing toggle
+            const annualToggle = document.getElementById('annualToggle');
+            const priceAmounts = document.querySelectorAll('.price-amount');
+            const annualPrices = document.querySelectorAll('.pricing-annual');
+            const pricePeriods = document.querySelectorAll('.price-period');
+            const discountBadge = document.querySelector('.discount-badge');
+            
+            if (annualToggle) {
+                annualToggle.addEventListener('change', function() {
+                    const isAnnual = this.checked;
+                    
+                    // Update monthly prices
+                    const monthlyPrices = ['$9.99', '$22.99', '$49.99', '$69.99'];
+                    const annualPricesAmounts = ['$109', '$259', '$529', '$749'];
+                    
+                    priceAmounts.forEach((element, index) => {
+                        element.textContent = isAnnual ? annualPricesAmounts[index] : monthlyPrices[index];
+                    });
+                    
+                    // Update period text
+                    pricePeriods.forEach(element => {
+                        element.textContent = isAnnual ? '/year' : '/month';
+                    });
+                    
+                    // Show/hide annual savings text
+                    annualPrices.forEach(element => {
+                        element.style.display = isAnnual ? 'block' : 'none';
+                    });
+                    
+                    // Update discount badge text
+                    if (discountBadge) {
+                        discountBadge.textContent = isAnnual ? 'Save up to $90+ yearly' : 'Save up to $90+ yearly';
+                    }
+                });
+            }
+            
+            // Smooth scroll with proper offset
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    if (href === '#') return;
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        e.preventDefault();
+                        
+                        // Calculate the navbar height
+                        const navbar = document.querySelector('.navbar');
+                        const navbarHeight = navbar ? navbar.offsetHeight : 70;
+                        
+                        // Get the target's position
+                        const targetPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = targetPosition + window.pageYOffset - navbarHeight;
+                        
+                        // Smooth scroll to the target
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update URL
+                        history.pushState(null, null, href);
+                        
+                        // Close mobile menu if open
+                        if (navMenu && navToggle) {
+                            navMenu.classList.remove('active');
+                            navToggle.classList.remove('active');
+                        }
+                    }
+                });
+            });
+            
+            // Handle initial hash in URL
+            if (window.location.hash) {
+                const targetId = window.location.hash.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    setTimeout(() => {
+                        const navbar = document.querySelector('.navbar');
+                        const navbarHeight = navbar ? navbar.offsetHeight : 70;
+                        const targetPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = targetPosition + window.pageYOffset - navbarHeight - 15;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                }
+            }
+            
+            // Add fade-in animation to elements when they come into view
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -40px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe elements with the fade-in class
+            document.querySelectorAll('.feature-card').forEach(card => {
+                observer.observe(card);
+            });
+            
+            // Update stats periodically for dynamic feel
+            setInterval(() => {
+                const stats = document.querySelectorAll('.stat-number');
+                if (stats.length >= 3) {
+                    // Randomize stats slightly for dynamic effect
+                    const randomChange = Math.random() * 2 - 1; // -1 to 1
+                    
+                    stats[0].textContent = Math.min(100, Math.max(95, Math.round(99 + randomChange))) + '%';
+                    stats[1].textContent = Math.round(15 + randomChange) + '+';
+                    stats[2].textContent = Math.min(40, Math.max(20, Math.round(30 + randomChange * 2))) + '%';
+                }
+            }, 8000);
+            
+            // Enterprise Pricing Logic
+            const unitInput = document.getElementById('unitInput');
+            const decreaseBtn = document.getElementById('decreaseUnits');
+            const increaseBtn = document.getElementById('increaseUnits');
+            const enterprisePrice = document.getElementById('enterprisePrice');
+            const enterprisePeriod = document.getElementById('enterprisePeriod');
+            const pricePerUnit = document.getElementById('pricePerUnit');
+            const enterpriseCta = document.getElementById('enterpriseCta');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Pricing tiers - price per unit decreases with volume
+            const pricingTiers = [
+                { minUnits: 101, maxUnits: 200, pricePerUnit: 1.09 },
+                { minUnits: 201, maxUnits: 500, pricePerUnit: 0.99 },
+                { minUnits: 501, maxUnits: 1000, pricePerUnit: 0.89 },
+                { minUnits: 1001, maxUnits: 5000, pricePerUnit: 0.79 },
+                { minUnits: 5001, maxUnits: 10000, pricePerUnit: 0.69 },
+                { minUnits: 10001, maxUnits: Infinity, pricePerUnit: 0.59 }
+            ];
+            
+            // Get the appropriate plan based on unit count
+            function getPlanForUnits(units) {
+                if (units <= 5) return { name: "Starter Plan", price: "$9.99/month", maxUnits: 5 };
+                if (units <= 20) return { name: "Essential Plan", price: "$22.99/month", maxUnits: 20 };
+                if (units <= 50) return { name: "Professional Plan", price: "$49.99/month", maxUnits: 50 };
+                if (units <= 100) return { name: "Business Plan", price: "$69.99/month", maxUnits: 100 };
+                return null; // Enterprise plan
+            }
+            
+            // Calculate price based on number of units
+            function calculatePrice(units) {
+                // Find the appropriate tier
+                const tier = pricingTiers.find(t => units >= t.minUnits && units <= t.maxUnits) || 
+                            pricingTiers[pricingTiers.length - 1];
+                
+                const basePrice = units * tier.pricePerUnit;
+                // Apply volume discount
+                let discount = 0;
+                if (units >= 1000) discount = 0.05;
+                if (units >= 5000) discount = 0.08;
+                if (units >= 10000) discount = 0.12;
+                
+                const finalPrice = basePrice * (1 - discount);
+                const perUnitPrice = finalPrice / units;
+                
+                return {
+                    total: finalPrice.toFixed(2),
+                    perUnit: perUnitPrice.toFixed(2),
+                    tier: tier.pricePerUnit
+                };
+            }
+            
+            // Update price display
+            function updatePrice() {
+                let units = parseInt(unitInput.value);
+                
+                // If input is empty or not a number, show error
+                if (isNaN(units)) {
+                    unitInput.classList.add('invalid');
+                    enterprisePrice.textContent = `$--.--`;
+                    pricePerUnit.textContent = `Enter a number`;
+                    errorMessage.style.display = 'block';
+                    errorMessage.innerHTML = `<p>Please enter a valid number of units</p>`;
+                    enterpriseCta.disabled = true;
+                    enterpriseCta.style.opacity = '0.6';
+                    enterpriseCta.style.cursor = 'not-allowed';
+                    return;
+                }
+                
+                // Validate minimum units
+                if (units < 101) {
+                    unitInput.classList.add('invalid');
+                    
+                    // Show appropriate message based on unit count
+                    const plan = getPlanForUnits(units);
+                    if (plan) {
+                        errorMessage.innerHTML = `<p>For ${units} units, check out our ${plan.name} at ${plan.price} (up to ${plan.maxUnits} units)</p>`;
+                    } else {
+                        errorMessage.innerHTML = `<p>For ${units} units, check out our pricing plans above</p>`;
+                    }
+                    
+                    errorMessage.style.display = 'block';
+                    
+                    enterprisePrice.textContent = `$--.--`;
+                    pricePerUnit.textContent = `Minimum 101 units`;
+                    enterpriseCta.disabled = true;
+                    enterpriseCta.style.opacity = '0.6';
+                    enterpriseCta.style.cursor = 'not-allowed';
+                } else {
+                    unitInput.classList.remove('invalid');
+                    errorMessage.style.display = 'none';
+                    
+                    // Update buttons state
+                    decreaseBtn.disabled = units <= 101;
+                    
+                    // Calculate price
+                    const priceData = calculatePrice(units);
+                    
+                    // Update display
+                    enterprisePrice.textContent = `$${priceData.total}`;
+                    pricePerUnit.textContent = `$${priceData.perUnit} per unit/month`;
+                    
+                    // Update CTA link
+                    enterpriseCta.href = `register.html?plan=enterprise&units=${units}`;
+                    enterpriseCta.disabled = false;
+                    enterpriseCta.style.opacity = '1';
+                    enterpriseCta.style.cursor = 'pointer';
+                }
+            }
+            
+            // Event listeners for unit input
+            if (unitInput && decreaseBtn && increaseBtn) {
+                // Initial price calculation
+                updatePrice();
+                
+                // Decrease units
+                decreaseBtn.addEventListener('click', () => {
+                    let currentValue = parseInt(unitInput.value) || 101;
+                    if (currentValue > 101) {
+                        unitInput.value = currentValue - 1;
+                        updatePrice();
+                    }
+                });
+                
+                // Increase units
+                increaseBtn.addEventListener('click', () => {
+                    let currentValue = parseInt(unitInput.value) || 101;
+                    unitInput.value = currentValue + 1;
+                    updatePrice();
+                });
+                
+                // Input change - allow any input but validate on blur
+                unitInput.addEventListener('input', (e) => {
+                    // Remove any non-numeric characters
+                    unitInput.value = unitInput.value.replace(/[^0-9]/g, '');
+                    
+                    // If empty, clear everything
+                    if (unitInput.value === '') {
+                        unitInput.classList.add('invalid');
+                        enterprisePrice.textContent = `$--.--`;
+                        pricePerUnit.textContent = `Enter a number`;
+                        errorMessage.style.display = 'block';
+                        errorMessage.innerHTML = `<p>Please enter a number of units</p>`;
+                        enterpriseCta.disabled = true;
+                        enterpriseCta.style.opacity = '0.6';
+                        enterpriseCta.style.cursor = 'not-allowed';
+                        return;
+                    }
+                    
+                    // Update based on current value
+                    updatePrice();
+                });
+                
+                // Handle blur event - validate final value
+                unitInput.addEventListener('blur', () => {
+                    let units = parseInt(unitInput.value);
+                    
+                    if (isNaN(units)) {
+                        unitInput.value = '101';
+                        updatePrice();
+                    } else if (units < 101) {
+                        // Keep the value but show error
+                        updatePrice();
+                    }
+                });
+                
+                // Handle focus - select all text for easy editing
+                unitInput.addEventListener('focus', () => {
+                    unitInput.select();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

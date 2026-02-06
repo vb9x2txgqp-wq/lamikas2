@@ -1,0 +1,4212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started | LAMIKAS</title>
+    <meta name="description" content="Get started with LAMIKAS in 2 minutes. Africa's most intuitive property management platform.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Flag Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css">
+    
+    <style>
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Primary Colors - LAMIKAS BLUE THEME */
+            --primary: #1a365d;
+            --primary-dark: #0d243f;
+            --primary-light: #bee3f8;
+            
+            /* Secondary Colors - LAMIKAS ACCENT */
+            --secondary: #38b2ac;
+            --secondary-dark: #2c9c96;
+            
+            /* Enterprise Color */
+            --enterprise: #805ad5;
+            --enterprise-light: #e9d8fd;
+            
+            /* Neutral Colors */
+            --dark: #1a1a1a;
+            --gray-900: #2d3748;
+            --gray-800: #4a5568;
+            --gray-700: #718096;
+            --gray-600: #a0aec0;
+            --gray-500: #cbd5e0;
+            --gray-400: #e2e8f0;
+            --gray-300: #edf2f7;
+            --gray-200: #f7fafc;
+            --white: #ffffff;
+            
+            /* Error Color */
+            --error: #dc2626;
+            --error-light: #fef2f2;
+            
+            /* Success Color */
+            --success: #10b981;
+            --success-light: #d1fae5;
+            
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-full: 9999px;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 0.75rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            
+            /* Typography */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        html, body {
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--gray-800);
+            background-color: var(--white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--dark);
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: var(--space-sm);
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+        }
+
+        /* ===== FIXED HEADER WITH PROGRESS BAR ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            z-index: 1000;
+            padding: var(--space-md) var(--space-lg);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            border-bottom: 4px solid transparent;
+            background-clip: padding-box;
+        }
+
+        /* Progress bar container */
+        .progress-container {
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gray-200);
+            overflow: hidden;
+        }
+
+        /* Actual progress bar */
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--dark);
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+
+        .logo:hover {
+            opacity: 0.8;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1rem;
+        }
+
+        /* ===== BACK TO HOME BUTTON ===== */
+        .back-home {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray-700);
+            font-weight: 600;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .back-home:hover {
+            color: var(--primary);
+            gap: 0.75rem;
+            background-color: var(--gray-100);
+        }
+
+        .back-home {
+            display: none;
+        }
+
+        .back-home.visible {
+            display: flex;
+        }
+
+        /* ===== ONBOARDING CONTAINER ===== */
+        .onboarding-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 100px;
+            padding-bottom: var(--space-xl);
+            overflow-y: auto;
+        }
+
+        .question-container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 var(--space-lg);
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 140px);
+        }
+
+        .question-step {
+            display: none;
+            animation: fadeIn 0.3s ease;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .question-step.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question-title {
+            font-size: 2rem;
+            margin-bottom: var(--space-sm);
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .question-subtitle {
+            color: var(--gray-700);
+            font-size: 1.25rem;
+            margin-bottom: var(--space-xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        /* ===== FIRST NAME ERROR ===== */
+        .first-name-error {
+            color: var(--error);
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            text-align: left;
+            display: none;
+        }
+
+        .first-name-error.show {
+            display: block;
+        }
+
+        #firstName.error {
+            border-color: var(--error);
+            background-color: var(--error-light);
+        }
+
+        /* ===== PASSWORD ERROR STYLES ===== */
+        .error-message {
+            color: var(--error);
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            text-align: left;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .form-input.error {
+            border-color: var(--error);
+            background-color: var(--error-light);
+        }
+
+        /* ===== TERMS CHECKBOX STYLES ===== */
+        .terms-checkbox-container {
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-lg);
+            text-align: left;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            display: none;
+        }
+
+        .terms-checkbox-container.show {
+            opacity: 1;
+            transform: translateY(0);
+            display: block;
+        }
+
+        .terms-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            cursor: pointer;
+        }
+
+        .checkbox-input {
+            margin-top: 0.25rem;
+            min-width: 20px;
+            width: 20px;
+            height: 20px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+
+        .checkbox-label {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: var(--gray-800);
+            cursor: pointer;
+        }
+
+        .checkbox-label a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: underline;
+            text-decoration-thickness: 1.5px;
+            text-underline-offset: 2px;
+            transition: color 0.2s ease;
+        }
+
+        .checkbox-label a:hover {
+            color: var(--primary-dark);
+            text-decoration-thickness: 2px;
+        }
+
+        .terms-error {
+            color: var(--error);
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            text-align: left;
+            display: none;
+        }
+
+        .terms-error.show {
+            display: block;
+        }
+
+        /* ===== OPTIONS GRID ===== */
+        .options-container {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .option-card {
+            background: var(--white);
+            border: 2px solid var(--gray-300);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-xs);
+            flex: 1;
+            min-width: 170px;
+            max-width: 190px;
+            min-height: 180px;
+            justify-content: center;
+        }
+
+        .option-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .option-card.selected {
+            border-color: var(--primary);
+            background-color: var(--primary-light);
+            box-shadow: 0 8px 20px rgba(26, 54, 93, 0.15);
+        }
+
+        .option-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: var(--radius-md);
+            background-color: var(--gray-200);
+            color: var(--gray-700);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            transition: all 0.3s ease;
+            margin-bottom: var(--space-sm);
+        }
+
+        .option-card.selected .option-icon {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .option-title {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 1.2rem;
+            margin-bottom: var(--space-xs);
+        }
+
+        .option-description {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        /* ===== SIMPLE UNITS INPUT (YOUR ORIGINAL STYLE) ===== */
+        .custom-units-input {
+            max-width: 300px;
+            margin: 20px auto 0;
+            display: none;
+            animation: fadeIn 0.3s ease;
+            position: relative;
+        }
+
+        .custom-units-input.with-icon {
+            padding-left: 50px;
+        }
+
+        .custom-units-input input.error {
+            border-color: var(--error);
+            background-color: var(--error-light);
+        }
+
+        .custom-units-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            border-radius: var(--radius-sm);
+            background-color: var(--gray-200);
+            color: var(--gray-700);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .custom-units-input.selected .custom-units-icon {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        #enterpriseUnitsError {
+            max-width: 300px;
+            margin: 8px auto 0;
+            text-align: left;
+        }
+
+        /* ===== ENTERPRISE CARD STYLES ===== */
+        .enterprise-card {
+            background: linear-gradient(135deg, var(--enterprise-light) 0%, rgba(56, 178, 172, 0.15) 100%);
+            border: 3px solid var(--enterprise);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-md);
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto var(--space-lg);
+        }
+
+        .enterprise-card .plan-badge {
+            background-color: var(--enterprise) !important;
+        }
+
+        .enterprise-card .plan-title {
+            color: var(--enterprise);
+        }
+
+        .enterprise-card .plan-price {
+            color: var(--enterprise);
+        }
+
+        .enterprise-card .btn-outline {
+            border-color: var(--enterprise);
+            color: var(--enterprise);
+        }
+
+        .enterprise-card .btn-outline:hover {
+            background-color: var(--enterprise);
+            color: var(--white);
+        }
+
+        /* ===== ENTERPRISE RECOMMENDATION BUTTONS - CLOSER TOGETHER ===== */
+        .enterprise-recommendation .recommendation-buttons {
+            margin-top: var(--space-md) !important;
+            padding-top: var(--space-sm);
+        }
+
+        .enterprise-recommendation .recommendation-buttons .btn {
+            min-width: 160px !important;
+            max-width: 180px !important;
+        }
+
+        /* ===== RECOMMENDATION SCREEN ===== */
+        .recommendation-screen {
+            text-align: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+	/* ===== ENTERPRISE RECOMMENDATION BUTTONS - CLOSER TO CARD ===== */
+	.enterprise-recommendation .recommendation-buttons {
+    	margin-top: 0.5rem !important; /* Reduced from var(--space-lg) which is 2rem */
+    	padding-top: 0.25rem;
+    	position: relative;
+    	top: -10px; /* Pulls buttons up slightly */
+	}
+
+	/* Optional: Make buttons slightly smaller for better fit */
+	.enterprise-recommendation .recommendation-buttons .btn {
+    	padding: 0.8rem 1.5rem;
+    	font-size: 1rem;
+	}
+
+        .recommendation-card {
+            background: linear-gradient(135deg, var(--primary-light) 0%, rgba(56, 178, 172, 0.15) 100%);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-md);
+            border: 2px solid var(--primary-light);
+            text-align: center;
+            width: 100%;
+        }
+
+        .recommendation-badge {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .recommendation-title {
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin-bottom: var(--space-sm);
+        }
+
+        .recommendation-description {
+            color: var(--gray-700);
+            margin-bottom: var(--space-md);
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .plan-features {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-md);
+        }
+
+        .plan-feature {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--gray-700);
+        }
+
+        .plan-feature i {
+            color: var(--secondary);
+            font-size: 1rem;
+        }
+
+        /* ===== ADJUSTED FREE TRIAL TEXT STYLING ===== */
+        .plan-price {
+            margin-bottom: 0.5rem;
+        }
+
+        .free-trial-text {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+            line-height: 1.2;
+            display: block;
+        }
+
+        .free-trial-subtext {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            line-height: 1.3;
+            display: block;
+        }
+
+        .regular-price {
+            font-size: 1.75rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+            line-height: 1;
+        }
+
+        .price-period {
+            font-size: 1rem;
+            font-weight: normal;
+            color: var(--gray-600);
+        }
+
+        .price-note {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            margin-bottom: var(--space-md);
+        }
+
+        /* ===== FORM SCREENS ===== */
+        .form-screen {
+            max-width: 600px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: var(--space-xl);
+            text-align: left;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--gray-900);
+            font-size: 1.25rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1.125rem 1.25rem;
+            font-family: var(--font-sans);
+            font-size: 1.2rem;
+            border: 2px solid var(--gray-400);
+            border-radius: var(--radius-md);
+            background-color: var(--white);
+            color: var(--gray-900);
+            transition: all 0.2s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        .input-hint {
+            font-size: 1rem;
+            color: var(--gray-600);
+            margin-top: 0.5rem;
+        }
+
+        .name-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-xl);
+        }
+
+        /* ===== VERIFICATION CODE INPUT ===== */
+        .verification-code-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: var(--space-lg) 0;
+        }
+
+        .code-input {
+            width: 60px;
+            height: 70px;
+            font-size: 2rem;
+            text-align: center;
+            border: 2px solid var(--gray-400);
+            border-radius: var(--radius-md);
+            background: var(--white);
+            font-family: var(--font-sans);
+            font-weight: 600;
+            color: var(--gray-900);
+            transition: all 0.2s ease;
+        }
+
+        .code-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
+            transform: scale(1.05);
+        }
+
+        .code-input.filled {
+            border-color: var(--secondary);
+            background-color: var(--success-light);
+        }
+
+        .verification-hint {
+            color: var(--gray-600);
+            font-size: 1rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .resend-code-container {
+            margin-top: var(--space-lg);
+            text-align: center;
+        }
+
+        .resend-code-container p {
+            color: var(--gray-700);
+            margin-bottom: 0.5rem;
+        }
+
+        #resendCodeLink {
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #resendCodeLink:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        .timer {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .timer.active {
+            display: block;
+        }
+
+        #countdown {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* ===== PASSWORD INPUT WITH TOGGLE ===== */
+        .password-input-container {
+            position: relative;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--gray-600);
+            cursor: pointer;
+            padding: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .password-toggle:hover {
+            color: var(--gray-800);
+        }
+
+        /* ===== PHONE INPUT WITH COUNTRY SELECTOR ===== */
+        .phone-input-container {
+            display: flex;
+            gap: 0;
+            border: 2px solid var(--gray-400);
+            border-radius: var(--radius-md);
+            overflow: visible;
+            background: var(--white);
+            position: relative;
+        }
+
+        .phone-input-container:focus-within {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        .country-selector {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1.125rem 1.25rem;
+            background-color: var(--gray-100);
+            border-right: 2px solid var(--gray-400);
+            cursor: pointer;
+            position: relative;
+            min-width: 160px;
+            z-index: 2;
+        }
+
+        .country-selector:hover {
+            background-color: var(--gray-200);
+        }
+
+        .country-flag {
+            font-size: 1.5rem;
+        }
+
+        .country-code {
+            font-weight: 600;
+            color: var(--gray-900);
+            font-size: 1.2rem;
+        }
+
+        .country-chevron {
+            margin-left: auto;
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+
+        .country-dropdown {
+            position: absolute;
+            top: 100%;
+            left: -2px;
+            width: 400px;
+            background: var(--white);
+            border: 2px solid var(--gray-300);
+            border-radius: var(--radius-md);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            overflow-y: auto;
+            z-index: 1001;
+            display: none;
+            margin-top: 5px;
+        }
+
+        .country-dropdown.active {
+            display: block;
+        }
+
+        .country-dropdown-search {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--gray-300);
+            background: var(--gray-50);
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        .country-search-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--gray-400);
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+        }
+
+        .country-search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .country-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .country-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .country-option:hover {
+            background-color: var(--gray-100);
+        }
+
+        .country-option.selected {
+            background-color: var(--primary-light);
+        }
+
+        .country-option-name {
+            flex: 1;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .phone-input {
+            flex: 1;
+            border: none;
+            padding: 1.125rem 1.25rem;
+            font-family: var(--font-sans);
+            font-size: 1.2rem;
+            outline: none;
+            min-width: 0;
+        }
+
+        /* ===== SUCCESS SCREEN ===== */
+        .success-screen {
+            text-align: center;
+            padding: var(--space-xl);
+        }
+
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 2.5rem;
+            margin: 0 auto var(--space-lg);
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.5;
+            border-radius: var(--radius-md);
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(26, 54, 93, 0.2);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(26, 54, 93, 0.2);
+        }
+
+        .btn-enterprise {
+            background-color: var(--enterprise);
+            color: var(--white);
+            border-color: var(--enterprise);
+        }
+
+        .btn-enterprise:hover {
+            background-color: var(--secondary-dark);
+            border-color: var(--secondary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(128, 90, 213, 0.2);
+        }
+
+        .btn-lg {
+            padding: 1.25rem 3rem;
+            font-size: 1.25rem;
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn:disabled:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+            width: 100%;
+        }
+
+        /* ===== RECOMMENDATION BUTTONS LAYOUT ===== */
+        .recommendation-buttons {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .recommendation-buttons .btn {
+            flex: 1;
+            min-width: 180px;
+            max-width: 220px;
+        }
+
+        /* ===== PLAN CARDS STYLES ===== */
+        .plans-container {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-xl);
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .plan-card {
+            background: var(--white);
+            border: 2px solid var(--gray-300);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            min-width: 250px;
+            max-width: 280px;
+            min-height: 500px;
+            justify-content: space-between;
+        }
+
+        .plan-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .plan-card.selected {
+            border-color: var(--primary);
+            background-color: var(--primary-light);
+            box-shadow: 0 8px 20px rgba(26, 54, 93, 0.15);
+        }
+
+        .enterprise-plan-card {
+            border-color: var(--enterprise);
+            max-width: 350px;
+            min-height: 550px;
+        }
+
+        .enterprise-plan-card:hover {
+            border-color: var(--enterprise);
+        }
+
+        .enterprise-plan-card.selected {
+            border-color: var(--enterprise);
+            background-color: var(--enterprise-light);
+            box-shadow: 0 8px 20px rgba(128, 90, 213, 0.15);
+        }
+
+        .plan-badge {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: var(--space-lg);
+        }
+
+        .plan-badge.recommended {
+            background-color: var(--primary);
+        }
+
+        .plan-badge.enterprise {
+            background-color: var(--enterprise);
+        }
+
+        .plan-badge.selected-badge {
+            background-color: var(--secondary);
+        }
+
+        .plan-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: var(--space-md);
+        }
+
+        .plan-description {
+            color: var(--gray-700);
+            margin-bottom: var(--space-lg);
+            font-size: 1rem;
+            line-height: 1.5;
+            min-height: 60px;
+        }
+
+        .plan-features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: var(--space-xl);
+            flex-grow: 1;
+            text-align: left;
+            width: 100%;
+        }
+
+        .plan-feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--gray-700);
+        }
+
+        .plan-feature-item i {
+            color: var(--secondary);
+            font-size: 1rem;
+            margin-top: 0.125rem;
+            flex-shrink: 0;
+        }
+
+        .enterprise-plan-card .plan-feature-item i {
+            color: var(--enterprise);
+        }
+
+        .plan-price-container {
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-price {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+            line-height: 1;
+        }
+
+        .enterprise-plan-card .plan-price {
+            color: var(--enterprise);
+        }
+
+        .plan-card .free-trial-text {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .enterprise-plan-card .free-trial-text {
+            color: var(--enterprise);
+        }
+
+        .plan-card .free-trial-subtext {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            line-height: 1.3;
+        }
+
+        .plan-card .regular-price {
+            font-size: 1.75rem;
+        }
+
+        .plan-card .price-note {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            margin-bottom: var(--space-lg);
+        }
+
+        .plan-card .btn {
+            width: 100%;
+            margin-top: auto;
+        }
+
+        /* ===== ALL PLANS VIEW CONTAINER ===== */
+        .all-plans-view {
+            display: none;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .all-plans-view.active {
+            display: block;
+        }
+
+        /* ===== ALL PLANS VIEW HEADER ===== */
+        .all-plans-header {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: var(--space-xl);
+            width: 100%;
+        }
+
+        .all-plans-back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+        }
+
+        .all-plans-back-btn i {
+            font-size: 0.9rem;
+        }
+
+        /* ===== DYNAMIC ALL PLANS VIEW ===== */
+        .dynamic-plans-container {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-xl);
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== LOADING STATE ===== */
+        .loading-state {
+            display: none;
+            text-align: center;
+        }
+
+        .loading-state.active {
+            display: block;
+        }
+
+        .spinner {
+            width: 80px;
+            height: 80px;
+            border: 5px solid var(--gray-300);
+            border-top: 5px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto var(--space-lg);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* ===== LOADING OVERLAY ===== */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.95);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            backdrop-filter: blur(5px);
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        .loading-overlay .spinner {
+            width: 60px;
+            height: 60px;
+            border-width: 4px;
+        }
+
+        /* ===== EMAIL SENDING NOTIFICATION ===== */
+        .email-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--white);
+            border-left: 4px solid var(--success);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            max-width: 400px;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            visibility:hidden;
+        }
+
+        .email-notification.show {
+            transform: translateX(0);
+        }
+
+        .email-notification.error {
+            border-left-color: var(--error);
+        }
+
+        .email-notification-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--success-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--success);
+            font-size: 1.2rem;
+        }
+
+        .email-notification.error .email-notification-icon {
+            background: var(--error-light);
+            color: var(--error);
+        }
+
+        .email-notification-content {
+            flex: 1;
+        }
+
+        .email-notification-title {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .email-notification-message {
+            font-size: 0.9rem;
+            color: var(--gray-700);
+        }
+
+        .email-notification-close {
+            background: none;
+            border: none;
+            color: var(--gray-600);
+            cursor: pointer;
+            padding: 0.25rem;
+            font-size: 1rem;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1100px) {
+            .plans-container {
+                gap: var(--space-md);
+            }
+            
+            .plan-card {
+                min-width: 280px;
+            }
+            
+            .enterprise-plan-card {
+                min-width: 300px;
+            }
+            
+            .dynamic-plans-container {
+                gap: var(--space-md);
+            }
+            
+            .dynamic-plans-container .plan-card {
+                min-width: 280px;
+            }
+            
+            .dynamic-plans-container .enterprise-plan-card {
+                min-width: 300px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .plans-container {
+                flex-direction: column;
+                align-items: center;
+                max-width: 500px;
+            }
+            
+            .plan-card {
+                width: 100%;
+                max-width: 400px;
+                min-height: auto;
+            }
+            
+            .enterprise-plan-card {
+                max-width: 400px;
+                min-height: auto;
+            }
+            
+            .dynamic-plans-container {
+                flex-direction: column;
+                align-items: center;
+                max-width: 500px;
+            }
+            
+            .dynamic-plans-container .plan-card {
+                width: 100%;
+                max-width: 400px;
+                min-height: auto;
+            }
+            
+            .dynamic-plans-container .enterprise-plan-card {
+                max-width: 400px;
+                min-height: auto;
+            }
+            
+            .email-notification {
+                left: 20px;
+                right: 20px;
+                max-width: none;
+            }
+            
+            .options-container {
+                max-width: 800px;
+            }
+            
+            .option-card {
+                min-width: 160px;
+                max-width: 180px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .recommendation-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .recommendation-buttons .btn {
+                min-width: 100%;
+                max-width: 100%;
+            }
+            
+            .question-title {
+                font-size: 1.75rem;
+            }
+            
+            .question-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .plan-card {
+                padding: var(--space-lg);
+            }
+            
+            .enterprise-plan-card {
+                padding: var(--space-lg);
+            }
+            
+            .dynamic-plans-container .plan-card {
+                padding: var(--space-lg);
+            }
+            
+            .dynamic-plans-container .enterprise-plan-card {
+                padding: var(--space-lg);
+            }
+            
+            .plan-title {
+                font-size: 1.5rem;
+            }
+            
+            .free-trial-text {
+                font-size: 1.3rem;
+            }
+            
+            .free-trial-subtext {
+                font-size: 1rem;
+            }
+            
+            .regular-price {
+                font-size: 1.5rem;
+            }
+            
+            .code-input {
+                width: 50px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .verification-code-container {
+                gap: 0.75rem;
+            }
+            
+            .options-container {
+                max-width: 700px;
+                gap: 0.75rem;
+            }
+            
+            .option-card {
+                min-width: 140px;
+                max-width: 160px;
+                padding: var(--space-md);
+            }
+            
+            .option-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .options-container {
+                max-width: 500px;
+            }
+            
+            .option-card {
+                min-width: 130px;
+                max-width: 150px;
+                min-height: 160px;
+                padding: var(--space-sm);
+            }
+            
+            .option-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.25rem;
+            }
+            
+            .option-title {
+                font-size: 1.1rem;
+            }
+            
+            .option-description {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .code-input {
+                width: 45px;
+                height: 55px;
+                font-size: 1.25rem;
+            }
+            
+            .verification-code-container {
+                gap: 0.5rem;
+            }
+            
+            .options-container {
+                max-width: 400px;
+                gap: 0.5rem;
+            }
+            
+            .option-card {
+                min-width: 110px;
+                max-width: 120px;
+                min-height: 150px;
+                padding: 0.75rem;
+            }
+            
+            .option-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .option-title {
+                font-size: 1rem;
+            }
+            
+            .option-description {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Email Notification -->
+    <div class="email-notification" id="emailNotification">
+        <div class="email-notification-icon">
+            <i class="fas fa-envelope"></i>
+        </div>
+        <div class="email-notification-content">
+            <div class="email-notification-title" id="emailNotificationTitle">Verification Email Sent</div>
+            <div class="email-notification-message" id="emailNotificationMessage"></div>
+        </div>
+        <button class="email-notification-close" id="emailNotificationClose">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Fixed Header with Progress Bar -->
+    <div class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">L</div>
+                <span>LAMIKAS</span>
+            </a>
+            
+            <!-- Back to Home Button (Only visible on Step 1) -->
+            <a href="index.html" class="back-home" id="backToHome">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
+        <!-- Progress Bar Container -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+
+    <!-- Onboarding Container -->
+    <div class="onboarding-container">
+        <!-- NEW STEP 1: Free Trial or Pay Now -->
+        <div class="question-step active" id="step1-content">
+            <div class="question-container">
+                <h1 class="question-title">How would you like to start?</h1>
+                <p class="question-subtitle">Choose the option that works best for you</p>
+                
+                <div class="options-container">
+                    <div class="option-card" data-value="free-trial">
+                        <div class="option-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <div class="option-title">Free Trial</div>
+                        <div class="option-description">Try LAMIKAS free for 7 days, no credit card required</div>
+                    </div>
+                    
+                    <div class="option-card" data-value="pay-now">
+                        <div class="option-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="option-title">Pay Now</div>
+                        <div class="option-description">Start your subscription immediately with full access</div>
+                    </div>
+                </div>
+                
+                <div class="navigation-buttons">
+                    <button class="btn btn-primary btn-lg" id="next1" disabled>Continue</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2: Who You Are (Previously Step 1) -->
+        <div class="question-step" id="step2-content">
+            <div class="question-container">
+                <h1 class="question-title">What best describes you?</h1>
+                <p class="question-subtitle">We'll personalize your experience based on your role</p>
+                
+                <div class="options-container">
+                    <div class="option-card" data-value="landlord">
+                        <div class="option-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="option-title">Landlord</div>
+                        <div class="option-description">I own and manage my own rental properties</div>
+                    </div>
+                    
+                    <div class="option-card" data-value="property-manager">
+                        <div class="option-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="option-title">Property Manager</div>
+                        <div class="option-description">I manage properties for other owners</div>
+                    </div>
+                    
+                    <div class="option-card" data-value="estate-manager">
+                        <div class="option-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="option-title">Estate Manager</div>
+                        <div class="option-description">I manage a gated community or estate</div>
+                    </div>
+                </div>
+                
+                <div class="navigation-buttons">
+                    <button class="btn btn-outline" id="back2">Back</button>
+                    <button class="btn btn-primary" id="next2" disabled>Continue</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3: How Many Units (Previously Step 2) -->
+        <div class="question-step" id="step3-content">
+            <div class="question-container">
+                <h1 class="question-title">How many units do you manage?</h1>
+                <p class="question-subtitle">This helps us recommend the perfect plan for your needs</p>
+                
+                <div class="options-container">
+                    <div class="option-card" data-value="1-5">
+                        <div class="option-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="option-title">1-5 units</div>
+                        <div class="option-description">Starting out or small portfolio</div>
+                    </div>
+                    
+                    <div class="option-card" data-value="6-20">
+                        <div class="option-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="option-title">6-20 units</div>
+                        <div class="option-description">Growing property portfolio</div>
+                    </div>
+                    
+                    <div class="option-card" data-value="21-50">
+                        <div class="option-icon">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <div class="option-title">21-50 units</div>
+                        <div class="option-description">Established portfolio</div>
+                    </div>
+                    
+                    <div class="option-card" data-value="50-100">
+                        <div class="option-icon">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <div class="option-title">50-100 units</div>
+                        <div class="option-description">Large portfolio or agency</div>
+                    </div>
+                    
+                    <!-- ENTERPRISE: More than 100 option -->
+                    <div class="option-card" data-value="more-than-100">
+                        <div class="option-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="option-title">More than 100</div>
+                        <div class="option-description">Enterprise & large-scale management</div>
+                    </div>
+                </div>
+                
+                <!-- SIMPLE ENTERPRISE UNITS INPUT (YOUR ORIGINAL STYLE) -->
+                <div class="custom-units-input" id="enterpriseUnitsInput">
+                    <div class="custom-units-icon">
+                        <i class="fas fa-question"></i>
+                    </div>
+                    <input type="text" 
+                           id="enterpriseUnitInput" 
+                           class="form-input" 
+                           placeholder="Enter number of units"
+                           style="padding-left: 50px;">
+                </div>
+                <!-- Error message moved OUTSIDE the custom-units-input div -->
+                <div class="error-message" id="enterpriseUnitsError">
+                    Please enter a valid number (101 or more)
+                </div>
+                
+                <div class="navigation-buttons">
+                    <button class="btn btn-outline" id="back3">Back</button>
+                    <button class="btn btn-primary" id="next3" disabled>Continue</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4: Main Challenge (Previously Step 3) -->
+        <div class="question-step" id="step4-content">
+            <div class="question-container">
+                <h1 class="question-title">What's your biggest challenge?</h1>
+                <p class="question-subtitle">We'll show you exactly how we solve this</p>
+                
+                <div class="options-container">
+                    <div class="option-card" data-value="rent-collection">
+                        <div class="option-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="option-title">Rent Collection</div>
+                        <div class="option-description">Chasing payments, manual tracking</div>
+                    </div>
+                    
+                    <div class="option-card" data-value="maintenance">
+                        <div class="option-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="option-title">Maintenance</div>
+                        <div class="option-description">Tracking repairs, contractor coordination</div>
+                    </div>
+                    
+                    <div class="option-card" data-value="communication">
+                        <div class="option-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="option-title">Communication</div>
+                        <div class="option-description">Announcements, reminders, queries</div>
+                    </div>
+                    
+                    <div class="option-card" data-value="financial-tracking">
+                        <div class="option-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="option-title">Financial Tracking</div>
+                        <div class="option-description">Expenses, reports, tax preparation</div>
+                    </div>
+                </div>
+                
+                <div class="navigation-buttons">
+                    <button class="btn btn-outline" id="back4">Back</button>
+                    <button class="btn btn-primary" id="next4" disabled>See Recommendation</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 5: Recommendation & Plans (Previously Step 4) -->
+        <div class="question-step" id="step5-content">
+            <div class="question-container" id="step5-container">
+                <!-- Single Recommendation View -->
+                <div class="recommendation-screen" id="singleRecommendationView">
+                    <!-- Standard recommendation card (for non-enterprise plans) -->
+                    <div class="recommendation-card" id="standardRecommendationCard">
+                        <!-- Filled by JavaScript -->
+                    </div>
+                    
+                    <!-- Enterprise recommendation card -->
+                    <div class="enterprise-card" id="enterpriseRecommendationCard" style="display: none;">
+                        <!-- Filled by JavaScript -->
+                    </div>
+                    
+                    <div class="recommendation-buttons">
+                        <button class="btn btn-outline" id="back5">Back</button>
+                        <button class="btn btn-primary" id="confirmPlan">Yes, This Looks Good!</button>
+                        <button class="btn btn-outline" id="seeOtherPlans">
+                            <i class="fas fa-list"></i>
+                            See Other Plans
+                        </button>
+                    </div>
+                </div>
+
+                <!-- All Plans View -->
+                <div class="all-plans-view" id="allPlansView">
+                    <!-- Back button at the top right -->
+                    <div class="all-plans-header">
+                        <button class="btn btn-outline all-plans-back-btn" id="allPlansBackBtn">
+                            <i class="fas fa-arrow-left"></i>
+                            Back to Recommendation
+                        </button>
+                    </div>
+                    
+                    <!-- Original Static Plans (Hidden) -->
+                    <div class="plans-container" id="staticPlansContainer" style="display: none;">
+                        <!-- Starter Plan -->
+                        <div class="plan-card" data-plan="starter">
+                            <div class="plan-badge" id="starterBadge"></div>
+                            <h3 class="plan-title">Starter Plan</h3>
+                            <p class="plan-description">Perfect for individual landlords</p>
+                            
+                            <div class="plan-features-list">
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Up to 5 units</span>
+                                </div>
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>All core features</span>
+                                </div>
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>M-Pesa integration</span>
+                                </div>
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Email support</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="plan-price-container">
+                                    <div class="plan-price" id="starterPrice">
+                                        <!-- Price will be inserted by JavaScript -->
+                                    </div>
+                                </div>
+                                <p class="price-note" id="starterNote">14-day free trial • No credit card required</p>
+                                
+                                <button class="btn btn-outline select-plan-btn" data-plan="starter">Select This Plan</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Essential Plan (ADDED) -->
+                        <div class="plan-card" data-plan="essential">
+                            <div class="plan-badge" id="essentialBadge"></div>
+                            <h3 class="plan-title">Essential Plan</h3>
+                            <p class="plan-description">Growing portfolio management</p>
+                            
+                            <div class="plan-features-list">
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Up to 20 units</span>
+                                </div>
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>All Essential features</span>
+                                </div>
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Bulk SMS credits</span>
+                                </div>
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Priority chat support</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="plan-price-container">
+                                    <div class="plan-price" id="essentialPrice">
+                                        <!-- Price will be inserted by JavaScript -->
+                                    </div>
+                                </div>
+                                <p class="price-note" id="essentialNote">14-day free trial • No credit card required</p>
+                                
+                                <button class="btn btn-outline select-plan-btn" data-plan="essential">Select This Plan</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Professional Plan -->
+                        <div class="plan-card" data-plan="professional">
+                            <div class="plan-badge" id="professionalBadge"></div>
+                            <h3 class="plan-title">Professional Plan</h3>
+                            <p class="plan-description">For growing property portfolios</p>
+                            
+                            <div class="plan-features-list">
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Up to 50 units</span>
+                                </div>
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Advanced reporting</span>
+                                </div>
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Maintenance tracking</span>
+                                </div>
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Bulk SMS messaging</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="plan-price-container">
+                                    <div class="plan-price" id="professionalPrice">
+                                        <!-- Price will be inserted by JavaScript -->
+                                    </div>
+                                </div>
+                                <p class="price-note" id="professionalNote">14-day free trial • No credit card required</p>
+                                
+                                <button class="btn btn-outline select-plan-btn" data-plan="professional">Select This Plan</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Business Plan -->
+                        <div class="plan-card" data-plan="business">
+                            <div class="plan-badge" id="businessBadge"></div>
+                            <h3 class="plan-title">Business Plan</h3>
+                            <p class="plan-description">For property managers & agencies</p>
+                            
+                            <div class="plan-features-list">
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Up to 100 units</span>
+                                </div>
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Multi-user access</span>
+                                </div>
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Custom reporting</span>
+                                </div>
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Dedicated support</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="plan-price-container">
+                                    <div class="plan-price" id="businessPrice">
+                                        <!-- Price will be inserted by JavaScript -->
+                                    </div>
+                                </div>
+                                <p class="price-note" id="businessNote">14-day free trial • No credit card required</p>
+                                
+                                <button class="btn btn-outline select-plan-btn" data-plan="business">Select This Plan</button>
+                            </div>
+                        </div>
+                        
+                        <!-- ENTERPRISE Plan -->
+                        <div class="plan-card enterprise-plan-card" data-plan="enterprise">
+                            <div class="plan-badge enterprise" id="enterpriseBadge"></div>
+                            <h3 class="plan-title">Enterprise Plan</h3>
+                            <p class="plan-description">For large portfolios & agencies with 100+ units</p>
+                            
+                            <div class="plan-features-list">
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Unlimited units (custom pricing)</span>
+                                </div>
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Unlimited user accounts</span>
+                                </div>
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Full API access & custom integrations</span>
+                                </div>
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Dedicated account manager & 24/7 support</span>
+                                </div>
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Custom reporting & analytics</span>
+                                </div>
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>White-label options available</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="plan-price-container">
+                                    <div class="plan-price" id="enterprisePrice">
+                                        <!-- Price will be inserted by JavaScript -->
+                                    </div>
+                                </div>
+                                <p class="price-note" id="enterpriseNote">Custom pricing based on units • 14-day free trial</p>
+                                
+                                <button class="btn btn-outline select-plan-btn" data-plan="enterprise">Select This Plan</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dynamic Plans Container (NEW - for showing only 4 plans) -->
+                    <div class="dynamic-plans-container" id="dynamicPlansContainer">
+                        <!-- Plans will be inserted here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 6: Name (Previously Step 5) -->
+        <div class="question-step" id="step6-content">
+            <div class="question-container">
+                <h1 class="question-title">What's your name?</h1>
+                <p class="question-subtitle">Let's personalize your experience</p>
+                
+                <div class="form-screen">
+                    <div class="name-group">
+                        <div class="form-group">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" id="firstName" class="form-input" placeholder="John" required>
+                            <div class="first-name-error" id="firstNameError">First name must be at least 2 letters</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" id="lastName" class="form-input" placeholder="Doe" required>
+                        </div>
+                    </div>
+                    
+                    <div class="navigation-buttons">
+                        <button class="btn btn-outline" id="back6">Back</button>
+                        <button class="btn btn-primary" id="next6">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 7: Welcome & Email (Previously Step 6) -->
+        <div class="question-step" id="step7-content">
+            <div class="question-container">
+                <h1 class="question-title" id="welcomeTitle"></h1>
+                <p class="question-subtitle">Please enter your email address</p>
+                
+                <div class="form-screen">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" class="form-input" placeholder="john@example.com" required>
+                    </div>
+                    
+                    <div class="navigation-buttons">
+                        <button class="btn btn-outline" id="back7">Back</button>
+                        <button class="btn btn-primary" id="next7" disabled>Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW STEP 8: Email Verification -->
+        <div class="question-step" id="step8-content">
+            <div class="question-container">
+                <h1 class="question-title">Verify your email</h1>
+                <p class="question-subtitle" id="verificationSubtitle">We've sent a 6-digit code to your email</p>
+                
+                <div class="form-screen">
+                    <div class="verification-code-container" id="codeContainer">
+                        <input type="text" class="code-input" maxlength="1" data-index="0">
+                        <input type="text" class="code-input" maxlength="1" data-index="1">
+                        <input type="text" class="code-input" maxlength="1" data-index="2">
+                        <input type="text" class="code-input" maxlength="1" data-index="3">
+                        <input type="text" class="code-input" maxlength="1" data-index="4">
+                        <input type="text" class="code-input" maxlength="1" data-index="5">
+                    </div>
+                    
+                    <div class="verification-hint">
+                        Enter the 6-digit verification code sent to your email
+                    </div>
+                    
+                    <div class="resend-code-container">
+                        <p>Didn't receive the code? <a href="#" id="resendCodeLink">Resend Code</a></p>
+                        <div class="timer" id="resendTimer">Resend available in <span id="countdown">60</span>s</div>
+                    </div>
+                    
+                    <div class="error-message" id="codeError">Invalid verification code. Please try again.</div>
+                    
+                    <div class="navigation-buttons">
+                        <button class="btn btn-outline" id="back8">Back</button>
+                        <button class="btn btn-primary" id="next8" disabled>Verify</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 9: Phone (Previously Step 7) -->
+        <div class="question-step" id="step9-content">
+            <div class="question-container">
+                <h1 class="question-title">You're almost done!</h1>
+                <p class="question-subtitle">Please enter your phone number</p>
+                
+                <div class="form-screen">
+                    <div class="form-group">
+                        <label class="form-label">Phone Number</label>
+                        <div class="phone-input-container" id="phoneContainer">
+                            <div class="country-selector" id="countrySelector">
+                                <span class="country-flag fi fi-us" id="countryFlag"></span>
+                                <span class="country-code" id="countryCode">+1</span>
+                                <i class="fas fa-chevron-down country-chevron"></i>
+                                <div class="country-dropdown" id="countryDropdown">
+                                    <div class="country-dropdown-search">
+                                        <input type="text" class="country-search-input" id="countrySearch" placeholder="Search countries...">
+                                    </div>
+                                    <div class="country-list" id="countryList">
+                                        <!-- Countries will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="tel" id="phone" class="phone-input" placeholder="(000) 000-0000" required>
+                        </div>
+                    </div>
+                    
+                    <div class="navigation-buttons">
+                        <button class="btn btn-outline" id="back9">Back</button>
+                        <button class="btn btn-primary" id="next9" disabled>Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 10: Password (Previously Step 8) -->
+        <div class="question-step" id="step10-content">
+            <div class="question-container">
+                <h1 class="question-title">Last step!</h1>
+                <p class="question-subtitle">Create a secure password</p>
+                
+                <div class="form-screen">
+                    <div class="form-group">
+                        <label for="password" class="form-label">Create Password</label>
+                        <div class="password-input-container">
+                            <input type="password" id="password" class="form-input" placeholder="At least 8 characters" required>
+                            <button type="button" class="password-toggle" id="togglePassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="error-message" id="passwordError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" id="confirmPassword" class="form-input" placeholder="Confirm your password" required>
+                        <div class="error-message" id="confirmPasswordError"></div>
+                    </div>
+                    
+                    <!-- Terms Checkbox Container -->
+                    <div class="terms-checkbox-container" id="termsContainer">
+                        <label class="terms-checkbox">
+                            <input type="checkbox" id="termsCheckbox" class="checkbox-input">
+                            <span class="checkbox-label">
+                                I agree to the <a href="legal.html#terms" target="_blank">Terms of Service</a> and <a href="legal.html#privacy" target="_blank">Privacy Policy</a>
+                            </span>
+                        </label>
+                        <div class="terms-error" id="termsError">Please accept the Terms of Service and Privacy Policy to continue</div>
+                    </div>
+                    
+                    <div class="navigation-buttons">
+                        <button class="btn btn-outline" id="back10">Back</button>
+                        <button class="btn btn-primary" id="next10">Create Account</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 11: Success (Previously Step 9) -->
+        <div class="question-step" id="step11-content">
+            <div class="question-container">
+                <div class="success-screen">
+                    <div class="success-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    
+                    <h1 class="question-title">Account Created Successfully!</h1>
+                    <p class="question-subtitle">Welcome to LAMIKAS. Redirecting to your dashboard...</p>
+                    
+                    <div class="spinner" id="redirectSpinner"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // User data
+            const userData = {
+                paymentType: null,
+                userType: null,
+                unitCount: null,
+                enterpriseUnits: null,
+                challenge: null,
+                firstName: null,
+                lastName: null,
+                email: null,
+                phone: null,
+                password: null,
+                countryCode: '+1',
+                countryName: 'United States',
+                selectedPlan: null,
+                recommendedPlan: null,
+                verificationCode: null,
+                verificationTimer: null
+            };
+
+            // Plan recommendations
+            const plans = {
+                'starter': {
+                    name: 'Starter',
+                    price: '$9.99',
+                    description: 'Perfect for individual landlords',
+                    features: ['Up to 5 units', 'All core features', 'M-Pesa integration', 'Email support'],
+                    order: 1
+                },
+                'essential': {
+                    name: 'Essential',
+                    price: '$22.99',
+                    description: 'Growing portfolio management',
+                    features: ['Up to 20 units', 'All Essential features', 'Bulk SMS credits', 'Priority chat support'],
+                    order: 2
+                },
+                'professional': {
+                    name: 'Professional',
+                    price: '$49.99',
+                    description: 'For growing property portfolios',
+                    features: ['Up to 50 units', 'All Professional features', 'Advanced reporting', 'Priority support', 'Bulk SMS credits'],
+                    order: 3
+                },
+                'business': {
+                    name: 'Business',
+                    price: '$69.99',
+                    description: 'For property managers & agencies',
+                    features: ['Up to 100 units', 'Multi-user access', 'Custom reporting', 'Dedicated account manager', 'API access'],
+                    order: 4
+                },
+                'enterprise': {
+                    name: 'Enterprise',
+                    price: 'Custom',
+                    description: 'For large portfolios & agencies with 100+ units',
+                    features: [
+                        'Unlimited units (custom pricing)',
+                        'Unlimited user accounts',
+                        'Full API access & custom integrations',
+                        'Dedicated account manager & 24/7 support',
+                        'Custom reporting & analytics',
+                        'White-label options available'
+                    ],
+                    order: 5
+                }
+            };
+            
+            // Plan order array for sorting
+            const planOrder = ['starter', 'essential', 'professional', 'business', 'enterprise'];
+            
+            // Enterprise pricing tiers - price per unit decreases with volume
+            const enterprisePricingTiers = [
+                { minUnits: 101, maxUnits: 200, pricePerUnit: 1.09 },
+                { minUnits: 201, maxUnits: 500, pricePerUnit: 0.99 },
+                { minUnits: 501, maxUnits: 1000, pricePerUnit: 0.89 },
+                { minUnits: 1001, maxUnits: 5000, pricePerUnit: 0.79 },
+                { minUnits: 5001, maxUnits: 10000, pricePerUnit: 0.69 },
+                { minUnits: 10001, maxUnits: Infinity, pricePerUnit: 0.59 }
+            ];
+            
+            // ===== COMPLETE COUNTRY DATA WITH FORMATS =====
+            const allCountries = [
+                {code: "AF", name: "Afghanistan", dialCode: "+93", format: "000 000 0000", pattern: "### ### ####", maxLength: 10},
+                {code: "AL", name: "Albania", dialCode: "+355", format: "000 000 0000", pattern: "### ### ####", maxLength: 10},
+                {code: "DZ", name: "Algeria", dialCode: "+213", format: "0000 00 00 00", pattern: "#### ## ## ##", maxLength: 10},
+                {code: "AS", name: "American Samoa", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "AD", name: "Andorra", dialCode: "+376", format: "000 000", pattern: "### ###", maxLength: 6},
+                {code: "AO", name: "Angola", dialCode: "+244", format: "000 000 000", pattern: "### ### ###", maxLength: 9},
+                {code: "AI", name: "Anguilla", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "AG", name: "Antigua & Barbuda", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "AR", name: "Argentina", dialCode: "+54", format: "000 00-0000-0000", pattern: "### ##-####-####", maxLength: 13},
+                {code: "AM", name: "Armenia", dialCode: "+374", format: "00 000000", pattern: "## ######", maxLength: 8},
+                {code: "AW", name: "Aruba", dialCode: "+297", format: "000 0000", pattern: "### ####", maxLength: 7},
+                {code: "AU", name: "Australia", dialCode: "+61", format: "0000 000 000", pattern: "#### ### ###", maxLength: 10},
+                {code: "AT", name: "Austria", dialCode: "+43", format: "0000 000000", pattern: "#### ######", maxLength: 10},
+                {code: "AZ", name: "Azerbaijan", dialCode: "+994", format: "00 000 00 00", pattern: "## ### ## ##", maxLength: 9},
+                {code: "BS", name: "Bahamas", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "BH", name: "Bahrain", dialCode: "+973", format: "0000 0000", pattern: "#### ####", maxLength: 8},
+                {code: "BD", name: "Bangladesh", dialCode: "+880", format: "00000-000000", pattern: "#####-######", maxLength: 11},
+                {code: "BB", name: "Barbados", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "BY", name: "Belarus", dialCode: "+375", format: "00 000-00-00", pattern: "## ###-##-##", maxLength: 9},
+                {code: "BE", name: "Belgium", dialCode: "+32", format: "0000 00 00 00", pattern: "#### ## ## ##", maxLength: 10},
+                {code: "BZ", name: "Belize", dialCode: "+501", format: "000-0000", pattern: "###-####", maxLength: 7},
+                {code: "BJ", name: "Benin", dialCode: "+229", format: "00 00 00 00", pattern: "## ## ## ##", maxLength: 8},
+                {code: "BM", name: "Bermuda", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "BT", name: "Bhutan", dialCode: "+975", format: "00 00 00 00", pattern: "## ## ## ##", maxLength: 8},
+                {code: "BO", name: "Bolivia", dialCode: "+591", format: "0000 0000", pattern: "#### ####", maxLength: 8},
+                {code: "BA", name: "Bosnia & Herzegovina", dialCode: "+387", format: "00 000 000", pattern: "## ### ###", maxLength: 8},
+                {code: "BW", name: "Botswana", dialCode: "+267", format: "00 000 000", pattern: "## ### ###", maxLength: 8},
+                {code: "BR", name: "Brazil", dialCode: "+55", format: "(00) 00000-0000", pattern: "(##) #####-####", maxLength: 11},
+                {code: "IO", name: "British Indian Ocean Territory", dialCode: "+246", format: "000 0000", pattern: "### ####", maxLength: 7},
+                {code: "VG", name: "British Virgin Islands", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "BN", name: "Brunei", dialCode: "+673", format: "000 0000", pattern: "### ####", maxLength: 7},
+                {code: "BG", name: "Bulgaria", dialCode: "+359", format: "00 000 0000", pattern: "## ### ####", maxLength: 9},
+                {code: "BF", name: "Burkina Faso", dialCode: "+226", format: "00 00 00 00", pattern: "## ## ## ##", maxLength: 8},
+                {code: "BI", name: "Burundi", dialCode: "+257", format: "00 00 00 00", pattern: "## ## ## ##", maxLength: 8},
+                {code: "KH", name: "Cambodia", dialCode: "+855", format: "00 000 000", pattern: "## ### ###", maxLength: 8},
+                {code: "CM", name: "Cameroon", dialCode: "+237", format: "0000 00 00 00", pattern: "#### ## ## ##", maxLength: 10},
+                {code: "CA", name: "Canada", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "CV", name: "Cape Verde", dialCode: "+238", format: "000 00 00", pattern: "### ## ##", maxLength: 7},
+                {code: "KY", name: "Cayman Islands", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "CF", name: "Central African Republic", dialCode: "+236", format: "00 00 00 00", pattern: "## ## ## ##", maxLength: 8},
+                {code: "TD", name: "Chad", dialCode: "+235", format: "00 00 00 00", pattern: "## ## ## ##", maxLength: 8},
+                {code: "CL", name: "Chile", dialCode: "+56", format: "0 0000 0000", pattern: "# #### ####", maxLength: 9},
+                {code: "CN", name: "China", dialCode: "+86", format: "000 0000 0000", pattern: "### #### ####", maxLength: 11},
+                {code: "CX", name: "Christmas Island", dialCode: "+61", format: "0000 000 000", pattern: "#### ### ###", maxLength: 10},
+                {code: "CC", name: "Cocos (Keeling) Islands", dialCode: "+61", format: "0000 000 000", pattern: "#### ### ###", maxLength: 10},
+                {code: "CO", name: "Colombia", dialCode: "+57", format: "000 000 0000", pattern: "### ### ####", maxLength: 10},
+                {code: "KM", name: "Comoros", dialCode: "+269", format: "000 00 00", pattern: "### ## ##", maxLength: 7},
+                {code: "CG", name: "Congo - Brazzaville", dialCode: "+242", format: "00 00000", pattern: "## #####", maxLength: 7},
+                {code: "CD", name: "Congo - Kinshasa", dialCode: "+243", format: "00 000 0000", pattern: "## ### ####", maxLength: 9},
+                {code: "CK", name: "Cook Islands", dialCode: "+682", format: "00 000", pattern: "## ###", maxLength: 5},
+                {code: "CR", name: "Costa Rica", dialCode: "+506", format: "0000 0000", pattern: "#### ####", maxLength: 8},
+                {code: "CI", name: "Côte d'Ivoire", dialCode: "+225", format: "00 00 00 00", pattern: "## ## ## ##", maxLength: 8},
+                {code: "HR", name: "Croatia", dialCode: "+385", format: "00 000 0000", pattern: "## ### ####", maxLength: 9},
+                {code: "CU", name: "Cuba", dialCode: "+53", format: "0 0000000", pattern: "# #######", maxLength: 8},
+                {code: "CW", name: "Curaçao", dialCode: "+599", format: "000 0000", pattern: "### ####", maxLength: 7},
+                {code: "CY", name: "Cyprus", dialCode: "+357", format: "00 000000", pattern: "## ######", maxLength: 8},
+                {code: "CZ", name: "Czech Republic", dialCode: "+420", format: "000 000 000", pattern: "### ### ###", maxLength: 9},
+                {code: "DK", name: "Denmark", dialCode: "+45", format: "00 00 00 00", pattern: "## ## ## ##", maxLength: 8},
+                {code: "DJ", name: "Djibouti", dialCode: "+253", format: "00 00 00 00", pattern: "## ## ## ##", maxLength: 8},
+                {code: "DM", name: "Dominica", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "DO", name: "Dominican Republic", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "EC", name: "Ecuador", dialCode: "+593", format: "0 000 0000", pattern: "# ### ####", maxLength: 8},
+                {code: "EG", name: "Egypt", dialCode: "+20", format: "00 0000 0000", pattern: "## #### ####", maxLength: 10},
+                {code: "SV", name: "El Salvador", dialCode: "+503", format: "0000 0000", pattern: "#### ####", maxLength: 8},
+                {code: "GQ", name: "Equatorial Guinea", dialCode: "+240", format: "00 000 0000", pattern: "## ### ####", maxLength: 9},
+                {code: "ER", name: "Eritrea", dialCode: "+257", format: "0 000 000", pattern: "# ### ###", maxLength: 7},
+                {code: "EE", name: "Estonia", dialCode: "+372", format: "0000 0000", pattern: "#### ####", maxLength: 8},
+                {code: "SZ", name: "Eswatini", dialCode: "+268", format: "00 00 00 00", pattern: "## ## ## ##", maxLength: 8},
+                {code: "ET", name: "Ethiopia", dialCode: "+251", format: "00 000 0000", pattern: "## ### ####", maxLength: 9},
+                {code: "FK", name: "Falkland Islands", dialCode: "+500", format: "00000", pattern: "#####", maxLength: 5},
+                {code: "FO", name: "Faroe Islands", dialCode: "+298", format: "000000", pattern: "######", maxLength: 6},
+                {code: "FJ", name: "Fiji", dialCode: "+679", format: "00 00000", pattern: "## #####", maxLength: 7},
+                {code: "FI", name: "Finland", dialCode: "+358", format: "00 0000000", pattern: "## #######", maxLength: 9},
+                {code: "FR", name: "France", dialCode: "+33", format: "0 00 00 00 00", pattern: "# ## ## ## ##", maxLength: 9},
+                {code: "GF", name: "French Guiana", dialCode: "+594", format: "00000 00 00", pattern: "##### ## ##", maxLength: 9},
+                {code: "PF", name: "French Polynesia", dialCode: "+689", format: "00 00 00", pattern: "## ## ##", maxLength: 6},
+                {code: "GA", name: "Gabon", dialCode: "+241", format: "0 00 00 00", pattern: "# ## ## ##", maxLength: 7},
+                {code: "GM", name: "Gambia", dialCode: "+220", format: "000 0000", pattern: "### ####", maxLength: 7},
+                {code: "GE", name: "Georgia", dialCode: "+995", format: "000 00 00 00", pattern: "### ## ## ##", maxLength: 9},
+                {code: "DE", name: "Germany", dialCode: "+49", format: "0000 0000000", pattern: "#### #######", maxLength: 11},
+                {code: "GH", name: "Ghana", dialCode: "+233", format: "00 000 0000", pattern: "## ### ####", maxLength: 9},
+                {code: "GI", name: "Gibraltar", dialCode: "+350", format: "00000000", pattern: "########", maxLength: 8},
+                {code: "GR", name: "Greece", dialCode: "+30", format: "000 000 0000", pattern: "### ### ####", maxLength: 10},
+                {code: "GL", name: "Greenland", dialCode: "+299", format: "00 00 00", pattern: "## ## ##", maxLength: 6},
+                {code: "GD", name: "Grenada", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "GP", name: "Guadeloupe", dialCode: "+590", format: "00000 00 00", pattern: "##### ## ##", maxLength: 9},
+                {code: "GU", name: "Guam", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "GT", name: "Guatemala", dialCode: "+502", format: "0000 0000", pattern: "#### ####", maxLength: 8},
+                {code: "GN", name: "Guinea", dialCode: "+224", format: "00 000 000", pattern: "## ### ###", maxLength: 8},
+                {code: "GW", name: "Guinea-Bissau", dialCode: "+245", format: "0 000000", pattern: "# ######", maxLength: 7},
+                {code: "GY", name: "Guyana", dialCode: "+592", format: "000 0000", pattern: "### ####", maxLength: 7},
+                {code: "HT", name: "Haiti", dialCode: "+509", format: "00 00 0000", pattern: "## ## ####", maxLength: 8},
+                {code: "HN", name: "Honduras", dialCode: "+504", format: "0000-0000", pattern: "####-####", maxLength: 8},
+                {code: "HK", name: "Hong Kong", dialCode: "+852", format: "0000 0000", pattern: "#### ####", maxLength: 8},
+                {code: "HU", name: "Hungary", dialCode: "+36", format: "00 000 0000", pattern: "## ### ####", maxLength: 9},
+                {code: "IS", name: "Iceland", dialCode: "+354", format: "000 0000", pattern: "### ####", maxLength: 7},
+                {code: "IN", name: "India", dialCode: "+91", format: "00000 00000", pattern: "##### #####", maxLength: 10},
+                {code: "ID", name: "Indonesia", dialCode: "+62", format: "000-000-000", pattern: "###-###-###", maxLength: 9},
+                {code: "IR", name: "Iran", dialCode: "+98", format: "000 000 0000", pattern: "### ### ####", maxLength: 10},
+                {code: "IQ", name: "Iraq", dialCode: "+964", format: "0000 000 0000", pattern: "#### ### ####", maxLength: 11},
+                {code: "IE", name: "Ireland", dialCode: "+353", format: "00 000 0000", pattern: "## ### ####", maxLength: 9},
+                {code: "IL", name: "Israel", dialCode: "+972", format: "0-000-0000", pattern: "#-###-####", maxLength: 8},
+                {code: "IT", name: "Italy", dialCode: "+39", format: "000 000 0000", pattern: "### ### ####", maxLength: 10},
+                {code: "JM", name: "Jamaica", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "JP", name: "Japan", dialCode: "+81", format: "00-0000-0000", pattern: "##-####-####", maxLength: 10},
+                {code: "JO", name: "Jordan", dialCode: "+962", format: "0 0000 0000", pattern: "# #### ####", maxLength: 9},
+                {code: "KZ", name: "Kazakhstan", dialCode: "+7", format: "000 000-00-00", pattern: "### ###-##-##", maxLength: 10},
+                {code: "KE", name: "Kenya", dialCode: "+254", format: "000 000 000", pattern: "### ### ###", maxLength: 9},
+                {code: "KI", name: "Kiribati", dialCode: "+686", format: "00000", pattern: "#####", maxLength: 5},
+                {code: "KW", name: "Kuwait", dialCode: "+965", format: "0000 0000", pattern: "#### ####", maxLength: 8},
+                {code: "KG", name: "Kyrgyzstan", dialCode: "+996", format: "000 000 000", pattern: "### ### ###", maxLength: 9},
+                {code: "LA", name: "Laos", dialCode: "+856", format: "00 00 000 000", pattern: "## ## ### ###", maxLength: 11},
+                {code: "LV", name: "Latvia", dialCode: "+371", format: "00 000 000", pattern: "## ### ###", maxLength: 8},
+                {code: "LB", name: "Lebanon", dialCode: "+961", format: "00 000 000", pattern: "## ### ###", maxLength: 8},
+                {code: "LS", name: "Lesotho", dialCode: "+266", format: "0 000 0000", pattern: "# ### ####", maxLength: 8},
+                {code: "LR", name: "Liberia", dialCode: '+231', format: "00 000 000", pattern: "## ### ###", maxLength: 8},
+                {code: "LY", name: "Libya", dialCode: "+218", format: "00-0000000", pattern: "##-#######", maxLength: 9},
+                {code: "LI", name: "Liechtenstein", dialCode: "+423", format: "000 000 000", pattern: "### ### ###", maxLength: 9},
+                {code: "LT", name: "Lithuania", dialCode: "+370", format: "000 00 000", pattern: "### ## ###", maxLength: 8},
+                {code: "LU", name: "Luxembourg", dialCode: "+352", format: "000 000 000", pattern: "### ### ###", maxLength: 9},
+                {code: "MO", name: "Macao", dialCode: "+853", format: "0000 0000", pattern: "#### ####", maxLength: 8},
+                {code: "MG", name: "Madagascar", dialCode: "+261", format: "00 00 000 00", pattern: "## ## ### ##", maxLength: 10},
+                {code: "MW", name: "Malawi", dialCode: "+265", format: "0 0000 0000", pattern: "# #### ####", maxLength: 9},
+                {code: "MY", name: "Malaysia", dialCode: "+60", format: "00-0000 0000", pattern: "##-#### ####", maxLength: 10},
+                {code: "MV", name: "Maldives", dialCode: "+960", format: "000-0000", pattern: "###-####", maxLength: 7},
+                {code: "ML", name: "Mali", dialCode: "+223", format: "00 00 00 00", pattern: "## ## ## ##", maxLength: 8},
+                {code: "MT", name: "Malta", dialCode: "+356", format: "0000 0000", pattern: "#### ####", maxLength: 8},
+                {code: "MH", name: "Marshall Islands", dialCode: "+692", format: "000-0000", pattern: "###-####", maxLength: 7},
+                {code: "MQ", name: "Martinique", dialCode: "+596", format: "00000 00 00", pattern: "##### ## ##", maxLength: 9},
+                {code: "MR", name: "Mauritania", dialCode: "+222", format: "00 00 00 00", pattern: "## ## ## ##", maxLength: 8},
+                {code: "MU", name: "Mauritius", dialCode: "+230", format: "0000 0000", pattern: "#### ####", maxLength: 8},
+                {code: "YT", name: "Mayotte", dialCode: "+262", format: "00000 00 00", pattern: "##### ## ##", maxLength: 9},
+                {code: "MX", name: "Mexico", dialCode: "+52", format: "000 000 0000", pattern: "### ### ####", maxLength: 10},
+                {code: "FM", name: "Micronesia", dialCode: "+691", format: "000-0000", pattern: "###-####", maxLength: 7},
+                {code: "MD", name: "Moldova", dialCode: "+373", format: "0000 00 00", pattern: "#### ## ##", maxLength: 8},
+                {code: "MC", name: "Monaco", dialCode: "+377", format: "00 00 00 00", pattern: "## ## ## ##", maxLength: 8},
+                {code: "MN", name: "Mongolia", dialCode: "+976", format: "0000 0000", pattern: "#### ####", maxLength: 8},
+                {code: "ME", name: "Montenegro", dialCode: "+382", format: "00 000 000", pattern: "## ### ###", maxLength: 8},
+                {code: "MS", name: "Montserrat", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "MA", name: "Morocco", dialCode: "+212", format: "00-0000-000", pattern: "##-####-###", maxLength: 9},
+                {code: "MZ", name: "Mozambique", dialCode: "+258", format: "00 000 000", pattern: "## ### ###", maxLength: 8},
+                {code: "MM", name: "Myanmar (Burma)", dialCode: "+95", format: "0 000 000", pattern: "# ### ###", maxLength: 7},
+                {code: "NA", name: "Namibia", dialCode: "+264", format: "00 000 0000", pattern: "## ### ####", maxLength: 9},
+                {code: "NR", name: "Nauru", dialCode: "+674", format: "000 0000", pattern: "### ####", maxLength: 7},
+                {code: "NP", name: "Nepal", dialCode: "+977", format: "000-0000000", pattern: "###-#######", maxLength: 10},
+                {code: "NL", name: "Netherlands", dialCode: "+31", format: "00 00000000", pattern: "## ########", maxLength: 10},
+                {code: "NC", name: "New Caledonia", dialCode: "+687", format: "00.00.00", pattern: "##.##.##", maxLength: 6},
+                {code: "NZ", name: "New Zealand", dialCode: "+64", format: "000 000 0000", pattern: "### ### ####", maxLength: 10},
+                {code: "NI", name: "Nicaragua", dialCode: "+505", format: "0000 0000", pattern: "#### ####", maxLength: 8},
+                {code: "NE", name: "Niger", dialCode: "+227", format: "00 00 00 00", pattern: "## ## ## ##", maxLength: 8},
+                {code: "NG", name: "Nigeria", dialCode: "+234", format: "000 000 0000", pattern: "### ### ####", maxLength: 10},
+                {code: "NU", name: "Niue", dialCode: "+683", format: "0000", pattern: "####", maxLength: 4},
+                {code: "NF", name: "Norfolk Island", dialCode: "+672", format: "0 00000", pattern: "# #####", maxLength: 6},
+                {code: "KP", name: "North Korea", dialCode: "+850", format: "000 0000 0000", pattern: "### #### ####", maxLength: 11},
+                {code: "MK", name: "North Macedonia", dialCode: "+389", format: "00 000 000", pattern: "## ### ###", maxLength: 8},
+                {code: "MP", name: "Northern Mariana Islands", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "NO", name: "Norway", dialCode: "+47", format: "000 00 000", pattern: "### ## ###", maxLength: 8},
+                {code: "OM", name: "Oman", dialCode: "+968", format: "0000 0000", pattern: "#### ####", maxLength: 8},
+                {code: "PK", name: "Pakistan", dialCode: "+92", format: "000 000 0000", pattern: "### ### ####", maxLength: 10},
+                {code: "PW", name: "Palau", dialCode: "+680", format: "000 0000", pattern: "### ####", maxLength: 7},
+                {code: "PS", name: "Palestine", dialCode: "+970", format: "00 000 0000", pattern: "## ### ####", maxLength: 9},
+                {code: "PA", name: "Panama", dialCode: "+507", format: "0000-0000", pattern: "####-####", maxLength: 8},
+                {code: "PG", name: "Papua New Guinea", dialCode: "+675", format: "000 00 000", pattern: "### ## ###", maxLength: 8},
+                {code: "PY", name: "Paraguay", dialCode: "+595", format: "0000 00000", pattern: "#### #####", maxLength: 9},
+                {code: "PE", name: "Peru", dialCode: "+51", format: "000 000 000", pattern: "### ### ###", maxLength: 9},
+                {code: "PH", name: "Philippines", dialCode: "+63", format: "000 000 0000", pattern: "### ### ####", maxLength: 10},
+                {code: "PL", name: "Poland", dialCode: "+48", format: "000 000 000", pattern: "### ### ###", maxLength: 9},
+                {code: "PT", name: "Portugal", dialCode: "+351", format: "000 000 000", pattern: "### ### ###", maxLength: 9},
+                {code: "PR", name: "Puerto Rico", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "QA", name: "Qatar", dialCode: "+974", format: "0000 0000", pattern: "#### ####", maxLength: 8},
+                {code: "RE", name: "Réunion", dialCode: "+262", format: "00000 00 00", pattern: "##### ## ##", maxLength: 9},
+                {code: "RO", name: "Romania", dialCode: "+40", format: "0000 000 000", pattern: "#### ### ###", maxLength: 10},
+                {code: "RU", name: "Russia", dialCode: "+7", format: "000 000-00-00", pattern: "### ###-##-##", maxLength: 10},
+                {code: "RW", name: "Rwanda", dialCode: "+250", format: "000 000 000", pattern: "### ### ###", maxLength: 9},
+                {code: "WS", name: "Samoa", dialCode: "+685", format: "00 00000", pattern: "## #####", maxLength: 7},
+                {code: "SM", name: "San Marino", dialCode: "+378", format: "0000 000000", pattern: "#### ######", maxLength: 10},
+                {code: "ST", name: "São Tomé & Príncipe", dialCode: "+239", format: "00 00000", pattern: "## #####", maxLength: 7},
+                {code: "SA", name: "Saudi Arabia", dialCode: "+966", format: "00 000 0000", pattern: "## ### ####", maxLength: 9},
+                {code: "SN", name: "Senegal", dialCode: "+221", format: "00 000 00 00", pattern: "## ### ## ##", maxLength: 9},
+                {code: "RS", name: "Serbia", dialCode: "+381", format: "00 000 0000", pattern: "## ### ####", maxLength: 9},
+                {code: "SC", name: "Seychelles", dialCode: "+248", format: "0 000 000", pattern: '# ### ###', maxLength: 7},
+                {code: "SL", name: "Sierra Leone", dialCode: "+232", format: "00 000000", pattern: "## ######", maxLength: 8},
+                {code: "SG", name: "Singapore", dialCode: "+65", format: "0000 0000", pattern: "#### ####", maxLength: 8},
+                {code: "SX", name: "Sint Maarten", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "SK", name: "Slovakia", dialCode: "+421", format: "0000 000 000", pattern: "#### ### ###", maxLength: 10},
+                {code: "SI", name: "Slovenia", dialCode: "+386", format: "00 000 000", pattern: "## ### ###", maxLength: 8},
+                {code: "SB", name: "Solomon Islands", dialCode: "+677", format: "00 00000", pattern: "## #####", maxLength: 7},
+                {code: "SO", name: "Somalia", dialCode: "+252", format: "0 000000", pattern: '# ######', maxLength: 7},
+                {code: "ZA", name: "South Africa", dialCode: "+27", format: "00 000 0000", pattern: "## ### ####", maxLength: 9},
+                {code: "KR", name: "South Korea", dialCode: "+82", format: "00-0000-0000", pattern: "##-####-####", maxLength: 10},
+                {code: "SS", name: "South Sudan", dialCode: "+211", format: "00 000 0000", pattern: "## ### ####", maxLength: 9},
+                {code: "ES", name: "Spain", dialCode: "+34", format: "000 000 000", pattern: "### ### ###", maxLength: 9},
+                {code: "LK", name: "Sri Lanka", dialCode: "+94", format: "00 000 0000", pattern: "## ### ####", maxLength: 9},
+                {code: "BL", name: "St. Barthélemy", dialCode: "+590", format: "00000 00 00", pattern: "##### ## ##", maxLength: 9},
+                {code: "SH", name: "St. Helena", dialCode: "+290", format: "0000", pattern: "####", maxLength: 4},
+                {code: "KN", name: "St. Kitts & Nevis", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "LC", name: "St. Lucia", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "MF", name: "St. Martin", dialCode: "+590", format: "00000 00 00", pattern: "##### ## ##", maxLength: 9},
+                {code: "PM", name: "St. Pierre & Miquelon", dialCode: "+508", format: "00 00 00", pattern: "## ## ##", maxLength: 6},
+                {code: "VC", name: "St. Vincent & Grenadines", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "SD", name: "Sudan", dialCode: "+249", format: "00 000 0000", pattern: "## ### ####", maxLength: 9},
+                {code: "SR", name: "Suriname", dialCode: "+597", format: "000-0000", pattern: "###-####", maxLength: 7},
+                {code: "SE", name: "Sweden", dialCode: "+46", format: "00-000 000 00", pattern: "##-### ### ##", maxLength: 10},
+                {code: "CH", name: "Switzerland", dialCode: "+41", format: "00 000 00 00", pattern: "## ### ## ##", maxLength: 9},
+                {code: "SY", name: "Syria", dialCode: "+963", format: "00 0000 000", pattern: "## #### ###", maxLength: 9},
+                {code: "TW", name: "Taiwan", dialCode: "+886", format: "0000 000 000", pattern: "#### ### ###", maxLength: 10},
+                {code: "TJ", name: "Tajikistan", dialCode: "+992", format: "00 000 0000", pattern: "## ### ####", maxLength: 9},
+                {code: "TZ", name: "Tanzania", dialCode: "+255", format: "00 000 0000", pattern: "## ### ####", maxLength: 9},
+                {code: "TH", name: "Thailand", dialCode: "+66", format: "00 000 0000", pattern: "## ### ####", maxLength: 9},
+                {code: "TL", name: "Timor-Leste", dialCode: "+670", format: "000 0000", pattern: "### ####", maxLength: 7},
+                {code: "TG", name: "Togo", dialCode: "+228", format: "00 00 00 00", pattern: "## ## ## ##", maxLength: 8},
+                {code: "TK", name: "Tokelau", dialCode: "+690", format: "0000", pattern: "####", maxLength: 4},
+                {code: "TO", name: "Tonga", dialCode: "+676", format: "00000", pattern: "#####", maxLength: 5},
+                {code: "TT", name: "Trinidad & Tobago", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "TN", name: "Tunisia", dialCode: "+216", format: "00 000 000", pattern: "## ### ###", maxLength: 8},
+                {code: "TR", name: "Turkey", dialCode: "+90", format: "000 000 00 00", pattern: "### ### ## ##", maxLength: 10},
+                {code: "TM", name: "Turkmenistan", dialCode: "+993", format: "0 00 000000", pattern: "# ## ######", maxLength: 9},
+                {code: "TC", name: "Turks & Caicos Islands", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "TV", name: "Tuvalu", dialCode: "+688", format: "00000", pattern: "#####", maxLength: 5},
+                {code: "VI", name: "U.S. Virgin Islands", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "UG", name: "Uganda", dialCode: "+256", format: "000 000 000", pattern: "### ### ###", maxLength: 9},
+                {code: "UA", name: "Ukraine", dialCode: "+380", format: "00 000 00 00", pattern: "## ### ## ##", maxLength: 9},
+                {code: "AE", name: "United Arab Emirates", dialCode: "+971", format: "00 000 0000", pattern: "## ### ####", maxLength: 9},
+                {code: "GB", name: "United Kingdom", dialCode: "+44", format: "0000 000 000", pattern: "#### ### ###", maxLength: 10},
+                {code: "US", name: "United States", dialCode: "+1", format: "(000) 000-0000", pattern: "(###) ###-####", maxLength: 10},
+                {code: "UY", name: "Uruguay", dialCode: "+598", format: "0 000 00 00", pattern: "# ### ## ##", maxLength: 8},
+                {code: "UZ", name: "Uzbekistan", dialCode: "+998", format: "00 000 00 00", pattern: "## ### ## ##", maxLength: 9},
+                {code: "VU", name: "Vanuatu", dialCode: "+678", format: "00000", pattern: "#####", maxLength: 5},
+                {code: "VA", name: "Vatican City", dialCode: "+39", format: "000 000 0000", pattern: "### ### ####", maxLength: 10},
+                {code: "VE", name: "Venezuela", dialCode: "+58", format: "0000-0000000", pattern: "####-#######", maxLength: 11},
+                {code: "VN", name: "Vietnam", dialCode: "+84", format: "00 0000 000", pattern: "## #### ###", maxLength: 9},
+                {code: "WF", name: "Wallis & Futuna", dialCode: "+681", format: "00 00 00", pattern: "## ## ##", maxLength: 6},
+                {code: "YE", name: "Yemen", dialCode: "+967", format: "0 000 000", pattern: '# ### ###', maxLength: 7},
+                {code: "ZM", name: "Zambia", dialCode: "+260", format: "00 000 0000", pattern: "## ### ####", maxLength: 9},
+                {code: "ZW", name: "Zimbabwe", dialCode: "+263", format: "00 000 0000", pattern: "## ### ####", maxLength: 9}
+            ];
+            
+            // DOM Elements
+            const steps = document.querySelectorAll('.question-step');
+            const progressBar = document.getElementById('progressBar');
+            const singleRecommendationView = document.getElementById('singleRecommendationView');
+            const allPlansView = document.getElementById('allPlansView');
+            const standardRecommendationCard = document.getElementById('standardRecommendationCard');
+            const enterpriseRecommendationCard = document.getElementById('enterpriseRecommendationCard');
+            const backToHomeButton = document.getElementById('backToHome');
+            const emailNotification = document.getElementById('emailNotification');
+            const emailNotificationTitle = document.getElementById('emailNotificationTitle');
+            const emailNotificationMessage = document.getElementById('emailNotificationMessage');
+            const emailNotificationClose = document.getElementById('emailNotificationClose');
+            const dynamicPlansContainer = document.getElementById('dynamicPlansContainer');
+            const staticPlansContainer = document.getElementById('staticPlansContainer');
+
+            // Navigation buttons
+            const next1 = document.getElementById('next1');
+            const next2 = document.getElementById('next2');
+            const next3 = document.getElementById('next3');
+            const next4 = document.getElementById('next4');
+            const back2 = document.getElementById('back2');
+            const back3 = document.getElementById('back3');
+            const back4 = document.getElementById('back4');
+            const back5 = document.getElementById('back5');
+            const back6 = document.getElementById('back6');
+            const back7 = document.getElementById('back7');
+            const back8 = document.getElementById('back8');
+            const back9 = document.getElementById('back9');
+            const back10 = document.getElementById('back10');
+            const confirmPlan = document.getElementById('confirmPlan');
+            const seeOtherPlans = document.getElementById('seeOtherPlans');
+            const next6 = document.getElementById('next6');
+            const next7 = document.getElementById('next7');
+            const next8 = document.getElementById('next8');
+            const next9 = document.getElementById('next9');
+            const next10 = document.getElementById('next10');
+            const togglePassword = document.getElementById('togglePassword');
+
+            // Verification elements
+            const verificationSubtitle = document.getElementById('verificationSubtitle');
+            const codeInputs = document.querySelectorAll('.code-input');
+            const codeError = document.getElementById('codeError');
+            const resendCodeLink = document.getElementById('resendCodeLink');
+            const resendTimer = document.getElementById('resendTimer');
+            const countdownElement = document.getElementById('countdown');
+
+            // Phone elements
+            const countrySelector = document.getElementById('countrySelector');
+            const countryDropdown = document.getElementById('countryDropdown');
+            const countryFlag = document.getElementById('countryFlag');
+            const countryCode = document.getElementById('countryCode');
+            const phoneInput = document.getElementById('phone');
+            const countryChevron = document.querySelector('.country-chevron');
+            const countrySearch = document.getElementById('countrySearch');
+            const countryList = document.getElementById('countryList');
+
+            // Error elements
+            const firstNameError = document.getElementById('firstNameError');
+            const passwordError = document.getElementById('passwordError');
+            const confirmPasswordError = document.getElementById('confirmPasswordError');
+
+            // Password elements
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+
+            // Terms elements
+            const termsContainer = document.getElementById('termsContainer');
+            const termsCheckbox = document.getElementById('termsCheckbox');
+            const termsError = document.getElementById('termsError');
+
+            // Price elements
+            const starterPrice = document.getElementById('starterPrice');
+            const essentialPrice = document.getElementById('essentialPrice');
+            const professionalPrice = document.getElementById('professionalPrice');
+            const businessPrice = document.getElementById('businessPrice');
+            const enterprisePrice = document.getElementById('enterprisePrice');
+
+            // Price note elements
+            const starterNote = document.getElementById('starterNote');
+            const essentialNote = document.getElementById('essentialNote');
+            const professionalNote = document.getElementById('professionalNote');
+            const businessNote = document.getElementById('businessNote');
+            const enterpriseNote = document.getElementById('enterpriseNote');
+
+            // Enterprise elements
+            const enterpriseUnitsInput = document.getElementById('enterpriseUnitsInput');
+            const enterpriseUnitInput = document.getElementById('enterpriseUnitInput');
+            const enterpriseUnitsError = document.getElementById('enterpriseUnitsError');
+            const customUnitsIcon = document.querySelector('.custom-units-icon');
+
+            // All plans back button
+            const allPlansBackBtn = document.getElementById('allPlansBackBtn');
+
+            // Current step tracking
+            let currentStep = 1;
+            
+            // Default to USA
+            let selectedCountry = allCountries.find(c => c.code === 'US');
+
+            // Verification code state
+            let resendTimerInterval = null;
+
+            // ===== ENTERPRISE PRICING FUNCTIONS =====
+            function calculateEnterprisePrice(units) {
+                const tier = enterprisePricingTiers.find(t => units >= t.minUnits && units <= t.maxUnits);
+                if (!tier) {
+                    // Use the last tier for very large numbers
+                    return enterprisePricingTiers[enterprisePricingTiers.length - 1];
+                }
+                return tier;
+            }
+
+            function getEnterprisePriceDisplay(units) {
+                const tier = calculateEnterprisePrice(units);
+                const totalPrice = (units * tier.pricePerUnit).toFixed(2);
+                return {
+                    totalPrice: totalPrice,
+                    pricePerUnit: tier.pricePerUnit.toFixed(2),
+                    tier: tier
+                };
+            }
+
+            function validateEnterpriseUnits() {
+                const units = parseInt(enterpriseUnitInput.value) || 0;
+                
+                if (userData.unitCount === 'more-than-100') {
+                    if (units >= 101) {
+                        enterpriseUnitsError.classList.remove('show');
+                        enterpriseUnitInput.classList.remove('error');
+                        userData.enterpriseUnits = units;
+                        next3.disabled = false;
+                        return true;
+                    } else {
+                        enterpriseUnitsError.classList.add('show');
+                        enterpriseUnitInput.classList.add('error');
+                        next3.disabled = true;
+                        return false;
+                    }
+                }
+                return false;
+            }
+
+            // ===== EMAIL NOTIFICATION FUNCTIONS =====
+            function showEmailNotification(title, message, isError = false) {
+                emailNotificationTitle.textContent = title;
+                emailNotificationMessage.textContent = message;
+                
+                if (isError) {
+                    emailNotification.classList.add('error');
+                    emailNotification.querySelector('.email-notification-icon').innerHTML = '<i class="fas fa-exclamation-circle"></i>';
+                } else {
+                    emailNotification.classList.remove('error');
+                    emailNotification.querySelector('.email-notification-icon').innerHTML = '<i class="fas fa-envelope"></i>';
+                }
+                
+                emailNotification.classList.add('show');
+                
+                // Auto-hide after 5 seconds for success, 10 seconds for errors
+                setTimeout(() => {
+                    if (emailNotification.classList.contains('show')) {
+                        hideEmailNotification();
+                    }
+                }, isError ? 10000 : 5000);
+            }
+
+            function hideEmailNotification() {
+                emailNotification.classList.remove('show');
+            }
+
+            // ===== UPDATE PROGRESS BAR =====
+            function updateProgressLine(step) {
+                const progressBar = document.getElementById('progressBar');
+                const progress = ((step - 1) / 10) * 100;
+                progressBar.style.width = `${progress}%`;
+            }
+
+            // ===== UPDATE BACK TO HOME BUTTON VISIBILITY =====
+            function updateBackToHomeButton() {
+                if (currentStep === 1) {
+                    backToHomeButton.classList.add('visible');
+                } else {
+                    backToHomeButton.classList.remove('visible');
+                }
+            }
+
+            // ===== FORMAT PRICE BASED ON PAYMENT TYPE =====
+            function formatPrice(price, isEnterprise = false) {
+                if (userData.paymentType === 'free-trial') {
+                    if (isEnterprise) {
+                        const priceData = userData.enterpriseUnits ? getEnterprisePriceDisplay(userData.enterpriseUnits) : { totalPrice: '109.89' };
+                        return `
+                            <span class="free-trial-text">Free for 7 days</span>
+                            <span class="free-trial-subtext">then $${priceData.totalPrice}/month</span>
+                        `;
+                    } else {
+                        return `
+                            <span class="free-trial-text">Free for 7 days</span>
+                            <span class="free-trial-subtext">then ${price}/month</span>
+                        `;
+                    }
+                } else {
+                    if (isEnterprise) {
+                        const priceData = userData.enterpriseUnits ? getEnterprisePriceDisplay(userData.enterpriseUnits) : { totalPrice: '109.89' };
+                        return `<span class="regular-price">$${priceData.totalPrice}<span class="price-period">/month</span></span>`;
+                    } else {
+                        return `<span class="regular-price">${price}<span class="price-period">/month</span></span>`;
+                    }
+                }
+            }
+
+            // ===== UPDATE PRICE ELEMENTS =====
+            function updatePriceElement(element, price, isEnterprise = false) {
+                if (element) {
+                    element.innerHTML = formatPrice(price, isEnterprise);
+                }
+            }
+
+            // ===== UPDATE PRICE NOTES =====
+            function updatePriceNotes() {
+                const notes = [starterNote, essentialNote, professionalNote, businessNote, enterpriseNote];
+                notes.forEach((note, index) => {
+                    if (note) {
+                        const isEnterpriseNote = index === 4; // enterpriseNote is 5th element
+                        
+                        if (userData.paymentType === 'free-trial') {
+                            if (isEnterpriseNote) {
+                                note.textContent = 'Start with 7-day free trial • No credit card required';
+                            } else {
+                                note.textContent = 'Start with 7-day free trial • No credit card required';
+                            }
+                        } else {
+                            if (isEnterpriseNote) {
+                                note.textContent = '14-day free trial • No credit card required';
+                            } else {
+                                note.textContent = '14-day free trial • No credit card required';
+                            }
+                        }
+                    }
+                });
+            }
+
+            // ===== UPDATE ALL PRICES =====
+            function updateAllPrices() {
+                updatePriceElement(starterPrice, '$9.99');
+                updatePriceElement(essentialPrice, '$22.99');
+                updatePriceElement(professionalPrice, '$49.99');
+                updatePriceElement(businessPrice, '$69.99');
+                
+                // Update enterprise price
+                if (userData.enterpriseUnits) {
+                    updatePriceElement(enterprisePrice, '', true);
+                } else {
+                    if (enterprisePrice) {
+                        enterprisePrice.innerHTML = `
+                            <span class="regular-price">Custom<span class="price-period"> pricing</span></span>
+                        `;
+                    }
+                }
+                
+                updatePriceNotes();
+            }
+
+            // ===== GENERATE VERIFICATION CODE =====
+            function generateVerificationCode() {
+                return Math.floor(100000 + Math.random() * 900000).toString();
+            }
+
+            // ===== CHECK IF CODE IS EXPIRED =====
+            function isCodeExpired(verificationCode) {
+                if (!verificationCode || !verificationCode.createdAt) {
+                    return true;
+                }
+                
+                const now = Date.now();
+                const codeAge = now - verificationCode.createdAt;
+                const FIFTEEN_MINUTES = 15 * 60 * 1000; // 15 minutes in milliseconds
+                
+                return codeAge > FIFTEEN_MINUTES;
+            }
+
+            // ===== SEND VERIFICATION EMAIL WITH RESEND.COM =====
+            async function sendVerificationEmail(email, code) {
+                try {
+                    // Show loading state
+                    showLoading(true);
+                    
+                    // Call your Netlify function to send email
+                    const response = await fetch('/.netlify/functions/send-verification-email', {
+                        method: 'POST',
+                        headers: { 
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            email: email,
+                            code: code,
+                            firstName: userData.firstName,
+                            lastName: userData.lastName
+                        })
+                    });
+
+                    const result = await response.json();
+                    
+                    if (!response.ok) {
+                        throw new Error(result.error || 'Failed to send verification email');
+                    }
+
+                    // Store the code with creation time (15 minutes expiration)
+                    userData.verificationCode = {
+                        code: code,
+                        createdAt: Date.now(),
+                        expiresIn: 15 * 60 * 1000 // 15 minutes in milliseconds
+                    };
+                    
+                    // Show success notification with 15-minute expiration message
+                    showEmailNotification(
+                        'Verification Email Sent!',
+                        `We've sent a 6-digit code to ${email}. The code will expire in 15 minutes.`,
+                        false
+                    );
+                    
+                    return true;
+                } catch (error) {
+                    console.error('Email sending error:', error);
+                    
+                    // Show error notification but still allow verification
+                    // (for demo purposes, we'll store the code anyway with 15-minute expiration)
+                    showEmailNotification(
+                        'Email Sending Failed',
+                        `Could not send email to ${email}. Please use this code for testing: ${code} (expires in 15 minutes)`,
+                        true
+                    );
+                    
+                    // Still store the code for demo/testing with 15-minute expiration
+                    userData.verificationCode = {
+                        code: code,
+                        createdAt: Date.now(),
+                        expiresIn: 15 * 60 * 1000
+                    };
+                    console.log(`[DEBUG] Use this code for testing (expires in 15 minutes): ${code}`);
+                    
+                    return true; // Return true to continue flow even if email fails
+                } finally {
+                    showLoading(false);
+                }
+            }
+
+            // ===== CALCULATE TIME REMAINING =====
+            function calculateTimeRemaining() {
+                if (!userData.verificationTimer || !userData.verificationTimer.expiresAt) {
+                    return 0;
+                }
+                
+                const now = Date.now();
+                const timeRemaining = Math.max(0, Math.floor((userData.verificationTimer.expiresAt - now) / 1000));
+                return timeRemaining;
+            }
+
+            // ===== START RESEND TIMER =====
+            async function startResendTimer() {
+                // Clear any existing timer
+                if (resendTimerInterval) {
+                    clearInterval(resendTimerInterval);
+                }
+                
+                // Calculate initial time remaining
+                let timeRemaining = calculateTimeRemaining();
+                
+                // If timer doesn't exist or has expired, create new one
+                if (!userData.verificationTimer || timeRemaining <= 0) {
+                    timeRemaining = 60;
+                    const newCode = generateVerificationCode();
+                    userData.verificationTimer = {
+                        expiresAt: Date.now() + (timeRemaining * 1000),
+                        email: userData.email,
+                        code: newCode
+                    };
+                    
+                    // Send initial code using Resend.com (with 15-minute expiration)
+                    await sendVerificationEmail(userData.email, newCode);
+                }
+                
+                // Update UI
+                updateTimerUI(timeRemaining);
+                
+                // Start timer interval
+                resendTimerInterval = setInterval(() => {
+                    timeRemaining = calculateTimeRemaining();
+                    
+                    if (timeRemaining <= 0) {
+                        clearInterval(resendTimerInterval);
+                        updateTimerUI(timeRemaining);
+                    } else {
+                        updateTimerUI(timeRemaining);
+                    }
+                }, 1000);
+            }
+
+            // ===== UPDATE TIMER UI =====
+            function updateTimerUI(timeRemaining) {
+                countdownElement.textContent = timeRemaining;
+                
+                if (timeRemaining > 0) {
+                    resendTimer.classList.add('active');
+                    resendCodeLink.style.pointerEvents = 'none';
+                    resendCodeLink.style.opacity = '0.5';
+                } else {
+                    resendTimer.classList.remove('active');
+                    resendCodeLink.style.pointerEvents = 'auto';
+                    resendCodeLink.style.opacity = '1';
+                }
+            }
+
+            // ===== CHECK IF EMAIL CHANGED =====
+            function hasEmailChanged() {
+                if (!userData.verificationTimer) {
+                    return true;
+                }
+                
+                return userData.verificationTimer.email !== userData.email;
+            }
+
+            // ===== VERIFICATION CODE INPUT HANDLING =====
+            function setupVerificationCodeInputs() {
+                codeInputs.forEach((input, index) => {
+                    input.addEventListener('input', (e) => {
+                        const value = e.target.value;
+                        
+                        // Only allow digits
+                        if (value && !/^\d$/.test(value)) {
+                            e.target.value = '';
+                            return;
+                        }
+                        
+                        // If a digit was entered, move to next input
+                        if (value && index < codeInputs.length - 1) {
+                            codeInputs[index + 1].focus();
+                        }
+                        
+                        // Update input styling
+                        if (value) {
+                            input.classList.add('filled');
+                        } else {
+                            input.classList.remove('filled');
+                        }
+                        
+                        // Save and validate
+                        validateVerificationCode();
+                    });
+                    
+                    input.addEventListener('keydown', (e) => {
+                        if (e.key === 'Backspace' && !input.value && index > 0) {
+                            codeInputs[index - 1].focus();
+                            codeInputs[index - 1].value = '';
+                            codeInputs[index - 1].classList.remove('filled');
+                            validateVerificationCode();
+                        }
+                    });
+                    
+                    input.addEventListener('paste', (e) => {
+                        e.preventDefault();
+                        const pastedData = e.clipboardData.getData('text').trim();
+                        
+                        if (/^\d{6}$/.test(pastedData)) {
+                            // Fill all inputs with pasted code
+                            for (let i = 0; i < 6; i++) {
+                                codeInputs[i].value = pastedData[i];
+                                codeInputs[i].classList.add('filled');
+                            }
+                            codeInputs[5].focus();
+                            validateVerificationCode();
+                        }
+                    });
+                });
+            }
+
+            // ===== VALIDATE VERIFICATION CODE =====
+            function validateVerificationCode() {
+                let code = '';
+                codeInputs.forEach(input => {
+                    code += input.value;
+                });
+                
+                // Enable button if all 6 digits are entered
+                next8.disabled = code.length !== 6;
+                
+                // Clear error if code is being entered
+                if (code.length > 0) {
+                    codeError.classList.remove('show');
+                }
+                
+                return code.length === 6;
+            }
+
+            // ===== GO TO STEP =====
+            async function goToStep(step) {
+                steps.forEach(s => s.classList.remove('active'));
+                document.getElementById(`step${step}-content`).classList.add('active');
+                updateProgressLine(step);
+                currentStep = step;
+                
+                // Update back to home button visibility
+                updateBackToHomeButton();
+                
+                if (step === 7 && userData.firstName) {
+                    const welcomeTitle = document.getElementById('welcomeTitle');
+                    welcomeTitle.textContent = `Welcome to LAMIKAS, ${userData.firstName}!`;
+                }
+                
+                if (step === 8 && userData.email) {
+                    // Update verification subtitle with email
+                    verificationSubtitle.textContent = `We've sent a 6-digit code to ${userData.email} (expires in 15 minutes)`;
+                    
+                    // Check if email changed
+                    const emailChanged = hasEmailChanged();
+                    
+                    if (emailChanged) {
+                        // If email changed, reset timer state and clear inputs
+                        userData.verificationTimer = null;
+                        userData.verificationCode = null;
+                        codeInputs.forEach(input => {
+                            input.value = '';
+                            input.classList.remove('filled');
+                        });
+                    } else {
+                        // If email didn't change, check if existing code is expired
+                        if (userData.verificationCode && isCodeExpired(userData.verificationCode)) {
+                            // Code expired, clear it
+                            userData.verificationCode = null;
+                            codeInputs.forEach(input => {
+                                input.value = '';
+                                input.classList.remove('filled');
+                            });
+                        } else if (userData.verificationCode) {
+                            // Code still valid, fill inputs
+                            for (let i = 0; i < 6 && i < userData.verificationCode.code.length; i++) {
+                                if (codeInputs[i]) {
+                                    codeInputs[i].value = userData.verificationCode.code[i];
+                                    codeInputs[i].classList.add('filled');
+                                }
+                            }
+                            // Focus the first empty input or the last one if all filled
+                            const firstEmptyIndex = Array.from(codeInputs).findIndex(input => !input.value);
+                            if (firstEmptyIndex >= 0) {
+                                codeInputs[firstEmptyIndex].focus();
+                            } else {
+                                codeInputs[5].focus();
+                            }
+                        } else {
+                            // No stored code, clear inputs
+                            codeInputs.forEach(input => {
+                                input.value = '';
+                                input.classList.remove('filled');
+                            });
+                        }
+                    }
+                    
+                    // Start/resume timer (this will send the email)
+                    await startResendTimer();
+                    
+                    // Focus first input if no code is entered
+                    if (!userData.verificationCode || isCodeExpired(userData.verificationCode)) {
+                        codeInputs[0].focus();
+                    }
+                    
+                    // Validate verification code (this will enable/disable the button)
+                    validateVerificationCode();
+                    
+                    // Clear any previous error
+                    codeError.classList.remove('show');
+                }
+                
+                // Close dropdown if open
+                if (countryDropdown) {
+                    countryDropdown.classList.remove('active');
+                    countryChevron.style.transform = 'rotate(0deg)';
+                }
+                
+                // Reset terms checkbox when leaving step 10
+                if (step !== 10) {
+                    hideTermsCheckbox();
+                }
+                
+                // Update prices when showing plan screens
+                if (step === 5 || (step === 4 && allPlansView.classList.contains('active'))) {
+                    updateAllPrices();
+                }
+                
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // ===== INITIALIZE OPTION CARDS =====
+            document.querySelectorAll('.option-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const stepId = this.closest('.question-step').id.replace('-content', '');
+                    const value = this.getAttribute('data-value');
+                    
+                    document.querySelectorAll(`#${stepId}-content .option-card`).forEach(c => {
+                        c.classList.remove('selected');
+                    });
+                    
+                    this.classList.add('selected');
+                    
+                    if (stepId === 'step1') {
+                        userData.paymentType = value;
+                        next1.disabled = false;
+                        updateAllPrices();
+                    } else if (stepId === 'step2') {
+                        userData.userType = value;
+                        next2.disabled = false;
+                    } else if (stepId === 'step3') {
+                        userData.unitCount = value;
+                        
+                        // Show/hide enterprise units input
+                        if (value === 'more-than-100') {
+                            enterpriseUnitsInput.style.display = 'block';
+                            enterpriseUnitInput.focus();
+                            next3.disabled = true; // Disable until valid number entered
+                            customUnitsIcon.style.backgroundColor = 'var(--primary)';
+                            customUnitsIcon.style.color = 'var(--white)';
+                        } else {
+                            enterpriseUnitsInput.style.display = 'none';
+                            enterpriseUnitInput.value = '';
+                            enterpriseUnitsError.classList.remove('show');
+                            enterpriseUnitInput.classList.remove('error');
+                            userData.enterpriseUnits = null;
+                            next3.disabled = false; // Enable for other options
+                            customUnitsIcon.style.backgroundColor = 'var(--gray-200)';
+                            customUnitsIcon.style.color = 'var(--gray-700)';
+                        }
+                    } else if (stepId === 'step4') {
+                        userData.challenge = value;
+                        next4.disabled = false;
+                    }
+                });
+            });
+
+            // ===== ENTERPRISE UNITS INPUT HANDLING =====
+            enterpriseUnitInput.addEventListener('input', function(e) {
+                const value = e.target.value;
+                
+                // Allow only numbers
+                e.target.value = value.replace(/\D/g, '');
+                
+                // Validate
+                validateEnterpriseUnits();
+                
+                // Update enterprise price in all plans view
+                if (enterprisePrice && userData.enterpriseUnits) {
+                    updatePriceElement(enterprisePrice, '', true);
+                }
+            });
+
+            // ===== GET RECOMMENDED PLAN =====
+            function getRecommendedPlan() {
+                const unitRange = userData.unitCount;
+                
+                if (unitRange === 'more-than-100') {
+                    return 'enterprise';
+                } else if (unitRange === '1-5') {
+                    return 'starter';
+                } else if (unitRange === '6-20') {
+                    return 'essential';
+                } else if (unitRange === '21-50') {
+                    return 'professional';
+                } else {
+                    return 'business';
+                }
+            }
+            
+            // ===== GENERATE SINGLE RECOMMENDATION =====
+            function generateSingleRecommendation() {
+                userData.recommendedPlan = getRecommendedPlan();
+                const planKey = userData.selectedPlan || userData.recommendedPlan;
+                const plan = plans[planKey];
+                
+                const isSelected = !!userData.selectedPlan;
+                const isRecommendedPlan = planKey === userData.recommendedPlan && !userData.selectedPlan;
+                const isEnterprise = planKey === 'enterprise';
+                
+                // Add or remove enterprise recommendation class
+                const step5Container = document.getElementById('step5-container');
+                if (isEnterprise) {
+                    step5Container.classList.add('enterprise-recommendation');
+                } else {
+                    step5Container.classList.remove('enterprise-recommendation');
+                }
+                
+                let challengeText = '';
+                if (userData.challenge) {
+                    switch(userData.challenge) {
+                        case 'rent-collection':
+                            challengeText = 'automated M-Pesa payments and payment reminders';
+                            break;
+                        case 'maintenance':
+                            challengeText = 'maintenance request tracking and contractor management';
+                            break;
+                        case 'communication':
+                            challengeText = 'bulk SMS messaging and tenant portal';
+                            break;
+                        case 'financial-tracking':
+                            challengeText = 'detailed financial reports and expense tracking';
+                            break;
+                        default:
+                            challengeText = 'all the tools you need';
+                    }
+                }
+                
+                if (isEnterprise) {
+                    // Generate enterprise recommendation
+                    const priceData = userData.enterpriseUnits ? 
+                        getEnterprisePriceDisplay(userData.enterpriseUnits) : 
+                        { totalPrice: '109.89', pricePerUnit: '1.09' };
+                    
+                    const priceHTML = userData.paymentType === 'free-trial' 
+                        ? `
+                            <div class="plan-price">
+                                <span class="free-trial-text">Free for 7 days</span>
+                                <span class="free-trial-subtext">then $${priceData.totalPrice}/month</span>
+                            </div>
+                            <div class="price-note">Start with 7-day free trial • No credit card required</div>
+                        `
+                        : `
+                            <div class="plan-price">
+                                <span class="regular-price">$${priceData.totalPrice}<span class="price-period">/month</span></span>
+                            </div>
+                            <div class="price-note">14-day free trial • No credit card required</div>
+                        `;
+                    
+                    const recommendationHTML = `
+                        ${isSelected ? '<div class="recommendation-badge" style="background-color: var(--secondary);">Selected Plan</div>' : 
+                          isRecommendedPlan ? '<div class="recommendation-badge">Recommended Plan</div>' : ''}
+                        <h3 class="recommendation-title">${plan.name}</h3>
+                        <p class="recommendation-description">
+                            Based on your ${userData.userType.replace('-', ' ')} role with ${userData.enterpriseUnits || '100+'} units, 
+                            this enterprise plan includes ${challengeText}. Price per unit: $${priceData.pricePerUnit}
+                        </p>
+                        
+                        <div class="plan-features">
+                            ${plan.features.map(feature => `
+                                <div class="plan-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>${feature}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        ${priceHTML}
+                    `;
+                    
+                    // Show enterprise card, hide standard card
+                    standardRecommendationCard.style.display = 'none';
+                    enterpriseRecommendationCard.style.display = 'block';
+                    enterpriseRecommendationCard.innerHTML = recommendationHTML;
+                    
+                } else {
+                    // Generate standard plan recommendation
+                    const priceHTML = userData.paymentType === 'free-trial' 
+                        ? `
+                            <div class="plan-price">
+                                <span class="free-trial-text">Free for 7 days</span>
+                                <span class="free-trial-subtext">then ${plan.price}/month</span>
+                            </div>
+                            <div class="price-note">Start with 7-day free trial • No credit card required</div>
+                        `
+                        : `
+                            <div class="plan-price">
+                                <span class="regular-price">${plan.price}<span class="price-period">/month</span></span>
+                            </div>
+                            <div class="price-note">14-day free trial • No credit card required</div>
+                        `;
+                    
+                    const recommendationHTML = `
+                        ${isSelected ? '<div class="recommendation-badge" style="background-color: var(--secondary);">Selected Plan</div>' : 
+                          isRecommendedPlan ? '<div class="recommendation-badge">Recommended Plan</div>' : ''}
+                        <h3 class="recommendation-title">${plan.name}</h3>
+                        <p class="recommendation-description">
+                            ${userData.userType && userData.unitCount ? 
+                                `Based on your ${userData.userType.replace('-', ' ')} role with ${userData.unitCount} units, 
+                                this plan includes ${challengeText}.` : 
+                                plan.description}
+                        </p>
+                        
+                        <div class="plan-features">
+                            ${plan.features.map(feature => `
+                                <div class="plan-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>${feature}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        ${priceHTML}
+                    `;
+                    
+                    // Show standard card, hide enterprise card
+                    standardRecommendationCard.style.display = 'block';
+                    enterpriseRecommendationCard.style.display = 'none';
+                    standardRecommendationCard.innerHTML = recommendationHTML;
+                }
+            }
+
+            // ===== GENERATE DYNAMIC PLANS VIEW =====
+            function generateDynamicPlansView() {
+                // Clear the dynamic container
+                dynamicPlansContainer.innerHTML = '';
+                
+                // Get the current plan (selected or recommended)
+                const currentPlanKey = userData.selectedPlan || userData.recommendedPlan;
+                
+                // Get all plan keys except the current one
+                const otherPlanKeys = planOrder.filter(key => key !== currentPlanKey);
+                
+                // Generate plan cards for the other 4 plans
+                otherPlanKeys.forEach(planKey => {
+                    const plan = plans[planKey];
+                    const isEnterprise = planKey === 'enterprise';
+                    const isRecommended = planKey === userData.recommendedPlan;
+                    
+                    const planCard = document.createElement('div');
+                    planCard.className = `plan-card ${isEnterprise ? 'enterprise-plan-card' : ''}`;
+                    planCard.setAttribute('data-plan', planKey);
+                    
+                    let badgeHTML = '';
+                    if (planKey === userData.selectedPlan) {
+                        badgeHTML = `<div class="plan-badge ${isEnterprise ? 'enterprise' : ''} selected-badge">Selected Plan</div>`;
+                    } else if (isRecommended) {
+                        badgeHTML = `<div class="plan-badge ${isEnterprise ? 'enterprise' : ''} recommended">Recommended for you</div>`;
+                    }
+                    
+                    const priceHTML = isEnterprise ? formatPrice(planKey, true) : formatPrice(planKey);
+                    
+                    const priceNote = userData.paymentType === 'free-trial' 
+                        ? 'Start with 7-day free trial • No credit card required'
+                        : '14-day free trial • No credit card required';
+                    
+                    planCard.innerHTML = `
+                        ${badgeHTML}
+                        <h3 class="plan-title">${plan.name}</h3>
+                        <p class="plan-description">${plan.description}</p>
+                        
+                        <div class="plan-features-list">
+                            ${plan.features.map(feature => `
+                                <div class="plan-feature-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>${feature}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        <div>
+                            <div class="plan-price-container">
+                                <div class="plan-price">
+                                    ${priceHTML}
+                                </div>
+                            </div>
+                            <p class="price-note">${priceNote}</p>
+                            
+                            <button class="btn ${planKey === userData.selectedPlan ? (isEnterprise ? 'btn-enterprise' : 'btn-primary') : 'btn-outline'} select-plan-btn" 
+                                    data-plan="${planKey}"
+                                    ${planKey === userData.selectedPlan ? 'disabled' : ''}>
+                                ${planKey === userData.selectedPlan ? 'Selected' : 'Select This Plan'}
+                            </button>
+                        </div>
+                    `;
+                    
+                    dynamicPlansContainer.appendChild(planCard);
+                });
+                
+                // Setup click events for the new plan cards
+                setupDynamicPlanCardClicks();
+            }
+
+            // ===== SETUP DYNAMIC PLAN CARD CLICKS =====
+            function setupDynamicPlanCardClicks() {
+                dynamicPlansContainer.querySelectorAll('.select-plan-btn').forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const planKey = this.getAttribute('data-plan');
+                        selectPlan(planKey);
+                    });
+                });
+                
+                dynamicPlansContainer.querySelectorAll('.plan-card').forEach(card => {
+                    card.addEventListener('click', function(e) {
+                        if (!e.target.classList.contains('select-plan-btn')) {
+                            const planKey = this.getAttribute('data-plan');
+                            selectPlan(planKey);
+                        }
+                    });
+                });
+            }
+
+            // ===== SHOW ALL PLANS =====
+            function showAllPlans() {
+                // Hide the static plans container
+                staticPlansContainer.style.display = 'none';
+                
+                // Generate and show dynamic plans
+                generateDynamicPlansView();
+                dynamicPlansContainer.style.display = 'flex';
+                
+                singleRecommendationView.style.display = 'none';
+                allPlansView.classList.add('active');
+                
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // ===== SHOW SINGLE RECOMMENDATION =====
+            function showSingleRecommendation() {
+                // Hide dynamic plans container
+                dynamicPlansContainer.style.display = 'none';
+                // Show static plans container (hidden)
+                staticPlansContainer.style.display = 'none';
+                
+                singleRecommendationView.style.display = 'flex';
+                allPlansView.classList.remove('active');
+                
+                generateSingleRecommendation();
+            }
+
+            // ===== SELECT PLAN FROM ALL VIEW =====
+            function selectPlan(planKey) {
+                userData.selectedPlan = planKey;
+                
+                // Update the UI immediately
+                if (allPlansView.classList.contains('active')) {
+                    // We're in the all plans view, update it
+                    generateDynamicPlansView();
+                }
+                
+                setTimeout(() => {
+                    showSingleRecommendation();
+                }, 800);
+            }
+
+            // ===== SETUP PLAN CARD CLICKS =====
+            function setupPlanCardClicks() {
+                document.addEventListener('click', function(e) {
+                    if (e.target.classList.contains('select-plan-btn')) {
+                        const planKey = e.target.getAttribute('data-plan');
+                        selectPlan(planKey);
+                    }
+                    
+                    if (e.target.closest('.plan-card') && !e.target.classList.contains('select-plan-btn')) {
+                        const card = e.target.closest('.plan-card');
+                        const planKey = card.getAttribute('data-plan');
+                        selectPlan(planKey);
+                    }
+                });
+            }
+
+            // ===== PHONE FORMATTING FUNCTIONS =====
+            function getDigitsOnly(str) {
+                return str.replace(/\D/g, '');
+            }
+
+            function formatPhoneNumber(value, pattern) {
+                const digits = getDigitsOnly(value);
+                let result = '';
+                let digitIndex = 0;
+                
+                for (let i = 0; i < pattern.length; i++) {
+                    if (digitIndex >= digits.length) break;
+                    
+                    if (pattern[i] === '#') {
+                        result += digits[digitIndex];
+                        digitIndex++;
+                    } else {
+                        result += pattern[i];
+                    }
+                }
+                
+                return result;
+            }
+
+            function updatePhonePlaceholder(country) {
+                phoneInput.placeholder = country.format;
+            }
+
+            function updatePhoneInputForCountry(country) {
+                selectedCountry = country;
+                userData.countryCode = country.dialCode;
+                userData.countryName = country.name;
+                
+                countryFlag.className = `country-flag fi fi-${country.code.toLowerCase()}`;
+                countryCode.textContent = country.dialCode;
+                
+                updatePhonePlaceholder(country);
+                
+                phoneInput.value = '';
+                
+                validatePhoneStep();
+                
+                countryDropdown.classList.remove('active');
+                countryChevron.style.transform = 'rotate(0deg)';
+            }
+            
+            function handlePhoneInput() {
+                const cursorPosition = phoneInput.selectionStart;
+                const oldValue = phoneInput.value;
+                const digits = getDigitsOnly(oldValue);
+                
+                const limitedDigits = digits.substring(0, selectedCountry.maxLength);
+                
+                const formatted = formatPhoneNumber(limitedDigits, selectedCountry.pattern);
+                phoneInput.value = formatted;
+                
+                if (cursorPosition === oldValue.length) {
+                    phoneInput.setSelectionRange(formatted.length, formatted.length);
+                } else {
+                    const newCursorPosition = Math.min(cursorPosition, formatted.length);
+                    phoneInput.setSelectionRange(newCursorPosition, newCursorPosition);
+                }
+                
+                validatePhoneStep();
+            }
+
+            // ===== PHONE VALIDATION =====
+            function validatePhoneStep() {
+                const digits = getDigitsOnly(phoneInput.value);
+                const minLength = Math.max(5, Math.floor(selectedCountry.maxLength * 0.7));
+                next9.disabled = digits.length < minLength;
+            }
+
+            // ===== FIRST NAME VALIDATION =====
+            function validateFirstName() {
+                const firstName = document.getElementById('firstName').value.trim();
+                const hasLetters = /[a-zA-Z]{2,}/.test(firstName);
+                
+                if (firstName.length < 2 || !hasLetters) {
+                    firstNameError.classList.add('show');
+                    document.getElementById('firstName').classList.add('error');
+                    return false;
+                } else {
+                    firstNameError.classList.remove('show');
+                    document.getElementById('firstName').classList.remove('error');
+                    return true;
+                }
+            }
+
+            // ===== PASSWORD VALIDATION =====
+            function validatePassword() {
+                const password = passwordInput.value;
+                const confirmPassword = confirmPasswordInput.value;
+                
+                let isValid = true;
+                
+                passwordError.textContent = '';
+                passwordError.classList.remove('show');
+                confirmPasswordError.textContent = '';
+                confirmPasswordError.classList.remove('show');
+                passwordInput.classList.remove('error');
+                confirmPasswordInput.classList.remove('error');
+                
+                if (password.length < 8) {
+                    passwordError.textContent = 'Password must be at least 8 characters';
+                    passwordError.classList.add('show');
+                    passwordInput.classList.add('error');
+                    isValid = false;
+                }
+                
+                if (!/(?=.*[A-Za-z])(?=.*\d)/.test(password)) {
+                    passwordError.textContent = 'Password must include both letters and numbers';
+                    passwordError.classList.add('show');
+                    passwordInput.classList.add('error');
+                    isValid = false;
+                }
+                
+                if (confirmPassword && password !== confirmPassword) {
+                    confirmPasswordError.textContent = 'Passwords do not match';
+                    confirmPasswordError.classList.add('show');
+                    confirmPasswordInput.classList.add('error');
+                    isValid = false;
+                }
+                
+                if (isValid && password && confirmPassword && password === confirmPassword) {
+                    showTermsCheckbox();
+                } else {
+                    hideTermsCheckbox();
+                }
+                
+                return isValid;
+            }
+
+            // ===== TERMS CHECKBOX FUNCTIONS =====
+            function showTermsCheckbox() {
+                termsContainer.classList.add('show');
+                setTimeout(() => {
+                    termsContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 300);
+            }
+
+            function hideTermsCheckbox() {
+                termsContainer.classList.remove('show');
+                termsCheckbox.checked = false;
+                termsError.classList.remove('show');
+            }
+
+            function validateTerms() {
+                if (!termsCheckbox.checked) {
+                    termsError.classList.add('show');
+                    return false;
+                } else {
+                    termsError.classList.remove('show');
+                    return true;
+                }
+            }
+
+            // ===== INITIALIZE COUNTRY DROPDOWN =====
+            function initializeCountryDropdown() {
+                const sortedCountries = [...allCountries].sort((a, b) => a.name.localeCompare(b.name));
+                
+                countryList.innerHTML = '';
+                
+                sortedCountries.forEach(country => {
+                    const option = document.createElement('div');
+                    option.className = 'country-option';
+                    if (country.code === 'US') {
+                        option.classList.add('selected');
+                    }
+                    option.innerHTML = `
+                        <span class="country-flag fi fi-${country.code.toLowerCase()}"></span>
+                        <span class="country-option-name">${country.name}</span>
+                        <span class="country-code">${country.dialCode}</span>
+                    `;
+                    
+                    option.addEventListener('click', () => {
+                        updatePhoneInputForCountry(country);
+                        
+                        document.querySelectorAll('.country-option').forEach(opt => {
+                            opt.classList.remove('selected');
+                        });
+                        option.classList.add('selected');
+                    });
+                    
+                    countryList.appendChild(option);
+                });
+                
+                countrySearch.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                });
+                
+                countrySearch.addEventListener('input', (e) => {
+                    const searchTerm = e.target.value.toLowerCase();
+                    const options = countryList.querySelectorAll('.country-option');
+                    
+                    if (searchTerm === '') {
+                        options.forEach(option => {
+                            option.style.display = 'flex';
+                        });
+                    } else {
+                        options.forEach(option => {
+                            const countryName = option.querySelector('.country-option-name').textContent.toLowerCase();
+                            const isVisible = countryName.startsWith(searchTerm);
+                            option.style.display = isVisible ? 'flex' : 'none';
+                        });
+                    }
+                });
+                
+                countrySelector.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    countryDropdown.classList.toggle('active');
+                    countryChevron.style.transform = countryDropdown.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+                    
+                    if (countryDropdown.classList.contains('active')) {
+                        const options = countryList.querySelectorAll('.country-option');
+                        options.forEach(option => {
+                            option.style.display = 'flex';
+                        });
+                        
+                        countrySearch.value = '';
+                        setTimeout(() => {
+                            countrySearch.focus();
+                        }, 100);
+                    }
+                });
+                
+                document.addEventListener('click', (e) => {
+                    if (!countrySelector.contains(e.target) && !countryDropdown.contains(e.target)) {
+                        countryDropdown.classList.remove('active');
+                        countryChevron.style.transform = 'rotate(0deg)';
+                    }
+                });
+                
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && countryDropdown.classList.contains('active')) {
+                        countryDropdown.classList.remove('active');
+                        countryChevron.style.transform = 'rotate(0deg)';
+                    }
+                });
+            }
+
+            // ===== PASSWORD INPUT CLEAR ERROR ON TYPING =====
+            passwordInput.addEventListener('input', function() {
+                validatePassword();
+            });
+
+            confirmPasswordInput.addEventListener('input', function() {
+                validatePassword();
+            });
+
+            // ===== TERMS CHECKBOX CHANGE =====
+            termsCheckbox.addEventListener('change', function() {
+                validateTerms();
+            });
+
+            // ===== EMAIL NOTIFICATION CLOSE =====
+            emailNotificationClose.addEventListener('click', hideEmailNotification);
+
+            // ===== ENTER KEY SUPPORT =====
+            function setupEnterKeySupport() {
+                document.addEventListener('keydown', function(e) {
+                    if (e.key !== 'Enter') return;
+                    if (e.target.id === 'countrySearch') return;
+                    if (countryDropdown && countryDropdown.classList.contains('active')) return;
+                    
+                    e.preventDefault();
+                    
+                    switch(currentStep) {
+                        case 1:
+                            if (!next1.disabled) next1.click();
+                            break;
+                        case 2:
+                            if (!next2.disabled) next2.click();
+                            break;
+                        case 3:
+                            if (!next3.disabled) next3.click();
+                            break;
+                        case 4:
+                            if (!next4.disabled) next4.click();
+                            break;
+                        case 5:
+                            if (allPlansView.classList.contains('active')) {
+                                return;
+                            }
+                            confirmPlan.click();
+                            break;
+                        case 6:
+                            next6.click();
+                            break;
+                        case 7:
+                            if (!next7.disabled) next7.click();
+                            break;
+                        case 8:
+                            if (!next8.disabled) next8.click();
+                            break;
+                        case 9:
+                            if (!next9.disabled) next9.click();
+                            break;
+                        case 10:
+                            next10.click();
+                            break;
+                    }
+                });
+            }
+
+            // ===== COMPLETE REGISTRATION FUNCTION =====
+            async function completeRegistration(userData) {
+                showLoading(true);
+                
+                try {
+                    // Check if verification code is expired
+                    if (userData.verificationCode && isCodeExpired(userData.verificationCode)) {
+                        throw new Error('Verification code has expired. Please request a new code.');
+                    }
+                    
+                    // Prepare enterprise data
+                    const enterpriseData = userData.recommendedPlan === 'enterprise' ? {
+                        enterpriseUnits: userData.enterpriseUnits,
+                        enterprisePrice: userData.enterpriseUnits ? 
+                            getEnterprisePriceDisplay(userData.enterpriseUnits).totalPrice : null
+                    } : {};
+                    
+                    // Call your Netlify function
+                    const response = await fetch('/.netlify/functions/auth', {
+                        method: 'POST',
+                        headers: { 
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            action: 'register',
+                            email: userData.email,
+                            password: userData.password,
+                            firstName: userData.firstName,
+                            lastName: userData.lastName,
+                            userType: userData.userType,
+                            unitCount: userData.unitCount,
+                            challenge: userData.challenge,
+                            selectedPlan: userData.selectedPlan || userData.recommendedPlan,
+                            paymentType: userData.paymentType,
+                            phone: userData.phone,
+                            countryCode: userData.countryCode,
+                            countryName: userData.countryName,
+                            verificationCode: userData.verificationCode ? userData.verificationCode.code : null,
+                            ...enterpriseData
+                        })
+                    });
+
+                    const result = await response.json();
+                    
+                    if (!response.ok) {
+                        throw new Error(result.error || 'Registration failed');
+                    }
+
+                    // Store user data
+                    localStorage.setItem('lamikas_user', JSON.stringify({
+                        ...userData,
+                        id: result.user?.id,
+                        createdAt: new Date().toISOString()
+                    }));
+
+                    // If autoLogin is enabled, store token
+                    if (result.autoLogin && result.session) {
+                        localStorage.setItem('lamikas_auth_token', result.session.access_token);
+                    }
+
+                    // Show success and redirect
+                    goToStep(11);
+                    
+                    // Redirect to dashboard after 2 seconds
+                    setTimeout(() => {
+                        window.location.href = 'dashboard.html';
+                    }, 2000);
+
+                } catch (error) {
+                    console.error('Registration error:', error);
+                    
+                    // Show error message
+                    const errorDiv = document.createElement('div');
+                    errorDiv.className = 'fixed top-4 right-4 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg shadow-lg z-50 max-w-md';
+                    errorDiv.innerHTML = `
+                        <div class="flex items-start">
+                            <i class="fas fa-exclamation-circle text-red-500 mt-0.5 mr-3"></i>
+                            <div>
+                                <p class="font-semibold">Registration Failed</p>
+                                <p class="text-sm mt-1">${error.message}</p>
+                                <button onclick="this.parentElement.parentElement.parentElement.remove()" 
+                                        class="mt-2 text-sm text-red-600 hover:text-red-800">
+                                    Dismiss
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    document.body.appendChild(errorDiv);
+                    
+                    // Remove error after 10 seconds
+                    setTimeout(() => {
+                        if (errorDiv.parentElement) {
+                            errorDiv.remove();
+                        }
+                    }, 10000);
+                } finally {
+                    showLoading(false);
+                }
+            }
+
+            // ===== EVENT LISTENERS =====
+            // Step 1-4 navigation
+            next1.addEventListener('click', () => {
+                if (userData.paymentType) {
+                    goToStep(2);
+                }
+            });
+
+            next2.addEventListener('click', () => {
+                if (userData.userType) {
+                    goToStep(3);
+                }
+            });
+
+            next3.addEventListener('click', () => {
+                if (userData.unitCount === 'more-than-100') {
+                    if (userData.enterpriseUnits && userData.enterpriseUnits >= 101) {
+                        goToStep(4);
+                    }
+                } else if (userData.unitCount) {
+                    goToStep(4);
+                }
+            });
+
+            next4.addEventListener('click', () => {
+                if (userData.challenge) {
+                    generateSingleRecommendation();
+                    goToStep(5);
+                }
+            });
+
+            confirmPlan.addEventListener('click', () => {
+                goToStep(6);
+            });
+
+            seeOtherPlans.addEventListener('click', () => {
+                showAllPlans();
+            });
+
+            // All plans back button
+            allPlansBackBtn.addEventListener('click', () => {
+                showSingleRecommendation();
+            });
+
+            // Back buttons
+            back2.addEventListener('click', () => goToStep(1));
+            back3.addEventListener('click', () => goToStep(2));
+            back4.addEventListener('click', () => goToStep(3));
+            back5.addEventListener('click', () => {
+                if (allPlansView.classList.contains('active')) {
+                    showSingleRecommendation();
+                } else {
+                    goToStep(4);
+                }
+            });
+            back6.addEventListener('click', () => goToStep(5));
+            back7.addEventListener('click', () => goToStep(6));
+            back8.addEventListener('click', () => goToStep(7));
+            back9.addEventListener('click', () => goToStep(8));
+            back10.addEventListener('click', () => goToStep(9));
+
+            // Step 6: Name with validation
+            const firstNameInput = document.getElementById('firstName');
+            firstNameInput.addEventListener('input', validateFirstName);
+            
+            next6.addEventListener('click', () => {
+                const firstName = firstNameInput.value.trim();
+                const lastName = document.getElementById('lastName').value.trim();
+                
+                if (validateFirstName() && lastName) {
+                    userData.firstName = firstName;
+                    userData.lastName = lastName;
+                    goToStep(7);
+                } else {
+                    if (!lastName) document.getElementById('lastName').classList.add('error');
+                }
+            });
+
+            // Step 7: Email
+            const emailInput = document.getElementById('email');
+            emailInput.addEventListener('input', function() {
+                const email = this.value.trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                next7.disabled = !emailRegex.test(email);
+                this.classList.remove('error');
+            });
+
+            next7.addEventListener('click', () => {
+                const email = emailInput.value.trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                
+                if (emailRegex.test(email)) {
+                    userData.email = email;
+                    goToStep(8);
+                } else {
+                    emailInput.classList.add('error');
+                }
+            });
+
+            // Step 8: Verification Code
+            next8.addEventListener('click', () => {
+                let enteredCode = '';
+                codeInputs.forEach(input => {
+                    enteredCode += input.value;
+                });
+                
+                // Check if code has 6 digits
+                if (enteredCode.length === 6 && /^\d{6}$/.test(enteredCode)) {
+                    // Check if stored verification code exists and is not expired
+                    if (userData.verificationCode && !isCodeExpired(userData.verificationCode)) {
+                        // Verify the entered code matches
+                        if (enteredCode === userData.verificationCode.code) {
+                            // Code is valid and not expired
+                            codeError.classList.remove('show');
+                            
+                            // Proceed to next step
+                            goToStep(9);
+                        } else {
+                            // Code doesn't match
+                            codeError.textContent = 'Invalid verification code. Please try again.';
+                            codeError.classList.add('show');
+                        }
+                    } else {
+                        // Code expired or doesn't exist
+                        codeError.textContent = 'Verification code has expired. Please request a new code.';
+                        codeError.classList.add('show');
+                        
+                        // Clear inputs
+                        codeInputs.forEach(input => {
+                            input.value = '';
+                            input.classList.remove('filled');
+                        });
+                        
+                        // Disable verify button
+                        next8.disabled = true;
+                        
+                        // Clear stored code
+                        userData.verificationCode = null;
+                    }
+                } else {
+                    // Invalid code format
+                    codeError.textContent = 'Please enter a valid 6-digit code.';
+                    codeError.classList.add('show');
+                }
+            });
+
+            // Resend code link
+            resendCodeLink.addEventListener('click', async (e) => {
+                e.preventDefault();
+                
+                const timeRemaining = calculateTimeRemaining();
+                
+                if (timeRemaining <= 0 && userData.email) {
+                    // Generate new timer
+                    const newCode = generateVerificationCode();
+                    userData.verificationTimer = {
+                        expiresAt: Date.now() + (60 * 1000),
+                        email: userData.email,
+                        code: newCode
+                    };
+                    
+                    // Send new code using Resend.com (with 15-minute expiration)
+                    await sendVerificationEmail(userData.email, newCode);
+                    
+                    // Clear stored verification code
+                    userData.verificationCode = null;
+                    
+                    // Clear inputs
+                    codeInputs.forEach(input => {
+                        input.value = '';
+                        input.classList.remove('filled');
+                    });
+                    
+                    // Focus first input
+                    codeInputs[0].focus();
+                    
+                    // Restart timer
+                    startResendTimer();
+                    
+                    // Disable verify button
+                    next8.disabled = true;
+                    
+                    // Update verification subtitle
+                    verificationSubtitle.textContent = `We've sent a new 6-digit code to ${userData.email} (expires in 15 minutes)`;
+                }
+            });
+
+            // Step 9: Phone with auto-formatting
+            phoneInput.addEventListener('input', handlePhoneInput);
+            
+            next9.addEventListener('click', () => {
+                const digits = getDigitsOnly(phoneInput.value);
+                const minLength = Math.max(5, Math.floor(selectedCountry.maxLength * 0.7));
+                
+                if (digits.length >= minLength) {
+                    userData.phone = selectedCountry.dialCode + digits;
+                    goToStep(10);
+                } else {
+                    phoneInput.classList.add('error');
+                }
+            });
+
+            // Password toggle
+            togglePassword.addEventListener('click', function() {
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    this.innerHTML = '<i class="fas fa-eye-slash"></i>';
+                } else {
+                    passwordInput.type = 'password';
+                    this.innerHTML = '<i class="fas fa-eye"></i>';
+                }
+            });
+
+            // Step 10: Password with terms validation
+            next10.addEventListener('click', async () => {
+                if (!validatePassword()) {
+                    return;
+                }
+                
+                if (!validateTerms()) {
+                    return;
+                }
+                
+                const password = passwordInput.value;
+                const confirmPassword = confirmPasswordInput.value;
+                
+                if (password === confirmPassword && termsCheckbox.checked) {
+                    userData.password = password;
+                    
+                    // Complete registration
+                    await completeRegistration(userData);
+                }
+            });
+
+            // ===== INITIALIZE =====
+            updateProgressLine(1);
+            updateBackToHomeButton();
+            initializeCountryDropdown();
+            updatePhonePlaceholder(selectedCountry);
+            setupEnterKeySupport();
+            setupPlanCardClicks();
+            setupVerificationCodeInputs();
+            
+            next9.disabled = true; // Phone step
+        });
+
+        // Loading overlay functions
+        function showLoading(show) {
+            document.getElementById('loadingOverlay').classList.toggle('active', show);
+        }
+    </script>
+</body>
+</html>

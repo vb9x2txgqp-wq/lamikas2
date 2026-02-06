@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | LAMIKAS</title>
+    <meta name="description" content="Frequently asked questions about LAMIKAS - Africa's property management platform. Get answers about features, pricing, security, and more.">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== LAMIKAS PROPERTY MANAGEMENT CSS (Same as index.html) ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Primary Colors - Professional Blue Theme */
+            --primary: #1a365d;
+            --primary-dark: #0d243f;
+            --primary-medium: #2c5282;
+            --primary-light: #4299e1;
+            --primary-lighter: #bee3f8;
+            
+            /* Secondary Colors */
+            --secondary: #2d3748;
+            --secondary-light: #4a5568;
+            
+            /* Accent Colors */
+            --accent: #38b2ac;
+            --accent-light: #81e6d9;
+            
+            /* Success Colors */
+            --success: #38a169;
+            --warning: #d69e2e;
+            --danger: #e53e3e;
+            --info: #3182ce;
+            
+            /* Neutral Colors */
+            --dark: #1a202c;
+            --gray-900: #2d3748;
+            --gray-800: #4a5568;
+            --gray-700: #718096;
+            --gray-600: #a0aec0;
+            --gray-500: #cbd5e0;
+            --gray-400: #e2e8f0;
+            --gray-300: #edf2f7;
+            --gray-200: #f7fafc;
+            --white: #ffffff;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+            
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 14px;
+            --radius-xl: 20px;
+            --radius-full: 9999px;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            --space-3xl: 6rem;
+            
+            /* Typography */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--dark);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--primary-medium);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            padding: var(--space-3xl) 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-title {
+            margin-bottom: var(--space-sm);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--gray-700);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.875rem 2rem;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.5;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-medium) 100%);
+            color: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            font-weight: 600;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-login {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary-medium);
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+        }
+
+        .btn-login:hover {
+            background-color: var(--primary-lighter);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+            color: var(--primary);
+        }
+
+        .btn-text {
+            background-color: transparent;
+            color: var(--primary);
+            border: none;
+            padding: 0.5rem 1rem;
+        }
+
+        .btn-text:hover {
+            color: var(--primary-dark);
+            background-color: var(--gray-200);
+        }
+
+        .btn-lg {
+            padding: 1rem 2.5rem;
+            font-size: 1.125rem;
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+
+        .btn-block {
+            width: 100%;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-medium) 100%);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .logo-text {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .logo-subtitle {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            margin-top: -4px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xl);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-lg);
+        }
+
+        .nav-link {
+            color: var(--gray-800);
+            font-weight: 600;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        /* ===== FAQ HERO SECTION ===== */
+        .faq-hero {
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.95) 0%, rgba(44, 82, 130, 0.95) 100%), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: var(--space-3xl) 0;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-hero .container {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            margin-bottom: var(--space-md);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background-color: rgba(255,255,255,0.1);
+            color: var(--white);
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: var(--radius-full);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .text-gradient {
+            background: linear-gradient(90deg, var(--accent-light) 0%, var(--white) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: var(--space-xl) auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.5rem 1rem 3rem;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            border: 2px solid var(--gray-300);
+            border-radius: var(--radius-full);
+            background-color: var(--white);
+            transition: all 0.2s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-lighter);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-600);
+        }
+
+        /* ===== FAQ CONTENT ===== */
+        .faq-content {
+            padding: var(--space-3xl) 0;
+        }
+
+        .faq-categories {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: var(--space-xl);
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 0.75rem 1.5rem;
+            background-color: var(--gray-200);
+            color: var(--gray-700);
+            border: none;
+            border-radius: var(--radius-full);
+            font-family: var(--font-sans);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .category-btn.active,
+        .category-btn:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .faq-grid {
+            display: grid;
+            gap: var(--space-md);
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--primary);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .faq-question {
+            padding: var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background-color: var(--white);
+        }
+
+        .question-text {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1.125rem;
+        }
+
+        .faq-icon {
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 var(--space-lg);
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--gray-700);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 var(--space-lg) var(--space-lg);
+            max-height: 500px;
+        }
+
+        /* ===== POPULAR QUESTIONS ===== */
+        .popular-questions {
+            background-color: var(--gray-200);
+            padding: var(--space-3xl) 0;
+        }
+
+        .popular-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .popular-card {
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            border: 1px solid var(--primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .popular-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .popular-icon {
+            width: 48px;
+            height: 48px;
+            background-color: var(--primary-lighter);
+            color: var(--primary);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-md);
+            font-size: 1.25rem;
+        }
+
+        .popular-question {
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            color: var(--dark);
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-section {
+            padding: var(--space-3xl) 0;
+            text-align: center;
+        }
+
+        .contact-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+
+        .contact-card {
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            border: 1px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-icon {
+            width: 64px;
+            height: 64px;
+            background-color: var(--primary-lighter);
+            color: var(--primary);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-md);
+            font-size: 1.5rem;
+        }
+
+        .contact-title {
+            margin-bottom: var(--space-sm);
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta {
+            padding: var(--space-3xl) 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+        }
+
+        .cta-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            color: var(--white);
+            margin-bottom: var(--space-md);
+        }
+
+        .cta-description {
+            font-size: 1.125rem;
+            margin-bottom: var(--space-xl);
+            opacity: 0.9;
+        }
+
+        .cta-actions {
+            margin-bottom: var(--space-xl);
+        }
+
+        .cta .btn-primary {
+            background-color: var(--white);
+            color: var(--white) !important;
+            border-color: var(--white);
+        }
+
+        .cta .btn-primary:hover {
+            background-color: var(--gray-200);
+            border-color: var(--gray-200);
+            color: var(--primary-dark) !important;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: var(--space-3xl) 0 var(--space-xl);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: var(--space-lg);
+            font-size: 1.25rem;
+        }
+
+        .footer-logo {
+            margin-bottom: var(--space-md);
+        }
+
+        .footer-description {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: var(--space-lg);
+            line-height: 1.8;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: var(--space-sm);
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255,255,255,0.1);
+            color: var(--white);
+            border-radius: var(--radius-full);
+            transition: all 0.2s ease;
+        }
+
+        .footer-social a:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-light);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            padding-top: var(--space-xl);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+        }
+
+        .footer-contact {
+            display: flex;
+            gap: var(--space-lg);
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item i {
+            color: var(--accent-light);
+        }
+
+        .contact-item a, .contact-item span {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .contact-item a:hover {
+            color: var(--white);
+        }
+
+        .footer-copyright {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.875rem;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.25rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: var(--space-lg);
+                box-shadow: var(--shadow-lg);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                align-items: flex-start;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+            
+            .nav-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            .nav-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .nav-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+            
+            .faq-categories {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .category-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-contact {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.75rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section {
+                padding: var(--space-2xl) 0;
+            }
+            
+            .contact-options {
+                grid-template-columns: 1fr;
+            }
+        }
+
+.faq-hero h1.section-title {
+    color: var(--white);
+}
+
+.faq-hero .section-subtitle {
+    color: var(--white);
+}
+
+        /* Section scroll fix */
+        section[id] {
+            scroll-margin-top: 100px;
+        }
+
+        /* For mobile */
+        @media (max-width: 768px) {
+            section[id] {
+                scroll-margin-top: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">L</div>
+                    <div>
+                        <div class="logo-text">LAMIKAS</div>
+                        <div class="logo-subtitle">Property Management</div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <div class="nav-links">
+                    <a href="index.html#features" class="nav-link">Features</a>
+                    <a href="index.html#pricing" class="nav-link">Pricing</a>
+                    <a href="faq.html" class="nav-link active">FAQ</a>
+                    <a href="about.html" class="nav-link">About</a>
+                </div>
+                
+                <div class="nav-actions">
+                    <a href="login.html" class="btn btn-login">Login</a>
+                    <a href="register.html" class="btn btn-primary" style="white-space: nowrap; position: relative; padding: 10px 40px 10px 20px; display: flex; flex-direction: column; align-items: center; line-height: 1.1; text-align: center; min-height: 62px; justify-content: center;">
+                        <div style="display: flex; flex-direction: column; gap: 3px;">
+                            <span style="font-weight: 700; font-size: 15px;">Start Free 7-Day Trial</span>
+                            <span style="font-size: 11px; font-weight: 500; opacity: 0.95; display: flex; align-items: center; justify-content: center; gap: 5px;">
+                                <i class="fas fa-credit-card" style="font-size: 10px;"></i>
+                                No credit card required!
+                            </span>
+                        </div>
+                        <i class="fas fa-arrow-right" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 14px;"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="faq-hero">
+        <div class="container">
+            <div class="hero-badge">
+                <span class="badge">Frequently Asked Questions</span>
+            </div>
+            <h1 class="section-title">How Can We <span class="text-gradient">Help You?</span></h1>
+            <p class="section-subtitle">Find quick answers to common questions about features, pricing, and setup.</p>
+            
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search for questions..." id="faqSearch">
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Questions -->
+    <section class="popular-questions">
+        <div class="container">
+            <h2 class="section-title">Popular Questions</h2>
+	    <div style="height: 20px;"></div>
+            <div style="margin: 20px 0;"></div>
+            <div class="popular-grid">
+                <div class="popular-card" data-category="getting-started" data-question="q1">
+                    <div class="popular-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="popular-question">How do I get started?</h3>
+                    <p>Learn how to set up your account and add your first property in minutes.</p>
+                </div>
+                
+                <div class="popular-card" data-category="pricing" data-question="q6">
+                    <div class="popular-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3 class="popular-question">What's included in the free trial?</h3>
+                    <p>All features are available during your 7-day free trial period.</p>
+                </div>
+                
+                <div class="popular-card" data-category="payments" data-question="q11">
+                    <div class="popular-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3 class="popular-question">Which payment methods are supported?</h3>
+                    <p>M-Pesa, credit/debit cards, and bank transfers are all supported.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Categories -->
+    <section class="faq-content" id="faq">
+        <div class="container">
+            <div class="faq-categories">
+                <button class="category-btn active" data-category="getting-started">
+                    <i class="fas fa-rocket"></i>
+                    Getting Started
+                </button>
+                <button class="category-btn" data-category="features">
+                    <i class="fas fa-cogs"></i>
+                    Features
+                </button>
+                <button class="category-btn" data-category="pricing">
+                    <i class="fas fa-money-bill-wave"></i>
+                    Pricing & Billing
+                </button>
+                <button class="category-btn" data-category="payments">
+                    <i class="fas fa-credit-card"></i>
+                    Payments
+                </button>
+                <button class="category-btn" data-category="security">
+                    <i class="fas fa-shield-alt"></i>
+                    Security & Privacy
+                </button>
+            </div>
+            
+            <!-- Getting Started FAQ -->
+            <div class="faq-category active" id="getting-started">
+                <h3 style="margin-bottom: var(--space-lg);">Getting Started</h3>
+                <div class="faq-grid">
+                    <div class="faq-item active" id="q1">
+                        <div class="faq-question">
+                            <span class="question-text">How do I get started with LAMIKAS?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Getting started is easy! Simply:</p>
+                            <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li>Sign up for a free 7-day trial (no credit card required)</li>
+                                <li>Add your properties and units</li>
+                                <li>Invite your tenants or add them manually</li>
+                                <li>Set up your payment preferences (M-Pesa, bank, card)</li>
+                                <li>Start managing your properties efficiently!</li>
+                            </ol>
+                            <p style="margin-top: 1rem;">Our onboarding wizard will guide you through each step.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" id="q2">
+                        <div class="faq-question">
+                            <span class="question-text">How long does setup take?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Most users can complete basic setup in 15-30 minutes. The time depends on:</p>
+                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li>Number of properties you're adding</li>
+                                <li>How many tenants you have</li>
+                                <li>Whether you're importing existing data</li>
+                            </ul>
+                            <p style="margin-top: 1rem;">Our guided setup makes the process quick and easy.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" id="q3">
+                        <div class="faq-question">
+                            <span class="question-text">Can I import my existing data?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! We support importing data from:</p>
+                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li>Excel/CSV files</li>
+                                <li>Other property management software</li>
+                                <li>Spreadsheets or manual records</li>
+                            </ul>
+                            <p style="margin-top: 1rem;">Contact our support team for assistance with data migration.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Features FAQ -->
+            <div class="faq-category" id="features" style="display: none;">
+                <h3 style="margin-bottom: var(--space-lg);">Features</h3>
+                <div class="faq-grid">
+                    <div class="faq-item" id="q4">
+                        <div class="faq-question">
+                            <span class="question-text">What features are included?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>All plans include:</p>
+                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li>Automated rent collection</li>
+                                <li>Tenant management</li>
+                                <li>Maintenance request tracking</li>
+                                <li>Financial reporting</li>
+                                <li>M-Pesa integration</li>
+                                <li>Mobile app access</li>
+                                <li>Document storage</li>
+                                <li>SMS/email communications</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" id="q5">
+                        <div class="faq-question">
+                            <span class="question-text">Is there a mobile app?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! LAMIKAS has native mobile apps for:</p>
+                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li><strong>iOS</strong> - Available on the App Store</li>
+                                <li><strong>Android</strong> - Available on Google Play Store</li>
+                                <li><strong>Web App</strong> - Works on any mobile browser</li>
+                            </ul>
+                            <p style="margin-top: 1rem;">The mobile app allows you to manage properties, view payments, and communicate with tenants on the go.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pricing FAQ -->
+            <div class="faq-category" id="pricing" style="display: none;">
+                <h3 style="margin-bottom: var(--space-lg);">Pricing & Billing</h3>
+                <div class="faq-grid">
+                    <div class="faq-item" id="q6">
+                        <div class="faq-question">
+                            <span class="question-text">What's included in the free trial?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>The 7-day free trial includes:</p>
+                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li>Access to all features</li>
+                                <li>Unlimited properties and tenants</li>
+                                <li>Full payment processing capabilities</li>
+                                <li>Email and chat support</li>
+                                <li>Mobile app access</li>
+                            </ul>
+                            <p style="margin-top: 1rem;">No credit card is required to start your trial. You can upgrade to a paid plan at any time during or after the trial.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" id="q7">
+                        <div class="faq-question">
+                            <span class="question-text">How does billing work?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Billing is simple and transparent:</p>
+                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li>Monthly or annual billing options</li>
+                                <li>Billed per unit per month</li>
+                                <li>No setup fees or hidden charges</li>
+                                <li>Payment via M-Pesa, card, or bank transfer</li>
+                                <li>Automatic receipts for all payments</li>
+                            </ul>
+                            <p style="margin-top: 1rem;">You can change your plan or cancel at any time.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" id="q8">
+                        <div class="faq-question">
+                            <span class="question-text">Can I change my plan later?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately, and you'll receive a prorated credit or charge for the remainder of your billing period.</p>
+                            <p style="margin-top: 1rem;">To change your plan:</p>
+                            <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li>Go to Account Settings</li>
+                                <li>Click on "Billing"</li>
+                                <li>Select "Change Plan"</li>
+                                <li>Choose your new plan</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" id="q9">
+                        <div class="faq-question">
+                            <span class="question-text">Are there any transaction fees?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We charge minimal transaction fees for payment processing:</p>
+                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li><strong>M-Pesa</strong>: 1% (capped at KSh 100)</li>
+                                <li><strong>Cards</strong>: 2.9% + KSh 10</li>
+                                <li><strong>Bank Transfers</strong>: Free</li>
+                            </ul>
+                            <p style="margin-top: 1rem;">These fees are charged to the tenant or property owner based on your settings. You can choose who pays the transaction fees.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" id="q10">
+                        <div class="faq-question">
+                            <span class="question-text">What happens after my free trial?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>After your 7-day free trial:</p>
+                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li>You'll receive a reminder email 3 days before the trial ends</li>
+                                <li>You can choose to upgrade to a paid plan</li>
+                                <li>If you don't upgrade, your account will be paused</li>
+                                <li>Your data is preserved for 30 days</li>
+                                <li>You can reactivate at any time by choosing a plan</li>
+                            </ul>
+                            <p style="margin-top: 1rem;">No charges will be applied without your consent.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Payments FAQ -->
+            <div class="faq-category" id="payments" style="display: none;">
+                <h3 style="margin-bottom: var(--space-lg);">Payments</h3>
+                <div class="faq-grid">
+                    <div class="faq-item" id="q11">
+                        <div class="faq-question">
+                            <span class="question-text">Which payment methods are supported?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We support multiple payment methods tailored for Africa:</p>
+                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li><strong>M-Pesa</strong>: Direct integration with instant confirmation</li>
+                                <li><strong>Cards</strong>: Visa, MasterCard, and American Express</li>
+                                <li><strong>Bank Transfer</strong>: Direct bank deposits</li>
+                                <li><strong>Cash</strong>: Manual payment recording</li>
+                            </ul>
+                            <p style="margin-top: 1rem;">Tenants can pay through their tenant portal using their preferred method.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" id="q12">
+                        <div class="faq-question">
+                            <span class="question-text">How are payments processed?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Payments are processed securely and efficiently:</p>
+                            <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li>Tenant initiates payment through their portal</li>
+                                <li>Payment is processed through our secure gateway</li>
+                                <li>Funds are verified and recorded instantly</li>
+                                <li>Both tenant and landlord receive confirmation</li>
+                                <li>Payment appears in your dashboard immediately</li>
+                            </ol>
+                            <p style="margin-top: 1rem;">Bank transfers may take 1-2 business days to reflect.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Security FAQ -->
+            <div class="faq-category" id="security" style="display: none;">
+                <h3 style="margin-bottom: var(--space-lg);">Security & Privacy</h3>
+                <div class="faq-grid">
+                    <div class="faq-item" id="q13">
+                        <div class="faq-question">
+                            <span class="question-text">Is my data secure?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we take data security very seriously:</p>
+                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li><strong>Bank-level encryption</strong>: All data is encrypted in transit and at rest</li>
+                                <li><strong>Regular backups</strong>: Daily backups to secure servers</li>
+                                <li><strong>Access controls</strong>: Role-based permissions</li>
+                                <li><strong>Compliance</strong>: GDPR and local data protection laws</li>
+                                <li><strong>Security audits</strong>: Regular third-party security testing</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" id="q14">
+                        <div class="faq-question">
+                            <span class="question-text">Who owns my data?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You own your data. We are simply the custodians.</p>
+                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li>You retain full ownership of all your property and tenant data</li>
+                                <li>You can export your data at any time</li>
+                                <li>We never sell or share your data with third parties</li>
+                                <li>You can delete your account and all associated data</li>
+                            </ul>
+                            <p style="margin-top: 1rem;">Our privacy policy provides full details about data ownership and usage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Still Have Questions?</h2>
+            <p class="section-subtitle">Our support team is ready to help you</p>
+            
+            <div class="contact-options">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="contact-title">Live Chat</h3>
+                    <p>Chat with our support team in real-time. Average response time: 2 minutes.</p>
+                    <button class="btn btn-primary" id="startChat" style="margin-top: var(--space-md);">
+                        <i class="fas fa-comment"></i>
+                        Start Chat
+                    </button>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="contact-title">Email Support</h3>
+                    <p>Send us an email and we'll respond within 4 hours during business hours.</p>
+                    <a href="mailto:support@lamikas.com" class="btn btn-outline" style="margin-top: var(--space-md);">
+                        <i class="fas fa-envelope"></i>
+                        Email Us
+                    </a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="contact-title">Phone Support</h3>
+                    <p>Call us directly for immediate assistance with urgent issues.</p>
+                    <a href="tel:+254711234567" class="btn btn-outline" style="margin-top: var(--space-md);">
+                        <i class="fas fa-phone"></i>
+                        Call +254 711 234 567
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Get Started?</h2>
+                <p class="cta-description">Join thousands of property professionals who are already saving time and increasing their rental income with LAMIKAS.</p>
+                <div class="cta-actions">
+                    <a href="register.html" class="btn btn-primary btn-lg">
+                        <span>Start Your Free 7-Day Trial</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <p style="margin-top: var(--space-sm); font-size: 0.875rem; opacity: 0.8;">No credit card required • Cancel anytime</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div class="logo-icon" style="width: 40px; height: 40px; font-size: 1.25rem;">L</div>
+                    </div>
+                    <p class="footer-description">Africa's most intuitive property management platform, helping landlords and property managers grow their rental income.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="#integrations">Integrations</a></li>
+                        <li><a href="#mobile-app">Mobile App</a></li>
+                        <li><a href="#roadmap">Roadmap</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="#tutorials">Tutorials</a></li>
+                        <li><a href="#webinars">Webinars</a></li>
+                        <li><a href="#api-docs">API Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:support@lamikas.com">support@lamikas.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+254711234567">+254 711 234 567</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Nairobi, Kenya</span>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2024 LAMIKAS Property Management. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Navigation Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                    navToggle.classList.toggle('active');
+                });
+            }
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (event) => {
+                if (navToggle && navMenu && !navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                    navMenu.classList.remove('active');
+                    navToggle.classList.remove('active');
+                }
+            });
+            
+            // FAQ Accordion Functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', function() {
+                    // Close all other items in the same category
+                    const category = item.closest('.faq-category');
+                    const allItemsInCategory = category.querySelectorAll('.faq-item');
+                    
+                    allItemsInCategory.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+            
+            // Category Tab Switching
+            const categoryTabs = document.querySelectorAll('.category-btn');
+            const categorySections = document.querySelectorAll('.faq-category');
+            
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Update active tab
+                    categoryTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show selected category
+                    categorySections.forEach(section => {
+                        section.style.display = 'none';
+                        if (section.id === category) {
+                            section.style.display = 'block';
+                        }
+                    });
+                    
+                    // Scroll to category
+                    document.getElementById('faq').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            });
+            
+            // Popular Questions Click Handler
+            const popularCards = document.querySelectorAll('.popular-card');
+            
+            popularCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    const questionId = this.getAttribute('data-question');
+                    
+                    // Switch to correct category
+                    categoryTabs.forEach(tab => {
+                        if (tab.getAttribute('data-category') === category) {
+                            tab.click();
+                        }
+                    });
+                    
+                    // Scroll to and open the question after a short delay
+                    setTimeout(() => {
+                        const questionElement = document.getElementById(questionId);
+                        if (questionElement) {
+                            // Close any open questions first
+                            const activeCategory = questionElement.closest('.faq-category');
+                            const allItems = activeCategory.querySelectorAll('.faq-item');
+                            allItems.forEach(item => item.classList.remove('active'));
+                            
+                            // Open the target question
+                            questionElement.classList.add('active');
+                            questionElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }, 300);
+                });
+            });
+            
+            // FAQ Search Functionality
+            const searchInput = document.getElementById('faqSearch');
+            
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase().trim();
+                
+                if (searchTerm.length < 2) {
+                    // Reset view if search term is too short
+                    categorySections.forEach(section => {
+                        section.style.display = section.classList.contains('active') ? 'block' : 'none';
+                    });
+                    
+                    faqItems.forEach(item => {
+                        item.style.display = 'block';
+                    });
+                    return;
+                }
+                
+                // Hide all categories initially
+                categorySections.forEach(section => {
+                    section.style.display = 'none';
+                });
+                
+                // Search through questions and answers
+                let foundResults = false;
+                
+                faqItems.forEach(item => {
+                    const questionText = item.querySelector('.question-text').textContent.toLowerCase();
+                    const answerText = item.querySelector('.faq-answer').textContent.toLowerCase();
+                    
+                    if (questionText.includes(searchTerm) || answerText.includes(searchTerm)) {
+                        item.style.display = 'block';
+                        foundResults = true;
+                        
+                        // Show the category containing this result
+                        const category = item.closest('.faq-category');
+                        category.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                // Show message if no results found
+                if (!foundResults) {
+                    const noResults = document.createElement('div');
+                    noResults.className = 'no-results';
+                    noResults.innerHTML = `
+                        <div style="text-align: center; padding: var(--space-2xl);">
+                            <i class="fas fa-search" style="font-size: 3rem; color: var(--gray-400); margin-bottom: var(--space-md);"></i>
+                            <h3>No results found for "${searchTerm}"</h3>
+                            <p>Try different keywords or contact our support team for help.</p>
+                        </div>
+                    `;
+                    
+                    // Remove previous no results message if exists
+                    const existingNoResults = document.querySelector('.no-results');
+                    if (existingNoResults) {
+                        existingNoResults.remove();
+                    }
+                    
+                    document.querySelector('.faq-content .container').appendChild(noResults);
+                } else {
+                    // Remove no results message if exists
+                    const existingNoResults = document.querySelector('.no-results');
+                    if (existingNoResults) {
+                        existingNoResults.remove();
+                    }
+                }
+            });
+            
+            // Live Chat Simulation
+            document.getElementById('startChat').addEventListener('click', function() {
+                alert('Live chat would open here. In a real implementation, this would connect to Intercom, Zendesk, or similar chat service.');
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
+                    
+                    e.preventDefault();
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        navMenu.classList.remove('active');
+                        navToggle.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+

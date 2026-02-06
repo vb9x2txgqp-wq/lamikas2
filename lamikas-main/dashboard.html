@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Management Dashboard | LAMIKAS</title>
+    
+    <!-- ALL LIBRARIES STAY - Loaded upfront -->
+    <!-- CSS Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Map Libraries (KEPT) -->
+    <script src="https://cdn.jsdelivr.net/npm/globe.gl"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Chart.js (KEPT) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Core CSS (layout only) -->
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Layout Styles Only */
+        .sidebar {
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 16rem;
+            z-index: 40;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .main-content-wrapper {
+            min-height: 100vh;
+            background: #f9fafb;
+            margin-left: 16rem;
+        }
+        
+        .page-content {
+            display: none;
+        }
+        
+        .page-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .nav-link {
+            margin: 2px 8px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-link.active {
+            background: rgba(59, 130, 246, 0.2);
+            border-left: 3px solid #3b82f6;
+            color: white;
+            font-weight: 500;
+        }
+        
+        .nav-link:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+        
+        /* Loading Spinner */
+        .loading-spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3b82f6;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Basic notification styles */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            max-width: 400px;
+            transform: translateX(120%);
+            transition: transform 0.3s ease;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .notification-success {
+            background-color: #d1fae5;
+            color: #065f46;
+            border-left: 4px solid #10b981;
+        }
+        
+        .notification-error {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border-left: 4px solid #ef4444;
+        }
+        
+        /* Sidebar sections styling */
+        .sidebar-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .sidebar-stats {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 8px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+           
+            .sidebar.active {
+                transform: translateX(0);
+            }
+           
+            .main-content-wrapper {
+                margin-left: 0;
+            }
+           
+            .overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.5);
+                z-index: 39;
+            }
+           
+            .overlay.active {
+                display: block;
+            }
+        }
+        
+        /* Enhanced Card Styling */
+        .enhanced-card {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .enhanced-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: all 0.2s ease;
+        }
+        
+        .stat-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .badge-success {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+        
+        .badge-warning {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+        
+        .badge-danger {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+        
+        .badge-info {
+            background-color: #e0f2fe;
+            color: #0369a1;
+        }
+        
+        .action-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .action-btn-sm {
+            padding: 0.375rem 0.75rem;
+            font-size: 0.875rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            box-shadow: 0 4px 8px rgba(59, 130, 246, 0.4);
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #374151;
+            border: 1px solid #d1d5db;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .btn-secondary:hover {
+            background: #f9fafb;
+            border-color: #9ca3af;
+        }
+        
+        .btn-danger {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+        }
+        
+        .btn-danger:hover {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            box-shadow: 0 4px 8px rgba(239, 68, 68, 0.4);
+            transform: translateY(-1px);
+        }
+        
+        .occupied {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+        
+        .vacant {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .enhanced-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        
+        .enhanced-table th {
+            background-color: #f9fafb;
+            padding: 1rem 1.5rem;
+            text-align: left;
+            font-weight: 600;
+            color: #374151;
+            border-bottom: 1px solid #e5e7eb;
+            white-space: nowrap;
+        }
+        
+        .enhanced-table td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #f3f4f6;
+            color: #4b5563;
+        }
+        
+        .enhanced-table tbody tr:hover {
+            background-color: #f9fafb;
+        }
+        
+        .enhanced-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-container {
+            background: white;
+            border-radius: 12px;
+            max-width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.3s ease;
+        }
+
+        .modal-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .modal-close-btn {
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            color: #6b7280;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .modal-close-btn:hover {
+            background: #f3f4f6;
+            color: #374151;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .modal-footer {
+            padding: 1.5rem 2rem;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+
+        /* Search results dropdown */
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-top: 4px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: none;
+        }
+
+        .search-result-item {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .search-result-item:hover {
+            background: #f3f4f6;
+        }
+
+        .search-result-name {
+            font-weight: 500;
+            color: #111827;
+        }
+
+        .search-result-type {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        /* Animation keyframes */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* Plan badge gradient */
+        .premium-badge {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: white;
+        }
+        
+        .pro-badge {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            color: white;
+        }
+        
+        .basic-badge {
+            background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+            color: white;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+    <!-- Loading State -->
+    <div id="loadingState" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+        <div class="text-center">
+            <div class="loading-spinner mx-auto mb-4"></div>
+            <p class="text-gray-600">Loading dashboard...</p>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobileMenuBtn" class="lg:hidden fixed top-4 left-4 z-50 p-2 bg-blue-600 text-white rounded-lg shadow-lg">
+        <i class="fas fa-bars text-xl"></i>
+    </button>
+
+    <!-- Overlay for Mobile Menu -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Sidebar Layout -->
+    <aside class="sidebar w-64 text-white">
+        <!-- Logo Section -->
+        <div class="p-6 border-b border-gray-700 bg-gray-800">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                    <span class="font-bold text-white">L</span>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold">LAMIKAS</h1>
+                    <p class="text-sm text-gray-400">Property Management</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Profile Section -->
+        <div class="sidebar-section mt-4">
+            <div class="flex items-center space-x-3 mb-4">
+                <div id="userAvatar" class="w-10 h-10 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-md">
+                    <span class="font-semibold text-white">JD</span>
+                </div>
+                <div class="flex-1">
+                    <p id="userName" class="font-medium text-white">John Doe</p>
+                    <p id="userRole" class="text-sm text-gray-300">Administrator</p>
+                </div>
+            </div>
+            
+            <div class="flex justify-between items-center mb-3 p-2 bg-gray-800 rounded-lg">
+                <span class="text-gray-300 text-sm">Properties</span>
+                <span id="propertiesCount" class="text-xl font-bold text-white">0</span>
+            </div>
+            
+            <!-- Plan Info -->
+            <div id="planBadge" class="pro-badge px-3 py-1.5 rounded-lg text-sm font-medium text-center mb-4 shadow-sm">
+                <span id="planName">PRO Plan</span>
+            </div>
+            
+            <button id="sidebarUpgradeBtn" class="w-full mt-2 px-3 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg text-sm font-medium flex items-center justify-center space-x-2 hover:from-blue-700 hover:to-purple-700 transition-all shadow-md">
+                <i class="fas fa-rocket"></i>
+                <span>Upgrade Plan</span>
+            </button>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="p-4 space-y-2 flex-1">
+            <a href="#" class="nav-link flex items-center space-x-3 p-3 rounded-lg active" data-page="dashboard">
+                <i class="fas fa-chart-line w-5"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-link flex items-center space-x-3 p-3 hover:bg-gray-800 rounded-lg transition" data-page="properties">
+                <i class="fas fa-building w-5"></i>
+                <span>Properties</span>
+
+            <a href="#" class="nav-link flex items-center space-x-3 p-3 hover:bg-gray-800 rounded-lg transition" data-page="tenants">
+                <i class="fas fa-users w-5"></i>
+                <span>Tenants</span>
+
+            <a href="#" class="nav-link flex items-center space-x-3 p-3 hover:bg-gray-800 rounded-lg transition" data-page="payments">
+                <i class="fas fa-money-bill-wave w-5"></i>
+                <span>Payments</span>
+
+            <a href="#" class="nav-link flex items-center space-x-3 p-3 hover:bg-gray-800 rounded-lg transition" data-page="maintenance">
+                <i class="fas fa-wrench w-5"></i>
+                <span>Maintenance</span>
+
+            <a href="#" class="nav-link flex items-center space-x-3 p-3 hover:bg-gray-800 rounded-lg transition" data-page="reports">
+                <i class="fas fa-chart-bar w-5"></i>
+                <span>Reports</span>
+            </a>
+            <a href="#" class="nav-link flex items-center space-x-3 p-3 hover:bg-gray-800 rounded-lg transition" data-page="settings">
+                <i class="fas fa-cog w-5"></i>
+                <span>Settings</span>
+            </a>
+            <a href="#" id="logoutBtn" class="nav-link flex items-center space-x-3 p-3 hover:bg-red-900/30 rounded-lg transition text-red-300 mt-8">
+                <i class="fas fa-sign-out-alt w-5"></i>
+                <span>Logout</span>
+            </a>
+        </nav>
+
+        <!-- Quick Stats Sidebar Footer -->
+        <div class="sidebar-stats mt-4">
+            <h3 class="text-sm text-gray-300 mb-3 font-medium">Quick Stats</h3>
+            <div class="space-y-3">
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-gray-400">Properties</span>
+                    <span id="sidebarPropertyCount" class="font-semibold text-white">0</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-gray-400">Occupancy</span>
+                    <span id="sidebarOccupancyRate" class="font-semibold text-green-400">0%</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-gray-400">Collections</span>
+                    <span id="sidebarMonthlyIncome" class="font-semibold text-white">$0</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-gray-400">Pending</span>
+                    <span id="sidebarPending" class="font-semibold text-yellow-400">0</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area - EMPTY CONTAINERS -->
+    <div class="main-content-wrapper">
+        <!-- Each page will inject its content here -->
+        <div id="dashboard" class="page-content active"></div>
+        <div id="properties" class="page-content"></div>
+        <div id="tenants" class="page-content"></div>
+        <div id="payments" class="page-content"></div>
+        <div id="maintenance" class="page-content"></div>
+        <div id="reports" class="page-content"></div>
+        <div id="settings" class="page-content"></div>
+    </div>
+
+    <!-- Global Modals -->
+    <!-- Add Property Modal -->
+    <div id="addPropertyModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+            <!-- Content will be injected by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notificationContainer"></div>
+
+    <!-- JavaScript Modules -->
+    <script type="module">
+        import { authManager } from './js/auth.js';
+        import { mainApp } from './js/main-app.js';  
+        import { Utils } from './js/utils.js';
+
+        // Make available globally
+        window.authManager = authManager;
+        window.mainApp = mainApp;
+        window.Utils = Utils;
+        window.L = window.L; // Leaflet already loaded
+        window.Globe = window.Globe; // Globe.gl already loaded
+        window.Chart = window.Chart; // Chart.js already loaded
+
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                await mainApp.initialize();
+            } catch (error) {
+                console.error('Failed to initialize app:', error);
+                document.getElementById('loadingState').innerHTML = `
+                    <div class="text-center">
+                        <i class="fas fa-exclamation-triangle text-4xl text-red-500 mb-4"></i>
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">Failed to Load Dashboard</h2>
+                        <p class="text-gray-600 mb-4">${error.message || 'Please try refreshing the page'}</p>
+                        <button onclick="window.location.reload()" class="px-4 py-2 bg-blue-600 text-white rounded-lg">
+                            Reload Page
+                        </button>
+                    </div>
+                `;
+            }
+        });
+    </script>
+
+    <!-- Global helper functions -->
+    <script>
+        // Global delete function
+        window.deleteProperty = function(propertyId) {
+            if (window.mainApp && window.mainApp.modules.dashboard) {
+                window.mainApp.modules.dashboard.deleteProperty(propertyId);
+            }
+        };
+
+        // Scroll functions
+        window.scrollPropertiesUp = function() {
+            const container = document.getElementById('propertiesListScroll');
+            if (container) container.scrollBy({ top: -100, behavior: 'smooth' });
+        };
+
+        window.scrollPropertiesDown = function() {
+            const container = document.getElementById('propertiesListScroll');
+            if (container) container.scrollBy({ top: 100, behavior: 'smooth' });
+        };
+
+        // All heavy libraries are already loaded in the <head>
+        // So we don't need dynamic loading functions
+    </script>
+</body>
+</html>

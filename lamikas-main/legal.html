@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal | LAMIKAS</title>
+    <meta name="description" content="Legal terms for LAMIKAS property management platform">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Primary Colors - LAMIKAS BLUE THEME */
+            --primary: #1a365d;
+            --primary-dark: #0d243f;
+            --primary-light: #e8f4fe;
+            --primary-ultralight: #f8fbff;
+            
+            /* Secondary Colors - LAMIKAS ACCENT */
+            --secondary: #38b2ac;
+            --secondary-light: #e6fffa;
+            
+            /* Neutral Colors */
+            --dark: #1a1a1a;
+            --gray-900: #2d3748;
+            --gray-800: #4a5568;
+            --gray-700: #718096;
+            --gray-600: #a0aec0;
+            --gray-500: #cbd5e0;
+            --gray-400: #e2e8f0;
+            --gray-300: #edf2f7;
+            --gray-200: #f7fafc;
+            --white: #ffffff;
+            
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 9999px;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 0.75rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            
+            /* Typography */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            /* Shadow */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* KILL ALL SMOOTH SCROLL */
+        html {
+            scroll-behavior: auto !important;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background: var(--white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            /* Force no scroll on load */
+            overflow-anchor: none;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--dark);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-lg);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin: var(--space-xl) 0 var(--space-lg);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--gray-300);
+        }
+
+        h3 {
+            font-size: 1.375rem;
+            color: var(--gray-900);
+            margin: var(--space-lg) 0 var(--space-md);
+        }
+
+        h4 {
+            font-size: 1.125rem;
+            color: var(--gray-800);
+            margin: var(--space-md) 0 var(--space-sm);
+        }
+
+        p {
+            margin-bottom: var(--space-md);
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--gray-300);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-md) var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.125rem;
+        }
+
+        /* Info Button Styles */
+        .info-btn {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm) var(--space-lg);
+            background: var(--primary);
+            border: 1px solid var(--primary-dark);
+            border-radius: var(--radius-md);
+            color: var(--white);
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: default;
+            transition: all 0.3s ease;
+        }
+
+        .info-btn:hover {
+            background: var(--primary-dark);
+            color: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .info-btn i {
+            font-size: 0.9rem;
+            color: var(--white);
+        }
+
+        /* ===== LEGAL HERO ===== */
+        .legal-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: var(--space-2xl) var(--space-lg);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-md);
+            color: var(--white);
+            background: none;
+            -webkit-text-fill-color: var(--white);
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin-bottom: var(--space-lg);
+        }
+
+        .last-updated {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            background: rgba(255, 255, 255, 0.1);
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: var(--radius-full);
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* ===== MAIN CONTAINER ===== */
+        .legal-main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-xl) var(--space-lg);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2xl);
+        }
+
+        /* ===== LEGAL TABS ===== */
+        .legal-tabs-container {
+            position: sticky;
+            top: 80px;
+            z-index: 90;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            box-shadow: var(--shadow-md);
+        }
+
+        .legal-tabs {
+            display: flex;
+            gap: var(--space-xs);
+            overflow-x: auto;
+            padding: var(--space-xs);
+            scrollbar-width: none;
+        }
+
+        .legal-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .legal-tab {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-md) var(--space-lg);
+            background: transparent;
+            border: none;
+            border-radius: var(--radius-md);
+            color: var(--gray-700);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            font-weight: 500;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .legal-tab:hover {
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .legal-tab.active {
+            background: var(--primary);
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .legal-tab i {
+            font-size: 1rem;
+        }
+
+        /* ===== LEGAL CONTENT ===== */
+        .legal-content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xl);
+        }
+
+        .legal-section {
+            display: none;
+            animation: fadeIn 0.3s ease;
+            /* Prevent anchor links from scrolling here */
+            scroll-margin-top: 0 !important;
+        }
+
+        .legal-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ===== CONTENT CARDS ===== */
+        .content-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-xl);
+            border: 1px solid var(--gray-300);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .content-card h3 {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            color: var(--primary);
+            margin-top: 0;
+        }
+
+        .content-card h3 i {
+            color: var(--secondary);
+        }
+
+        /* ===== CARD GRID ===== */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-lg);
+            margin: var(--space-lg) 0;
+        }
+
+        .feature-card {
+            background: var(--primary-ultralight);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            border: 1px solid var(--gray-300);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-light);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.25rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .feature-title {
+            font-size: 1.125rem;
+            color: var(--dark);
+            margin-bottom: var(--space-sm);
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-sm);
+            line-height: 1.5;
+        }
+
+        .feature-list li i {
+            color: var(--secondary);
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        /* ===== TABLE STYLES ===== */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--space-lg) 0;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .data-table thead {
+            background: var(--primary);
+        }
+
+        .data-table th {
+            padding: var(--space-md);
+            color: var(--white);
+            font-weight: 600;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        .data-table tbody tr {
+            border-bottom: 1px solid var(--gray-300);
+        }
+
+        .data-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .data-table td {
+            padding: var(--space-md);
+            vertical-align: top;
+        }
+
+        /* ===== CONTACT GRID ===== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+            margin: var(--space-lg) 0;
+        }
+
+        .contact-card {
+            background: var(--primary);
+            color: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-md);
+            font-size: 1.25rem;
+        }
+
+        .contact-title {
+            color: var(--white);
+            font-size: 1.125rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: var(--space-xl) var(--space-lg);
+            margin-top: var(--space-2xl);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: var(--space-lg);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--white);
+        }
+
+        .footer-logo-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--white);
+            color: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+        }
+
+        .copyright {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .legal-tabs {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+            }
+            
+            .legal-tab {
+                padding: var(--space-sm) var(--space-md);
+                font-size: 0.9rem;
+            }
+            
+            .content-card {
+                padding: var(--space-lg);
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-btn {
+                padding: var(--space-sm) var(--space-md);
+                font-size: 0.8rem;
+            }
+
+            .info-btn span {
+                display: none;
+            }
+
+            .info-btn i {
+                margin-right: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .legal-main-container {
+                padding: var(--space-lg) var(--space-md);
+            }
+            
+            .content-card {
+                padding: var(--space-md);
+            }
+            
+            .hero-title {
+                font-size: 1.75rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .header-container {
+                padding: var(--space-sm);
+            }
+        }
+
+        /* ===== UTILITY CLASSES ===== */
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-0 {
+            margin-bottom: 0;
+        }
+
+        .mt-2 {
+            margin-top: var(--space-xs);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">L</div>
+                <span>LAMIKAS</span>
+            </a>
+            
+            <!-- Info Button -->
+            <button class="info-btn" id="infoBtn" title="Your progress is saved elsewhere">
+                <i class="fas fa-info-circle"></i>
+                <span>You can close this tab after reading - Your progress is saved</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="legal-hero">
+        <div class="hero-container">
+            <h1 class="hero-title">Legal Information</h1>
+            <p class="hero-subtitle">
+                Important legal documents that govern your use of LAMIKAS. Please read these terms carefully before using our platform.
+            </p>
+            <div class="last-updated">
+                <i class="fas fa-clock"></i>
+                Last Updated: January 10, 2026
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="legal-main-container">
+        <!-- Tabs Navigation -->
+        <div class="legal-tabs-container">
+            <div class="legal-tabs">
+                <button class="legal-tab active" data-tab="terms">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Terms of Service</span>
+                </button>
+                <button class="legal-tab" data-tab="privacy">
+                    <i class="fas fa-shield-halved"></i>
+                    <span>Privacy Policy</span>
+                </button>
+                <button class="legal-tab" data-tab="cookies">
+                    <i class="fas fa-cookie-bite"></i>
+                    <span>Cookie Policy</span>
+                </button>
+                <button class="legal-tab" data-tab="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact Us</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Content Sections -->
+        <div class="legal-content">
+            <!-- Terms of Service -->
+            <section id="terms" class="legal-section active">
+                <h2>Terms of Service</h2>
+                
+                <div class="content-card">
+                    <h3><i class="fas fa-exclamation-circle"></i> Important Notice</h3>
+                    <p>By accessing or using LAMIKAS, you agree to be bound by these Terms of Service. These terms govern your access to and use of our property management platform.</p>
+                    <p>If you disagree with any part of these terms, you may not access our services. Please read this agreement carefully before proceeding.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3><i class="fas fa-user-check"></i> Account Requirements</h3>
+                    <div class="card-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-birthday-cake"></i>
+                            </div>
+                            <h4 class="feature-title">Age Requirement</h4>
+                            <p>You must be at least 18 years old to create an account and use our services.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <h4 class="feature-title">Account Security</h4>
+                            <p>You are responsible for maintaining the security of your account credentials.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <h4 class="feature-title">Accurate Information</h4>
+                            <p>All information provided during registration must be accurate and complete.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3><i class="fas fa-credit-card"></i> Subscription Plans</h3>
+                    <p>Choose the plan that best fits your property management needs:</p>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Plan</th>
+                                <th>Price</th>
+                                <th>Units</th>
+                                <th>Features</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Starter</strong></td>
+                                <td>$9.99/month</td>
+                                <td>Up to 5</td>
+                                <td>M-Pesa, Auto Reminders</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Professional</strong></td>
+                                <td>$44.99/month</td>
+                                <td>Up to 50</td>
+                                <td>Advanced Reports, SMS Credits</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Business</strong></td>
+                                <td>$69.99/month</td>
+                                <td>Up to 100</td>
+                                <td>Multi-user, API Access</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="content-card">
+                    <h3><i class="fas fa-ban"></i> Prohibited Activities</h3>
+                    <p>When using LAMIKAS, you agree not to:</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-times"></i> Use the platform for any unlawful purposes</li>
+                        <li><i class="fas fa-times"></i> Attempt to gain unauthorized access to systems</li>
+                        <li><i class="fas fa-times"></i> Interfere with platform performance</li>
+                        <li><i class="fas fa-times"></i> Harass or abuse other users</li>
+                        <li><i class="fas fa-times"></i> Distribute malware or harmful code</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Privacy Policy -->
+            <section id="privacy" class="legal-section">
+                <h2>Privacy Policy</h2>
+                
+                <div class="content-card">
+                    <h3><i class="fas fa-database"></i> Information We Collect</h3>
+                    <p>To provide our services, we collect various types of information:</p>
+                    
+                    <div class="card-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <h4 class="feature-title">Personal Information</h4>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i> Name & Contact Details</li>
+                                <li><i class="fas fa-check"></i> Email & Phone Number</li>
+                                <li><i class="fas fa-check"></i> Business Information</li>
+                            </ul>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h4 class="feature-title">Property Data</h4>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i> Property Details</li>
+                                <li><i class="fas fa-check"></i> Tenant Information</li>
+                                <li><i class="fas fa-check"></i> Financial Records</li>
+                            </ul>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4 class="feature-title">Usage Data</h4>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i> Device Information</li>
+                                <li><i class="fas fa-check"></i> Usage Patterns</li>
+                                <li><i class="fas fa-check"></i> Analytics Data</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3><i class="fas fa-lock"></i> Data Protection</h3>
+                    <p>We implement industry-standard security measures to protect your data:</p>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Security Measure</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>SSL/TLS Encryption</strong></td>
+                                <td>All data transmissions are encrypted</td>
+                                <td>Active</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Regular Audits</strong></td>
+                                <td>Security assessments and penetration testing</td>
+                                <td>Quarterly</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Access Controls</strong></td>
+                                <td>Role-based access and authentication</td>
+                                <td>Active</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="content-card">
+                    <h3><i class="fas fa-share-alt"></i> Data Sharing</h3>
+                    <p>We only share your data with trusted third parties when necessary:</p>
+                    
+                    <div class="card-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <h4 class="feature-title">Payment Processors</h4>
+                            <p>Secure payment processing partners for transaction handling.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <h4 class="feature-title">Cloud Services</h4>
+                            <p>Encrypted data storage with reputable cloud providers.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-gavel"></i>
+                            </div>
+                            <h4 class="feature-title">Legal Compliance</h4>
+                            <p>When required by law or legal authorities with proper jurisdiction.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cookie Policy -->
+            <section id="cookies" class="legal-section">
+                <h2>Cookie Policy</h2>
+                
+                <div class="content-card">
+                    <h3><i class="fas fa-cookie"></i> What Are Cookies?</h3>
+                    <p>Cookies are small text files that are stored on your device when you visit websites. They help websites remember information about your visit, which can make it easier to visit the site again and make the site more useful to you.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3><i class="fas fa-list"></i> Types of Cookies We Use</h3>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Cookie Type</th>
+                                <th>Purpose</th>
+                                <th>Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Essential Cookies</strong></td>
+                                <td>Required for basic website functionality</td>
+                                <td>Session</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Analytics Cookies</strong></td>
+                                <td>Understand how visitors use our platform</td>
+                                <td>2 years</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Preference Cookies</strong></td>
+                                <td>Remember your settings and preferences</td>
+                                <td>1 year</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="content-card">
+                    <h3><i class="fas fa-sliders-h"></i> Managing Cookies</h3>
+                    <p>You can control cookies through your browser settings:</p>
+                    
+                    <div class="card-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fab fa-chrome"></i>
+                            </div>
+                            <h4 class="feature-title">Google Chrome</h4>
+                            <p>Settings → Privacy and Security → Cookies and other site data</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fab fa-safari"></i>
+                            </div>
+                            <h4 class="feature-title">Safari</h4>
+                            <p>Preferences → Privacy → Cookies and website data</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fab fa-firefox"></i>
+                            </div>
+                            <h4 class="feature-title">Firefox</h4>
+                            <p>Options → Privacy & Security → Cookies and Site Data</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="legal-section">
+                <h2>Contact Information</h2>
+                
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="contact-title">General Inquiries</h3>
+                        <p class="mb-0">legal@lamikas.com</p>
+                        <p class="mt-2">Response time: 24-48 hours</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3 class="contact-title">Data Protection</h3>
+                        <p class="mb-0">dpo@lamikas.com</p>
+                        <p class="mt-2">For privacy-related concerns</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3 class="contact-title">Phone Support</h3>
+                        <p class="mb-0">+254 700 000 000</p>
+                        <p class="mt-2">Mon-Fri, 9AM-5PM EAT</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <a href="index.html" class="footer-logo">
+                <div class="footer-logo-icon">L</div>
+                <span>LAMIKAS</span>
+            </a>
+            
+            <div class="copyright">
+                © 2025 LAMIKAS. All rights reserved.<br>
+                Africa's most intuitive property management platform.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ===== KILL ALL HASH SCROLLING - DO THIS FIRST =====
+            // Force page to top NO MATTER WHAT
+            window.scrollTo(0, 0);
+            
+            // If there's a hash in the URL, remove it temporarily to prevent scroll
+            if (window.location.hash) {
+                const hash = window.location.hash;
+                // Clear hash from URL without triggering scroll
+                history.replaceState(null, null, ' ');
+                
+                // Restore hash after tiny delay (for tab functionality)
+                setTimeout(() => {
+                    history.replaceState(null, null, hash);
+                }, 10);
+            }
+            
+            // ===== TAB SWITCHING FUNCTIONALITY =====
+            const tabs = document.querySelectorAll('.legal-tab');
+            const sections = document.querySelectorAll('.legal-section');
+            const infoBtn = document.getElementById('infoBtn');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Remove active class from all tabs and sections
+                    tabs.forEach(t => t.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding section
+                    this.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                    
+                    // Update URL hash WITHOUT SCROLLING
+                    // Use replaceState instead of pushState to avoid adding to history
+                    history.replaceState(null, null, `#${tabId}`);
+                    
+                    // Ensure we stay at the top (double protection)
+                    window.scrollTo(0, 0);
+                });
+            });
+            
+            // ===== HANDLE INITIAL PAGE LOAD WITH HASH =====
+            // Check if there's a hash in URL after we've prevented scroll
+            setTimeout(() => {
+                const hash = window.location.hash.substring(1);
+                if (hash && document.getElementById(hash)) {
+                    const tabToActivate = document.querySelector(`[data-tab="${hash}"]`);
+                    if (tabToActivate) {
+                        // Activate the correct tab
+                        tabs.forEach(t => t.classList.remove('active'));
+                        sections.forEach(s => s.classList.remove('active'));
+                        tabToActivate.classList.add('active');
+                        document.getElementById(hash).classList.add('active');
+                    }
+                }
+                
+                // Final guarantee: stay at top
+                window.scrollTo(0, 0);
+            }, 50);
+            
+            // ===== INFO BUTTON FUNCTIONALITY =====
+            infoBtn.addEventListener('click', function() {
+                const tooltip = document.createElement('div');
+                tooltip.textContent = "Your progress is automatically saved. Feel free to close this tab!";
+                tooltip.style.position = 'fixed';
+                tooltip.style.top = '100px';
+                tooltip.style.right = '20px';
+                tooltip.style.backgroundColor = 'var(--primary)';
+                tooltip.style.color = 'var(--white)';
+                tooltip.style.padding = 'var(--space-md) var(--space-lg)';
+                tooltip.style.borderRadius = 'var(--radius-md)';
+                tooltip.style.boxShadow = 'var(--shadow-lg)';
+                tooltip.style.zIndex = '1000';
+                tooltip.style.maxWidth = '300px';
+                tooltip.style.animation = 'fadeIn 0.3s ease';
+                
+                document.body.appendChild(tooltip);
+                
+                setTimeout(() => {
+                    tooltip.style.opacity = '0';
+                    tooltip.style.transition = 'opacity 0.3s ease';
+                    setTimeout(() => {
+                        if (tooltip.parentNode) {
+                            tooltip.parentNode.removeChild(tooltip);
+                        }
+                    }, 300);
+                }, 3000);
+            });
+            
+            // ===== STICKY TAB BEHAVIOR =====
+            let lastScrollTop = 0;
+            const tabsContainer = document.querySelector('.legal-tabs-container');
+            
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop) {
+                    // Scrolling down
+                    if (scrollTop > 200) {
+                        tabsContainer.style.opacity = '0.95';
+                        tabsContainer.style.transform = 'translateY(-5px)';
+                    }
+                } else {
+                    // Scrolling up
+                    tabsContainer.style.opacity = '1';
+                    tabsContainer.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+        });
+    </script>
+</body>
+</html>
+
+

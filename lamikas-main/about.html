@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | LAMIKAS</title>
+    <meta name="description" content="Meet the team behind LAMIKAS - Africa's most intuitive property management platform. Learn our story, mission, and values.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== LAMIKAS PROPERTY MANAGEMENT CSS (Same as index.html) ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Primary Colors - Professional Blue Theme */
+            --primary: #1a365d;
+            --primary-dark: #0d243f;
+            --primary-medium: #2c5282;
+            --primary-light: #4299e1;
+            --primary-lighter: #bee3f8;
+            
+            /* Secondary Colors */
+            --secondary: #2d3748;
+            --secondary-light: #4a5568;
+            
+            /* Accent Colors */
+            --accent: #38b2ac;
+            --accent-light: #81e6d9;
+            
+            /* Success Colors */
+            --success: #38a169;
+            --warning: #d69e2e;
+            --danger: #e53e3e;
+            --info: #3182ce;
+            
+            /* Neutral Colors */
+            --dark: #1a202c;
+            --gray-900: #2d3748;
+            --gray-800: #4a5568;
+            --gray-700: #718096;
+            --gray-600: #a0aec0;
+            --gray-500: #cbd5e0;
+            --gray-400: #e2e8f0;
+            --gray-300: #edf2f7;
+            --gray-200: #f7fafc;
+            --white: #ffffff;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+            
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 14px;
+            --radius-xl: 20px;
+            --radius-full: 9999px;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            --space-3xl: 6rem;
+            
+            /* Typography */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* ===== CUSTOM SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--gray-200);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-light);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-medium);
+        }
+
+        /* Firefox scrollbar */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-light) var(--gray-200);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--dark);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--primary-medium);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            padding: var(--space-3xl) 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-title {
+            margin-bottom: var(--space-sm);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--gray-700);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.875rem 2rem;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.5;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-medium) 100%);
+            color: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            font-weight: 600;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* LOGIN BUTTON - Lighter blue border - NOW DARKER */
+        .btn-login {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary-medium); /* DARKER BORDER */
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+        }
+
+        .btn-login:hover {
+            background-color: var(--primary-lighter);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+            color: var(--primary);
+        }
+
+        .btn-text {
+            background-color: transparent;
+            color: var(--primary);
+            border: none;
+            padding: 0.5rem 1rem;
+        }
+
+        .btn-text:hover {
+            color: var(--primary-dark);
+            background-color: var(--gray-200);
+        }
+
+        .btn-lg {
+            padding: 1rem 2.5rem;
+            font-size: 1.125rem;
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+
+        .btn-block {
+            width: 100%;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-medium) 100%);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .logo-text {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .logo-subtitle {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            margin-top: -4px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xl);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-lg);
+        }
+
+        .nav-link {
+            color: var(--gray-800);
+            font-weight: 600;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .about-hero {
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.95) 0%, rgba(44, 82, 130, 0.95) 100%), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: var(--space-3xl) 0;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .about-hero .container {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            margin-bottom: var(--space-md);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background-color: rgba(255,255,255,0.1);
+            color: var(--white);
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: var(--radius-full);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .about-hero h1 {
+            color: var(--white);
+            margin-bottom: var(--space-md);
+        }
+
+        .text-gradient {
+            background: linear-gradient(90deg, var(--accent-light) 0%, var(--white) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-hero p {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-xl);
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== MISSION SECTION ===== */
+        .mission-section {
+            background-color: var(--gray-200);
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-xl);
+        }
+
+        .mission-card {
+            text-align: center;
+            padding: var(--space-xl);
+            border-radius: var(--radius-xl);
+            background-color: var(--white);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .mission-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.75rem;
+            margin: 0 auto var(--space-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ===== STORY SECTION ===== */
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+        }
+
+        .story-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+
+        .story-visual {
+            position: relative;
+        }
+
+        .story-image {
+            width: 100%;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-medium) 100%);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        .story-highlight {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--white);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            max-width: 280px;
+            border: 1px solid var(--primary);
+        }
+
+        .highlight-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: var(--space-xs);
+        }
+
+        /* ===== TEAM SECTION ===== */
+        .team-section {
+            background-color: var(--gray-200);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-xl);
+        }
+
+        .team-member {
+            text-align: center;
+            padding: var(--space-xl);
+            background-color: var(--white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .member-avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin: 0 auto var(--space-md);
+            overflow: hidden;
+            border: 4px solid var(--primary-lighter);
+        }
+
+        .avatar-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-medium) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .member-name {
+            margin-bottom: var(--space-xs);
+        }
+
+        .member-role {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+        }
+
+        .member-bio {
+            color: var(--gray-700);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: var(--space-md);
+        }
+
+        /* ===== VALUES SECTION ===== */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+
+        .value-card {
+            padding: var(--space-lg);
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--primary);
+            border-left: 4px solid var(--primary);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .value-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: var(--space-md);
+        }
+
+        /* ===== PRESS SECTION ===== */
+        .press-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+
+        .press-logo {
+            height: 40px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 var(--space-md);
+            background: var(--gray-200);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            color: var(--gray-700);
+            min-width: 120px;
+        }
+
+        .press-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+            background: var(--primary-lighter);
+            color: var(--primary);
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta {
+            padding: var(--space-3xl) 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+        }
+
+        .cta-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            color: var(--white);
+            margin-bottom: var(--space-md);
+        }
+
+        .cta-description {
+            font-size: 1.125rem;
+            margin-bottom: var(--space-xl);
+            opacity: 0.9;
+        }
+
+        .cta-actions {
+            margin-bottom: var(--space-xl);
+        }
+
+        /* WHITE TEXT FOR CTA BUTTON */
+        .cta .btn-primary {
+            background-color: var(--white);
+            color: var(--white) !important; /* WHITE TEXT */
+            border-color: var(--white);
+        }
+
+        .cta .btn-primary:hover {
+            background-color: var(--gray-200);
+            border-color: var(--gray-200);
+            color: var(--primary-dark) !important;
+        }
+
+        .cta-note {
+            margin-top: var(--space-sm);
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        .cta-benefits {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-xl);
+            flex-wrap: wrap;
+        }
+
+        .benefit {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .benefit i {
+            font-size: 1.25rem;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: var(--space-3xl) 0 var(--space-xl);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: var(--space-lg);
+            font-size: 1.25rem;
+        }
+
+        .footer-logo {
+            margin-bottom: var(--space-md);
+        }
+
+        .footer-description {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: var(--space-lg);
+            line-height: 1.8;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: var(--space-sm);
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255,255,255,0.1);
+            color: var(--white);
+            border-radius: var(--radius-full);
+            transition: all 0.2s ease;
+        }
+
+        .footer-social a:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-light);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            padding-top: var(--space-xl);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+        }
+
+        .footer-contact {
+            display: flex;
+            gap: var(--space-lg);
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item i {
+            color: var(--accent-light);
+        }
+
+        .contact-item a, .contact-item span {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .contact-item a:hover {
+            color: var(--white);
+        }
+
+        .footer-copyright {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.875rem;
+        }
+
+        /* ===== PROFILE MODAL STYLES ===== */
+        .profile-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .profile-modal.active {
+            display: flex;
+        }
+
+        .modal-container {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            width: 90%;
+            max-width: 800px;
+            max-height: 85vh;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            animation: slideUp 0.4s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-medium) 100%);
+            padding: var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .modal-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .modal-content {
+            padding: var(--space-xl);
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+
+        /* Custom scrollbar for modal */
+        .modal-content::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .modal-content::-webkit-scrollbar-track {
+            background: transparent;
+            margin: 10px 0;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb {
+            background: var(--primary-light);
+            border-radius: 3px;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-medium);
+        }
+
+        .profile-section {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+            margin-bottom: var(--space-xl);
+            padding-bottom: var(--space-xl);
+            border-bottom: 2px solid var(--gray-300);
+        }
+
+        .profile-image {
+            text-align: center;
+        }
+
+        .profile-avatar-large {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 0 auto;
+            box-shadow: var(--shadow-xl);
+            border: 5px solid var(--white);
+            outline: 5px solid var(--primary-light);
+        }
+
+        .profile-name {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: var(--space-xs);
+            line-height: 1.2;
+        }
+
+        .profile-tagline {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: var(--space-lg);
+        }
+
+	.profile-details-grid {
+    	display: grid;
+    	grid-template-columns: 1fr 1fr;
+    	gap: var(--space-lg);
+    	margin-bottom: var(--space-xl);
+       }
+
+	.detail-card {
+    	background: var(--gray-100);
+    	border-radius: var(--radius-lg);
+    	padding: var(--space-lg);
+    	border: 2px solid var(--primary);
+	}
+
+        .detail-title {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-md);
+            color: var(--primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .detail-title i {
+            font-size: 1.25rem;
+        }
+
+        .detail-content {
+            color: var(--gray-800);
+            line-height: 1.6;
+        }
+
+        .detail-item {
+            margin-bottom: var(--space-sm);
+            padding-bottom: var(--space-sm);
+            border-bottom: 1px solid var(--gray-300);
+        }
+
+        .detail-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .detail-value {
+            color: var(--gray-900);
+            font-size: 1.1rem;
+        }
+
+        .profile-actions {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+            padding-top: var(--space-xl);
+            border-top: 2px solid var(--gray-300);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.25rem;
+            }
+            
+            .story-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+            
+            .story-highlight {
+                position: relative;
+                bottom: 0;
+                right: 0;
+                margin-top: var(--space-lg);
+                max-width: 100%;
+            }
+
+            .profile-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .profile-avatar-large {
+                width: 180px;
+                height: 180px;
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: var(--space-lg);
+                box-shadow: var(--shadow-lg);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                align-items: flex-start;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+            
+            .nav-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            .nav-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .nav-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-lg);
+            }
+            
+            .press-logos {
+                gap: var(--space-md);
+            }
+            
+            .press-logo {
+                min-width: 100px;
+                font-size: 0.875rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+
+            .modal-container {
+                width: 95%;
+                max-height: 90vh;
+            }
+
+            .profile-quote {
+                font-size: 1.25rem;
+                padding: var(--space-md);
+            }
+
+            .profile-details-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-name {
+                font-size: 1.8rem;
+            }
+
+            .profile-tagline {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-avatar-large {
+                width: 150px;
+                height: 150px;
+                font-size: 2.5rem;
+            }
+
+            .profile-actions {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.75rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section {
+                padding: var(--space-2xl) 0;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-contact {
+                justify-content: center;
+            }
+
+            .modal-content {
+                padding: var(--space-lg);
+            }
+
+            .profile-quote {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Section scroll fix */
+        section[id] {
+            scroll-margin-top: 100px;
+        }
+
+        /* For mobile */
+        @media (max-width: 768px) {
+            section[id] {
+                scroll-margin-top: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation - EXACT SAME AS INDEX.HTML -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">L</div>
+                    <div>
+                        <div class="logo-text">LAMIKAS</div>
+                        <div class="logo-subtitle">Property Management</div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <div class="nav-links">
+                    <a href="index.html#features" class="nav-link">Features</a>
+                    <a href="index.html#pricing" class="nav-link">Pricing</a>
+                    <a href="faq.html" class="nav-link">FAQ</a>
+                    <a href="about.html" class="nav-link active">About</a>
+                </div>
+                
+                <div class="nav-actions">
+                    <a href="login.html" class="btn btn-login">Login</a>
+                    <a href="register.html" class="btn btn-primary" style="white-space: nowrap; position: relative; padding: 10px 40px 10px 20px; display: flex; flex-direction: column; align-items: center; line-height: 1.1; text-align: center; min-height: 62px; justify-content: center;">
+                        <div style="display: flex; flex-direction: column; gap: 3px;">
+                            <span style="font-weight: 700; font-size: 15px;">Start Free 7-Day Trial</span>
+                            <span style="font-size: 11px; font-weight: 500; opacity: 0.95; display: flex; align-items: center; justify-content: center; gap: 5px;">
+                                <i class="fas fa-credit-card" style="font-size: 10px;"></i>
+                                No credit card required!
+                            </span>
+                        </div>
+                        <i class="fas fa-arrow-right" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 14px;"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="hero-badge">
+                <span class="badge">Our Story</span>
+            </div>
+            <h1>Built by<br><span class="text-gradient">Property Professionals</span></h1>
+            <p>
+                We're on a mission to modernize property management worldwide. LAMIKAS was created after experiencing firsthand inefficiencies of manual workflows, late rent payments, and outdated paperwork. Built by property professionals and driven by smart technology, our platform streamlines operations, automates rent collection, and gives landlords and property managers real-time control over their properties—anywhere in the world.
+            </p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="section mission-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Mission & Vision</h2>
+                <p class="section-subtitle">We're building a modern, intuitive property management platform that empowers landlords and property managers worldwide</p>
+            </div>
+            
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To simplify property management for landlords and property managers worldwide through intuitive technology that saves time, increases income, and eliminates administrative headaches.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To become a leading global property management platform, trusted by property professionals to manage rental income efficiently and grow their real estate portfolios across markets.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Our Promise</h3>
+                    <p>We're committed to building software that actually works in the real world and fully trustworthy—featuring flexible payment integrations, reliable support, and tools designed to adapt to diverse property markets and regulations around the globe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="section" id="story">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Story</h2>
+                <p class="section-subtitle">From frustration to innovation: How we built Africa's favorite property management platform</p>
+            </div>
+            
+            <div class="story-content">
+                <div class="story-text">
+                    <p>LAMIKAS started in 2023 when our founder—an active landlord managing multiple properties—grew frustrated with the inefficiencies of traditional property management.</p>
+                    
+                    <p>Late rent payments, endless reminder messages, paper receipts, and spreadsheets that never quite added up had become the daily reality for property owners everywhere.</p>
+                    
+                    <p>While property management software existed in some markets, most solutions were rigid, outdated, or poorly suited to how landlords and tenants actually operate. They failed to support diverse payment methods, real-world landlord–tenant relationships, and the regulatory nuances of different regions.</p>
+                    
+                    <p>So we built our own.</p>
+                    
+                    <p>What began as a simple system for managing just 9 properties quickly proved its value. Other landlords took notice. Property managers wanted tools that could help them scale efficiently without added complexity.</p>
+
+                    <p>Today, LAMIKAS supports property professionals across multiple countries in Africa, helping them streamline operations, improve cash flow, and grow their portfolios—and this is only the beginning.</p>
+                </div>
+                
+                <div class="story-visual">
+                    <div class="story-image">
+                        <div style="text-align: center;">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">🏠</div>
+                            <div>Our journey began with</div>
+                            <div style="font-size: 2rem; font-weight: 800; margin-top: 0.5rem;">9 properties</div>
+                        </div>
+                    </div>
+                    <div class="story-highlight">
+                        <div class="highlight-number">500+</div>
+                        <h4>Property Professionals</h4>
+                        <p>Trusting us with their rental management across Africa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Meet Our Team</h2>
+                <p class="section-subtitle">A diverse team of property experts, software engineers, and customer success specialists</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">MR</div>
+                    </div>
+                    <h3 class="member-name">Mohammad Ramadhan</h3>
+                    <div class="member-role">Founder & CEO</div>
+                    <p class="member-bio">Experienced property owner and manager across East Africa, with deep hands-on knowledge of day-to-day property operations.</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">HM</div>
+                    </div>
+                    <h3 class="member-name">Harith Abuu Mohamad</h3>
+                    <div class="member-role">Co-Founder</div>
+                    <p class="member-bio">Co-Founder and entrepreneur with extensive experience across East Africa, focused on building and scaling operationally strong ventures.</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">HH</div>
+                    </div>
+                    <h3 class="member-name">Hisham Hussein</h3>
+                    <div class="member-role">Website Developer</div>
+                    <p class="member-bio">"I just turn ideas into clean, smooth running websites."</p>
+		    <p class="member-bio">View profile below for more details.</p>
+                    <button class="btn btn-outline btn-sm" onclick="openHishamProfile()" style="margin-top: 15px; padding: 8px 20px;">
+                        <i class="fas fa-user-circle"></i>
+                        View Profile
+                    </button>
+                </div> 
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Values</h2>
+                <p class="section-subtitle">The principles that guide everything we do at LAMIKAS</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Customer First</h3>
+                    <p>We listen to our customers and build features that solve their real problems. Your success is our success.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>We're constantly improving our platform based on customer feedback and market needs. Built for today, ready for tomorrow.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Partnership</h3>
+                    <p>We work with our customers as partners, not just users. Your growth is our growth.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Results-Driven</h3>
+                    <p>We measure success by the time saved, income increased, and stress reduced for our customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Transform Your Property Management?</h2>
+                <p class="cta-description">Join 500+ property professionals who are already saving time and increasing their rental income.</p>
+                <div class="cta-actions">
+                    <a href="register.html" class="btn btn-primary btn-lg">
+                        <span>Start Your Free 7-Day Trial</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <p class="cta-note">No credit card required • Cancel anytime</p>
+                </div>
+                <div class="cta-benefits">
+                    <div class="benefit">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Bank-level security</span>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-headset"></i>
+                        <span>Dedicated onboarding</span>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Mobile app included</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div class="logo-icon" style="width: 40px; height: 40px; font-size: 1.25rem;">L</div>
+                    </div>
+                    <p class="footer-description">Africa's most intuitive property management platform, helping landlords and property managers grow their rental income.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="#integrations">Integrations</a></li>
+                        <li><a href="#mobile-app">Mobile App</a></li>
+                        <li><a href="#roadmap">Roadmap</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="#tutorials">Tutorials</a></li>
+                        <li><a href="#webinars">Webinars</a></li>
+                        <li><a href="#api-docs">API Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:support@lamikas.com">support@lamikas.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+254711234567">+254 711 234 567</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Nairobi, Kenya</span>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2024 LAMIKAS Property Management. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Profile Modal -->
+    <div id="hishamProfileModal" class="profile-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 style="color: var(--white); margin: 0;">Profile Details</h2>
+                <button class="modal-close" onclick="closeHishamProfile()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+
+<div class="profile-section">
+    <div class="profile-image">
+        <div class="profile-avatar-large">HH</div>
+    </div>
+    <div class="profile-info">
+        <h1 class="profile-name">Hisham Hussein</h1>
+        <div class="profile-tagline">Website Developer</div>
+        
+        <p style="font-size: 1.2rem; color: var(--gray-700); margin-top: var(--space-lg); line-height: 1.6;">
+            "I just turn ideas into clean, smooth running websites."
+        </p>
+    </div>
+</div>
+
+<p style="text-align: center; margin: 0 0 2rem 0; font-weight: 600; color: var(--primary); font-size: 1.1rem;">
+    I'm available to code for people, just message me.
+</p>
+                
+                <div class="profile-details-grid">
+                    <div class="detail-card">
+                        <div class="detail-title">
+                            <i class="fas fa-user"></i>
+                            Personal Information
+                        </div>
+                        <div class="detail-content">
+                            <div class="detail-item">
+                                <span class="detail-label">Full Name</span>
+                                <span class="detail-value">Hisham Hussein</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Age</span>
+                                <span class="detail-value">18 years old</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Nationality</span>
+                                <span class="detail-value">Kenyan</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <div class="detail-title">
+                            <i class="fas fa-envelope"></i>
+                            Contact Information
+                        </div>
+                        <div class="detail-content">
+                            <div class="detail-item">
+                                <span class="detail-label">Email</span>
+                                <span class="detail-value">hisham@lamikas.com</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Role at LAMIKAS</span>
+                                <span class="detail-value">Website Developer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-actions">
+                    <a href="mailto:hisham@lamikas.com" class="btn btn-primary btn-lg">
+                        <i class="fas fa-envelope"></i>
+                        Email Me
+                    </a>
+                    <button class="btn btn-outline btn-lg" onclick="closeHishamProfile()">
+                        <i class="fas fa-times"></i>
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle - SAME AS INDEX.HTML
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                    navToggle.classList.toggle('active');
+                });
+            }
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (event) => {
+                if (navToggle && navMenu && !navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                    navMenu.classList.remove('active');
+                    navToggle.classList.remove('active');
+                }
+            });
+            
+            // Smooth scroll with proper offset
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    if (href === '#') return;
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        e.preventDefault();
+                        
+                        // Calculate the navbar height
+                        const navbar = document.querySelector('.navbar');
+                        const navbarHeight = navbar ? navbar.offsetHeight : 80;
+                        
+                        // Get the target's position
+                        const targetPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = targetPosition + window.pageYOffset - navbarHeight;
+                        
+                        // Smooth scroll to the target
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update URL
+                        history.pushState(null, null, href);
+                        
+                        // Close mobile menu if open
+                        if (navMenu && navToggle) {
+                            navMenu.classList.remove('active');
+                            navToggle.classList.remove('active');
+                        }
+                    }
+                });
+            });
+            
+            // Handle initial hash in URL
+            if (window.location.hash) {
+                const targetId = window.location.hash.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    setTimeout(() => {
+                        const navbar = document.querySelector('.navbar');
+                        const navbarHeight = navbar ? navbar.offsetHeight : 80;
+                        const targetPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = targetPosition + window.pageYOffset - navbarHeight - 20;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                }
+            }
+            
+            // Update copyright year automatically
+            const copyrightElement = document.querySelector('.footer-copyright p');
+            if (copyrightElement) {
+                const currentYear = new Date().getFullYear();
+                copyrightElement.innerHTML = copyrightElement.innerHTML.replace('2024', currentYear);
+            }
+        });
+
+// Profile Modal Functions
+function openHishamProfile() {
+    const modal = document.getElementById('hishamProfileModal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Reset scroll position to top
+        const modalContent = modal.querySelector('.modal-content');
+        if (modalContent) {
+            modalContent.scrollTop = 0;
+        }
+    }
+}
+
+	function closeHishamProfile() {
+    	const modal = document.getElementById('hishamProfileModal');
+    	if (modal) {
+        // Reset scroll position before closing
+        const modalContent = modal.querySelector('.modal-content');
+        if (modalContent) {
+            modalContent.scrollTop = 0;
+        }
+        
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+        
+        // Close modal when clicking outside
+        document.addEventListener('click', function(e) {
+            const modal = document.getElementById('hishamProfileModal');
+            if (modal && modal.classList.contains('active')) {
+                if (e.target === modal) {
+                    closeHishamProfile();
+                }
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeHishamProfile();
+            }
+        });
+    </script>
+</body>
+</html>
+
+
